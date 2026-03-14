@@ -1,0 +1,30 @@
+Options -Indexes
+
+RewriteEngine On
+RedirectMatch 301 ^/blog(/.*)?$ https://blog.puncher.com$1
+
+
+# 1. Forçar HTTPS e remover www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.puncher\.com [NC]
+RewriteRule ^ https://puncher.com%{REQUEST_URI} [R=301,L]
+
+# 2. Redirecionar URLs antigas sem extensão para .html
+Redirect 301 /about/ https://puncher.com/about.html
+Redirect 301 /contact/ https://puncher.com/contact.html
+Redirect 301 /pricing/ https://puncher.com/pricing.html
+Redirect 301 /pricing https://puncher.com/pricing.html
+Redirect 301 /order/ https://puncher.com/order.html
+Redirect 301 /vector-service/ https://puncher.com/vector-service.html
+Redirect 301 /partnership/ https://puncher.com/partner-companies.html
+Redirect 301 /quote/ https://puncher.com/contact.html
+
+# 3. Redirecionar URLs antigas do sistema para o novo app
+Redirect 301 /register/ https://puncher.com/app/
+Redirect 301 /customer-area/ https://puncher.com/app/meus-pedidos/
+
+# 4. Redirecionar URLs muito antigas
+Redirect 301 /index.php https://puncher.com/
+Redirect 301 /embed/ https://puncher.com/
+Redirect 301 /format.htm https://puncher.com/
+

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Place your embroidery digitizing order. Professional digitizing services with fast turnaround.">
+    <meta name="keywords" content="embroidery digitizing, digitizing order, embroidery designs, machine embroidery">
+    <title>Place Order | Puncher Embroidery Digitizing</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <style>
+        /* Additional styles for order page */
+        .order-section {
+            padding: 60px 0;
+            background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
+            min-height: calc(100vh - 200px);
+        }
+        
+        .order-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .coming-soon-banner {
+            background: linear-gradient(135deg, #f6e05e 0%, #ed8936 100%);
+            color: #744210;
+            padding: 20px 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #c05621;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .coming-soon-banner .icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        
+        .coming-soon-banner h4 {
+            margin: 0 0 5px 0;
+            color: #744210;
+            font-size: 16px;
+        }
+        
+        .coming-soon-banner p {
+            margin: 0;
+            font-size: 14px;
+            color: #975a16;
+        }
+        
+        .order-form-container h3 {
+            color: #1a365d;
+            margin-bottom: 25px;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .order-form-container {
+                padding: 25px;
+                margin: 0 15px;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .unit-options {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+        }
+        
+        .unit-options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        
+        .unit-options input[type="radio"] {
+            width: auto;
+        }
+        
+        .file-upload-box {
+            border: 2px dashed #cbd5e0;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            background: #f7fafc;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .file-upload-box:hover {
+            border-color: #4299e1;
+            background: #ebf8ff;
+        }
+        
+        .file-upload-box.has-file {
+            border-color: #48bb78;
+            background: #f0fff4;
+            border-style: solid;
+        }
+        
+        .file-upload-box .upload-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .file-upload-box .upload-text {
+            color: #4a5568;
+            font-size: 14px;
+        }
+        
+        .file-upload-box .upload-text strong {
+            color: #2b6cb0;
+        }
+        
+        .file-upload-box input[type="file"] {
+            display: none;
+        }
+        
+        .file-info {
+            display: none;
+            margin-top: 10px;
+            padding: 12px 15px;
+            background: #c6f6d5;
+            border: 2px solid #48bb78;
+            border-radius: 8px;
+            text-align: left;
+        }
+        
+        .file-info.visible {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .file-info .file-details {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .file-info .file-icon {
+            font-size: 20px;
+        }
+        
+        .file-info .file-name {
+            font-weight: 600;
+            color: #22543d;
+        }
+        
+        .file-info .file-size {
+            color: #276749;
+            font-size: 12px;
+        }
+        
+        .file-info .remove-btn {
+            background: #e53e3e;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px 30px;
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(43, 108, 176, 0.4);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-note {
+            text-align: center;
+            margin-top: 20px;
+            color: #718096;
+            font-size: 14px;
+        }
+        
+        /* Success/Error messages */
+        .form-message {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background: #c6f6d5;
+            border: 1px solid #48bb78;
+            color: #22543d;
+        }
+        
+        .form-message.error {
+            background: #fed7d7;
+            border: 1px solid #fc8181;
+            color: #c53030;
+        }
+        
+        .required-star {
+            color: #e53e3e;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-376DZQKDWZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-376DZQKDWZ');
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    </header>
+
+    <!-- Page Title -->
+    <section class="hero" style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); padding: 60px 0;">
+        <div class="container">
+            <h1 style="font-size: 36px; margin-bottom: 10px;">PLACE YOUR ORDER</h1>
+            <p style="font-size: 18px; opacity: 0.9;">Submit your design for professional embroidery digitizing</p>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="order-section">
+        <div class="container">
+            <div class="order-form-container">
+                
+                <!-- Coming Soon Banner -->
+                <div class="coming-soon-banner">
+                    <div class="icon">🚧</div>
+                    <div>
+                        <h4>Coming Soon: New Ordering System!</h4>
+                        <p>A brand new ordering system is being developed with improved features. This temporary form will be replaced soon. Thank you for your patience!</p>
+                    </div>
+                </div>
+                
+                <h3>📦 Order Details</h3>
+                
+                <!-- Messages -->
+                <div id="form-message" class="form-message"></div>
+                
+                <form id="order-form" action="php/send-order.php" method="POST" enctype="multipart/form-data">
+                    
+                    <!-- Contact Info -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name / Company <span class="required-star">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your E-mail <span class="required-star">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Your e-mail" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Design Info -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="design_name">Design Name <span class="required-star">*</span></label>
+                            <input type="text" id="design_name" name="design_name" placeholder="Design name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="po_number">Design PO Number (optional)</label>
+                            <input type="text" id="po_number" name="po_number" placeholder="PO Number">
+                        </div>
+                    </div>
+                    
+                    <!-- Placement -->
+                    <div class="form-group">
+                        <label for="placement">Place of Embroidery <span class="required-star">*</span></label>
+                        <select id="placement" name="placement" required>
+                            <option value="">Select placement...</option>
+                            <option value="Left Chest">Left Chest</option>
+                            <option value="Front Cap">Front Cap</option>
+                            <option value="Side Cap">Side Cap</option>
+                            <option value="Back Cap">Back Cap</option>
+                            <option value="Full Back">Full Back</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Dimensions -->
+                    <div class="form-group">
+                        <label for="dimensions">Dimensions (Width x Height) <span class="required-star">*</span></label>
+                        <input type="text" id="dimensions" name="dimensions" placeholder="e.g., 3.5 x 2.5" required>
+                        <div class="unit-options">
+                            <label>
+                                <input type="radio" name="unit" value="Inches" checked> Inches
+                            </label>
+                            <label>
+                                <input type="radio" name="unit" value="Centimeters"> Centimeters
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Fabric -->
+                    <div class="form-group">
+                        <label for="fabric">Fabric (optional)</label>
+                        <input type="text" id="fabric" name="fabric" placeholder="e.g., Cotton, Polyester, Twill...">
+                    </div>
+                    
+                    <!-- Comments -->
+                    <div class="form-group">
+                        <label for="comments">Comments / Special Instructions (optional)</label>
+                        <textarea id="comments" name="comments" placeholder="Describe any special requirements, colors, stitch preferences, etc."></textarea>
+                    </div>
+                    
+                    <!-- File Upload 1 - Main File -->
+                    <div class="form-group">
+                        <label>Logo / Artwork File <span class="required-star">*</span></label>
+                        <label for="main_file" class="file-upload-box" id="main-file-box">
+                            <div class="upload-icon">📎</div>
+                            <div class="upload-text"><strong>Click to choose your logo/artwork file</strong><br>JPG, PNG, PDF, AI, EPS, SVG (Max 10MB)</div>
+                            <input type="file" id="main_file" name="main_file" accept=".jpg,.jpeg,.png,.gif,.pdf,.ai,.eps,.svg" required>
+                        </label>
+                        <div class="file-info" id="main-file-info">
+                            <div class="file-details">
+                                <span class="file-icon" id="main-file-icon">🖼️</span>
+                                <span class="file-name" id="main-file-name"></span>
+                                <span class="file-size" id="main-file-size"></span>
+                            </div>
+                            <button type="button" class="remove-btn" onclick="removeFile('main')">✕</button>
+                        </div>
+                    </div>
+                    
+                    <!-- File Upload 2 - Additional File -->
+                    <div class="form-group">
+                        <label>Additional Reference File (optional)</label>
+                        <label for="additional_file" class="file-upload-box" id="additional-file-box">
+                            <div class="upload-icon">📄</div>
+                            <div class="upload-text"><strong>Click to add an additional reference file</strong><br>JPG, PNG, PDF, AI, EPS, SVG (Max 10MB)</div>
+                            <input type="file" id="additional_file" name="additional_file" accept=".jpg,.jpeg,.png,.gif,.pdf,.ai,.eps,.svg">
+                        </label>
+                        <div class="file-info" id="additional-file-info">
+                            <div class="file-details">
+                                <span class="file-icon" id="additional-file-icon">🖼️</span>
+                                <span class="file-name" id="additional-file-name"></span>
+                                <span class="file-size" id="additional-file-size"></span>
+                            </div>
+                            <button type="button" class="remove-btn" onclick="removeFile('additional')">✕</button>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        📨 Submit Order
+                    </button>
+                </form>
+                
+                <p class="form-note">
+                    You will receive an e-mail confirming that we received your order and later, another e-mail confirming we started working on it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Puncher.com</h4>
+                    <p style="color: #a0aec0;">Professional embroidery digitizing services since 1993. Trusted by thousands of customers worldwide.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="pricing.html">Embroidery Digitizing</a></li>
+                        <li><a href="vector-service.html">Vector Art</a></li>
+                        <li><a href="embroidery-file-formats.html">File Formats</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partner-companies.html">Partners</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>📧 <a href="/#quote" style="color:#e8791d;font-weight:600;">Send us a message</a></li>
+                        <li>💬 <a href="https://wa.me/5531920039974" style="color: #a0aec0;">WhatsApp: (31) 9 2003-9974</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 1993-2025 Puncher.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+    
+    <script>
+    // File upload handling
+    function setupFileUpload(inputId, prefix) {
+        const input = document.getElementById(inputId);
+        const box = document.getElementById(prefix + '-file-box');
+        const info = document.getElementById(prefix + '-file-info');
+        const icon = document.getElementById(prefix + '-file-icon');
+        const name = document.getElementById(prefix + '-file-name');
+        const size = document.getElementById(prefix + '-file-size');
+        
+        input.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                const file = this.files[0];
+                
+                // Format size
+                let sizeText = '';
+                if (file.size < 1024) {
+                    sizeText = file.size + ' B';
+                } else if (file.size < 1024 * 1024) {
+                    sizeText = (file.size / 1024).toFixed(1) + ' KB';
+                } else {
+                    sizeText = (file.size / (1024 * 1024)).toFixed(1) + ' MB';
+                }
+                
+                // Set icon based on extension
+                const ext = file.name.split('.').pop().toLowerCase();
+                if (['jpg', 'jpeg', 'png', 'gif', 'webp'].indexOf(ext) > -1) {
+                    icon.textContent = '🖼️';
+                } else if (ext === 'pdf') {
+                    icon.textContent = '📕';
+                } else if (['ai', 'eps', 'svg'].indexOf(ext) > -1) {
+                    icon.textContent = '🎨';
+                } else {
+                    icon.textContent = '📄';
+                }
+                
+                name.textContent = file.name;
+                size.textContent = '(' + sizeText + ')';
+                info.classList.add('visible');
+                box.classList.add('has-file');
+            }
+        });
+    }
+    
+    function removeFile(prefix) {
+        const input = document.getElementById(prefix === 'main' ? 'main_file' : 'additional_file');
+        const box = document.getElementById(prefix + '-file-box');
+        const info = document.getElementById(prefix + '-file-info');
+        
+        input.value = '';
+        info.classList.remove('visible');
+        box.classList.remove('has-file');
+    }
+    
+    // Initialize file uploads
+    setupFileUpload('main_file', 'main');
+    setupFileUpload('additional_file', 'additional');
+    
+    // Form submission
+    document.getElementById('order-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submit-btn');
+        const messageDiv = document.getElementById('form-message');
+        const originalText = submitBtn.innerHTML;
+        
+        // Disable button and show loading
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '⏳ Sending...';
+        
+        // Create FormData
+        const formData = new FormData(this);
+        
+        // Send via fetch
+        fetch('php/send-order.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            messageDiv.style.display = 'block';
+            
+            if (data.success) {
+                messageDiv.className = 'form-message success';
+                messageDiv.innerHTML = '✅ ' + data.message;
+                this.reset();
+                removeFile('main');
+                removeFile('additional');
+                
+                // Scroll to message
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                messageDiv.className = 'form-message error';
+                messageDiv.innerHTML = '❌ ' + data.message;
+            }
+        })
+        .catch(error => {
+            messageDiv.style.display = 'block';
+            messageDiv.className = 'form-message error';
+            messageDiv.innerHTML = '❌ An error occurred. Please try again or contact us directly at <a href="/#quote" style="color:#e8791d;font-weight:600;">Send us a message</a>';
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        });
+    });
+    </script>
+</body>
+</html>

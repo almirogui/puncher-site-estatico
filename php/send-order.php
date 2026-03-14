@@ -1,0 +1,339 @@
+<?php
+/**
+ * PUNCHER.COM - Order Form Handler (Temporary)
+ * Receives order requests and sends email notification
+ * 
+ * Features:
+ * - Saves uploaded files and creates clickable links
+ * - Sends notification to admin (puncher@puncher.com)
+ * - Sends confirmation email to customer
+ */
+
+header('Content-Type: application/json');
+
+// Configuration
+$to_email = 'puncher@puncher.com';
+$from_email = 'noreply@puncher.com';
+$site_url = 'https://puncher.com'; 
+$subject_prefix = '[Puncher.com Order]';
+
+// Check if POST request
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo json_encode(['success' => false, 'message' => 'Invalid request method']);
+    exit;
+}
+
+// Get form data
+$name = isset($_POST['name']) ? trim($_POST['name']) : '';
+$email = isset($_POST['email']) ? trim($_POST['email']) : '';
+$design_name = isset($_POST['design_name']) ? trim($_POST['design_name']) : '';
+$po_number = isset($_POST['po_number']) ? trim($_POST['po_number']) : '';
+$placement = isset($_POST['placement']) ? trim($_POST['placement']) : '';
+$dimensions = isset($_POST['dimensions']) ? trim($_POST['dimensions']) : '';
+$unit = isset($_POST['unit']) ? trim($_POST['unit']) : 'Inches';
+$fabric = isset($_POST['fabric']) ? trim($_POST['fabric']) : '';
+$comments = isset($_POST['comments']) ? trim($_POST['comments']) : '';
+
+// Validate required fields
+if (empty($name) || empty($email) || empty($design_name) || empty($placement) || empty($dimensions)) {
+    echo json_encode(['success' => false, 'message' => 'Please fill in all required fields']);
+    exit;
+}
+
+// Validate email
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo json_encode(['success' => false, 'message' => 'Please enter a valid email address']);
+    exit;
+}
+
+// Handle file uploads
+$upload_dir = dirname(__DIR__) . '/uploads/orders/';
+if (!is_dir($upload_dir)) {
+    mkdir($upload_dir, 0755, true);
+}
+
+$allowed_extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'pdf', 'ai', 'eps', 'svg'];
+$max_size = 10 * 1024 * 1024; // 10MB
+
+/**
+ * Process a file upload
+ */
+function processFileUpload($file_key, $upload_dir, $site_url, $allowed_extensions, $max_size) {
+    $result = [
+        'success' => false,
+        'link_html' => '<p style="color: #999;">No file attached</p>',
+        'filename' => '',
+        'url' => ''
+    ];
+    
+    if (!isset($_FILES[$file_key]) || $_FILES[$file_key]['error'] !== UPLOAD_ERR_OK) {
+        return $result;
+    }
+    
+    $file = $_FILES[$file_key];
+    $file_extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    
+    // Validate extension
+    if (!in_array($file_extension, $allowed_extensions)) {
+        return $result;
+    }
+    
+    // Validate size
+    if ($file['size'] > $max_size) {
+        return $result;
+    }
+    
+    // Create unique filename
+    $unique_id = date('Ymd_His') . '_' . uniqid();
+    $safe_filename = preg_replace('/[^a-zA-Z0-9._-]/', '_', $file['name']);
+    $filename = $unique_id . '_' . $safe_filename;
+    $filepath = $upload_dir . $filename;
+    
+    if (move_uploaded_file($file['tmp_name'], $filepath)) {
+        $file_url = $site_url . '/uploads/orders/' . $filename;
+        $result = [
+            'success' => true,
+            'link_html' => "
+                <p>
+                    <a href='{$file_url}' target='_blank' style='color: #2b6cb0; text-decoration: none; font-weight: bold;'>
+                        📎 {$file['name']}
+                    </a>
+                    <br>
+                    <a href='{$file_url}' target='_blank' style='color: #718096; font-size: 12px;'>
+                        Click to view/download
+                    </a>
+                </p>
+            ",
+            'filename' => $file['name'],
+            'url' => $file_url
+        ];
+    }
+    
+    return $result;
+}
+
+// Process main file (required)
+$main_file = processFileUpload('main_file', $upload_dir, $site_url, $allowed_extensions, $max_size);
+if (!$main_file['success']) {
+    // Check if file was provided but failed
+    if (isset($_FILES['main_file']) && $_FILES['main_file']['error'] === UPLOAD_ERR_OK) {
+        echo json_encode(['success' => false, 'message' => 'Failed to upload main file. Please try again.']);
+        exit;
+    } else if (!isset($_FILES['main_file']) || $_FILES['main_file']['error'] === UPLOAD_ERR_NO_FILE) {
+        echo json_encode(['success' => false, 'message' => 'Please attach your logo/artwork file.']);
+        exit;
+    }
+}
+
+// Process additional file (optional)
+$additional_file = processFileUpload('additional_file', $upload_dir, $site_url, $allowed_extensions, $max_size);
+
+// Build email content for ADMIN
+$subject = "$subject_prefix $design_name - from $name";
+
+$additional_file_section = '';
+if ($additional_file['success']) {
+    $additional_file_section = "
+        <div class='field'>
+            <div class='label'>📄 Additional Reference File:</div>
+            <div class='file-box'>
+                {$additional_file['link_html']}
+            </div>
+        </div>
+    ";
+}
+
+$admin_message = "
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
+        .content { background: #f7fafc; padding: 30px; border: 1px solid #e2e8f0; }
+        .field { margin-bottom: 20px; }
+        .label { font-weight: bold; color: #1a365d; margin-bottom: 5px; }
+        .value { padding: 12px; background: white; border-radius: 5px; border: 1px solid #e2e8f0; }
+        .footer { text-align: center; padding: 20px; color: #718096; font-size: 12px; }
+        .file-box { background: #edf2f7; padding: 15px; border-radius: 8px; border-left: 4px solid #ed8936; }
+        .highlight { background: #c6f6d5; padding: 10px 15px; border-radius: 5px; border-left: 4px solid #38a169; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h2>📦 New Order Received</h2>
+            <p style='margin: 0; opacity: 0.9;'>Temporary Order Form</p>
+        </div>
+        <div class='content'>
+            <div class='highlight'>
+                <strong>Design:</strong> " . htmlspecialchars($design_name) . "
+            </div>
+            
+            <div class='field'>
+                <div class='label'>👤 Customer:</div>
+                <div class='value'>" . htmlspecialchars($name) . "</div>
+            </div>
+            <div class='field'>
+                <div class='label'>📧 Email:</div>
+                <div class='value'><a href='mailto:" . htmlspecialchars($email) . "' style='color: #2b6cb0;'>" . htmlspecialchars($email) . "</a></div>
+            </div>
+            <div class='field'>
+                <div class='label'>🏷️ PO Number:</div>
+                <div class='value'>" . (empty($po_number) ? '<em style=\"color: #999;\">Not provided</em>' : htmlspecialchars($po_number)) . "</div>
+            </div>
+            <div class='field'>
+                <div class='label'>📍 Placement:</div>
+                <div class='value'>" . htmlspecialchars($placement) . "</div>
+            </div>
+            <div class='field'>
+                <div class='label'>📐 Dimensions:</div>
+                <div class='value'><strong>" . htmlspecialchars($dimensions) . " " . htmlspecialchars($unit) . "</strong></div>
+            </div>
+            <div class='field'>
+                <div class='label'>🧵 Fabric:</div>
+                <div class='value'>" . (empty($fabric) ? '<em style=\"color: #999;\">Not specified</em>' : htmlspecialchars($fabric)) . "</div>
+            </div>
+            <div class='field'>
+                <div class='label'>💬 Comments:</div>
+                <div class='value'>" . (empty($comments) ? '<em style=\"color: #999;\">None</em>' : nl2br(htmlspecialchars($comments))) . "</div>
+            </div>
+            <div class='field'>
+                <div class='label'>🎨 Logo/Artwork File:</div>
+                <div class='file-box'>
+                    {$main_file['link_html']}
+                </div>
+            </div>
+            {$additional_file_section}
+        </div>
+        <div class='footer'>
+            <p>This order was submitted from the temporary order form on Puncher.com</p>
+            <p>Reply directly to this email to respond to the customer.</p>
+        </div>
+    </div>
+</body>
+</html>
+";
+
+// Email headers for ADMIN
+$admin_headers = [
+    'MIME-Version: 1.0',
+    'Content-type: text/html; charset=UTF-8',
+    'From: Puncher.com <' . $from_email . '>',
+    'Reply-To: ' . $name . ' <' . $email . '>',
+    'X-Mailer: PHP/' . phpversion()
+];
+
+// Send email to ADMIN
+$admin_email_sent = mail($to_email, $subject, $admin_message, implode("\r\n", $admin_headers));
+
+// Build CONFIRMATION email for CUSTOMER
+$customer_subject = "Order Received: " . $design_name . " - Puncher.com";
+
+$files_summary = "<p><strong>📎 Main file:</strong> " . htmlspecialchars($main_file['filename']) . "</p>";
+if ($additional_file['success']) {
+    $files_summary .= "<p><strong>📄 Additional file:</strong> " . htmlspecialchars($additional_file['filename']) . "</p>";
+}
+
+$customer_message = "
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+        .header h2 { margin: 0; }
+        .content { background: #f7fafc; padding: 30px; border: 1px solid #e2e8f0; }
+        .highlight { background: #c6f6d5; padding: 15px; border-radius: 8px; border-left: 4px solid #38a169; margin: 20px 0; }
+        .summary { background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin: 20px 0; }
+        .summary-item { padding: 8px 0; border-bottom: 1px solid #edf2f7; }
+        .summary-item:last-child { border-bottom: none; }
+        .footer { text-align: center; padding: 20px; color: #718096; font-size: 12px; background: #1a365d; border-radius: 0 0 10px 10px; }
+        .footer p { margin: 5px 0; color: #a0aec0; }
+        .footer a { color: #ed8936; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h2>✅ Order Received!</h2>
+        </div>
+        <div class='content'>
+            <p>Dear <strong>" . htmlspecialchars($name) . "</strong>,</p>
+            
+            <div class='highlight'>
+                <strong>🎉 Great news!</strong> We have received your order for <strong>\"" . htmlspecialchars($design_name) . "\"</strong> and our team will start working on it soon.
+            </div>
+            
+            <p>You will receive another email when we start working on your design, and a final email when it's ready for download.</p>
+            
+            <div class='summary'>
+                <h4 style='margin-top: 0; color: #1a365d;'>📋 Order Summary:</h4>
+                <div class='summary-item'><strong>Design:</strong> " . htmlspecialchars($design_name) . "</div>
+                " . (!empty($po_number) ? "<div class='summary-item'><strong>PO Number:</strong> " . htmlspecialchars($po_number) . "</div>" : "") . "
+                <div class='summary-item'><strong>Placement:</strong> " . htmlspecialchars($placement) . "</div>
+                <div class='summary-item'><strong>Dimensions:</strong> " . htmlspecialchars($dimensions) . " " . htmlspecialchars($unit) . "</div>
+                " . (!empty($fabric) ? "<div class='summary-item'><strong>Fabric:</strong> " . htmlspecialchars($fabric) . "</div>" : "") . "
+                <div style='margin-top: 15px; padding-top: 15px; border-top: 1px solid #edf2f7;'>
+                    {$files_summary}
+                </div>
+            </div>
+            
+            " . (!empty($comments) ? "
+            <div style='background: #edf2f7; padding: 15px; border-radius: 8px; margin: 20px 0;'>
+                <h4 style='margin: 0 0 10px 0; color: #1a365d;'>💬 Your Comments:</h4>
+                <p style='margin: 0;'>" . nl2br(htmlspecialchars($comments)) . "</p>
+            </div>
+            " : "") . "
+            
+            <p>If you have any questions or need to make changes, feel free to reply to this email or contact us at <a href='mailto:puncher@puncher.com' style='color: #2b6cb0;'>puncher@puncher.com</a>.</p>
+            
+            <p style='margin-top: 30px;'>Thank you for choosing Puncher.com!</p>
+            
+            <p>Best regards,<br>
+            <strong>The Puncher Team</strong></p>
+        </div>
+        <div class='footer'>
+            <p><strong>Puncher.com</strong> - Professional Embroidery Digitizing since 1993</p>
+            <p>📧 <a href='mailto:puncher@puncher.com'>puncher@puncher.com</a> | 💬 <a href='https://wa.me/5531920039974' style='color: #ed8936;'>WhatsApp</a></p>
+            <p><a href='https://puncher.com'>www.puncher.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
+";
+
+// Email headers for CUSTOMER
+$customer_headers = [
+    'MIME-Version: 1.0',
+    'Content-type: text/html; charset=UTF-8',
+    'From: Puncher.com <' . $from_email . '>',
+    'Reply-To: ' . $to_email,
+    'X-Mailer: PHP/' . phpversion()
+];
+
+// Send confirmation email to CUSTOMER
+$customer_email_sent = mail($email, $customer_subject, $customer_message, implode("\r\n", $customer_headers));
+
+// Log the order
+$log_dir = dirname(__DIR__) . '/logs/';
+if (!is_dir($log_dir)) {
+    mkdir($log_dir, 0755, true);
+}
+$log_entry = date('Y-m-d H:i:s') . " | Order | $design_name | $name | $email | $placement | $dimensions $unit | Admin:" . ($admin_email_sent ? 'OK' : 'FAIL') . " | Customer:" . ($customer_email_sent ? 'OK' : 'FAIL') . "\n";
+file_put_contents($log_dir . 'orders.log', $log_entry, FILE_APPEND);
+
+// Response
+if ($admin_email_sent) {
+    echo json_encode([
+        'success' => true, 
+        'message' => 'Order submitted successfully! Check your email for confirmation.'
+    ]);
+} else {
+    echo json_encode([
+        'success' => false, 
+        'message' => 'Failed to send order. Please try again or contact us directly at puncher@puncher.com'
+    ]);
+}

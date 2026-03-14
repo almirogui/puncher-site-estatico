@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Puncher</title>
+    <link rel="alternate" hreflang="en" href="https://puncher.com/faq.html" />
+    <link rel="alternate" hreflang="de" href="https://puncher.com/de/faq.html" />
+    <link rel="alternate" hreflang="fr" href="https://puncher.com/fr/faq.html" />
+    <link rel="alternate" hreflang="es" href="https://puncher.com/es/faq.html" />
+    <link rel="alternate" hreflang="it" href="https://puncher.com/it/faq.html" />
+    <link rel="alternate" hreflang="x-default" href="https://puncher.com/faq.html" />
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-376DZQKDWZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-376DZQKDWZ');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo"><img src="../images/logo.png" alt="Puncher" style="height: 55px; background: white; padding: 8px 15px; border-radius: 8px;"></a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="pricing.html">Prezzi</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="../app/" class="btn btn-primary" style="padding: 8px 20px;">Accedi</a></li>
+                </ul>
+            </nav>
+            <div id="language-switcher" style="display: flex; align-items: center; margin-left: 15px;"></div>
+        </div>
+    </header>
+    <section class="page-header" style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%) !important;">
+        <div class="container">
+            <h1 style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">Domande Frequenti</h1>
+            <p style="color: #ffffff !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); opacity: 1;">Risposte alle domande più comuni</p>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
+                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: #f7fafc; cursor: pointer; font-weight: 600;">Quanto tempo richiede la digitalizzazione?</div>
+                    <div style="padding: 20px; display: none;">La maggior parte dei design viene completata in 24 ore. I design complessi possono richiedere 48 ore.</div>
+                </div>
+                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
+                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: #f7fafc; cursor: pointer; font-weight: 600;">Quali formati di file offrite?</div>
+                    <div style="padding: 20px; display: none;">Forniamo tutti i formati comuni: DST, PES, JEF, EXP, VP3, XXX e altri.</div>
+                </div>
+                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
+                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: #f7fafc; cursor: pointer; font-weight: 600;">Offrite revisioni gratuite?</div>
+                    <div style="padding: 20px; display: none;">Sì! Offriamo revisioni gratuite illimitate fino alla completa soddisfazione.</div>
+                </div>
+                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
+                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: #f7fafc; cursor: pointer; font-weight: 600;">C'è un ordine minimo?</div>
+                    <div style="padding: 20px; display: none;">Non c'è un ordine minimo. Puoi ordinare anche un singolo design.</div>
+                </div>
+                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
+                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: #f7fafc; cursor: pointer; font-weight: 600;">Come posso pagare?</div>
+                    <div style="padding: 20px; display: none;">Accettiamo PayPal, carte di credito e bonifico bancario.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-bottom"><p>&copy; 1993-2025 Puncher.com. Tutti i diritti riservati.</p></div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="../js/language.js"></script>
+    <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('div:first-child').addEventListener('click', () => {
+            const answer = item.querySelector('div:last-child');
+            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        });
+    });
+    </script>
+</body>
+</html>

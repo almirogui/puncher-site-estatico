@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transparent embroidery digitizing pricing. Pay only for the stitches your design needs. Starting from $10. Professional quality since 1993.">
+    <title>Embroidery Digitizing Pricing — Free Quotes | Puncher.com</title>
+    <meta name="description" content="Transparent embroidery digitizing pricing. Free quotes, no hidden fees. Volume discounts available. DST, PES, EMB and all formats. Rush service in 4 hours. See our rates.">
+    <link rel="alternate" hreflang="en" href="https://puncher.com/pricing.html" />
+    <link rel="alternate" hreflang="de" href="https://puncher.com/de/pricing.html" />
+    <link rel="alternate" hreflang="fr" href="https://puncher.com/fr/pricing.html" />
+    <link rel="alternate" hreflang="es" href="https://puncher.com/es/pricing.html" />
+    <link rel="alternate" hreflang="it" href="https://puncher.com/it/pricing.html" />
+    <link rel="alternate" hreflang="x-default" href="https://puncher.com/pricing.html" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-376DZQKDWZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-376DZQKDWZ');
+    </script>
+
+    <style>
+    /* ── Pricing Page Extra Styles ── */
+    .pr-badge {
+        display: inline-block;
+        background: rgba(201,149,58,.18);
+        border: 1px solid rgba(201,149,58,.45);
+        color: #e6b050;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        padding: .3rem .9rem;
+        border-radius: 50px;
+        margin-bottom: 1.25rem;
+    }
+    .pr-hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+    .pr-stat strong {
+        display: block;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 2rem;
+        color: #e6b050;
+        line-height: 1;
+    }
+    .pr-stat span {
+        font-size: .78rem;
+        color: rgba(255,255,255,.6);
+        text-transform: uppercase;
+        letter-spacing: .08em;
+    }
+    .pr-section-label {
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--primary-color, #e67e22);
+        margin-bottom: .5rem;
+    }
+    /* Placement cards */
+    .pr-placement-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+        gap: 1.1rem;
+        margin-bottom: 1.75rem;
+    }
+    .pr-card {
+        background: #fff;
+        border: 1.5px solid #e2d9ce;
+        border-radius: 12px;
+        padding: 1.6rem 1.25rem;
+        text-align: center;
+        position: relative;
+        transition: transform .22s, box-shadow .22s, border-color .22s;
+        overflow: hidden;
+    }
+    .pr-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #c9953a, #e6b050);
+        opacity: 0;
+        transition: opacity .22s;
+    }
+    .pr-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(13,27,42,.14); border-color: #c9953a; }
+    .pr-card:hover::before { opacity: 1; }
+    .pr-card-icon { font-size: 2rem; margin-bottom: .6rem; display: block; }
+    .pr-card-name { font-weight: 700; font-size: .95rem; margin-bottom: .2rem; color: #0d1b2a; }
+    .pr-card-size { font-size: .75rem; color: #6b7280; margin-bottom: .9rem; font-family: monospace; }
+    .pr-card-from { font-size: .7rem; color: #6b7280; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .2rem; }
+    .pr-card-price {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 2rem;
+        font-weight: 900;
+        color: #c9953a;
+        line-height: 1;
+    }
+    .pr-card-note { font-size: .74rem; color: #6b7280; margin-top: .65rem; padding-top: .65rem; border-top: 1px solid #e2d9ce; }
+    .pr-info-box {
+        background: linear-gradient(135deg, #fff8ed, #fff3e0);
+        border: 1px solid #f0d090;
+        border-radius: 10px;
+        padding: 1rem 1.4rem;
+        font-size: .88rem;
+        color: #5a4010;
+        display: flex;
+        align-items: flex-start;
+        gap: .7rem;
+    }
+    /* Stitch table layout */
+    .pr-stitch-layout {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+    @media (max-width: 680px) { .pr-stitch-layout { grid-template-columns: 1fr; } }
+    .pr-stitch-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(13,27,42,.09); }
+    .pr-stitch-table thead tr { background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); color: white; }
+    .pr-stitch-table thead th { padding: .85rem 1.1rem; text-align: left; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+    .pr-stitch-table tbody tr { background: white; border-bottom: 1px solid #e2d9ce; transition: background .15s; }
+    .pr-stitch-table tbody tr:nth-child(even) { background: #faf8f5; }
+    .pr-stitch-table tbody tr:hover { background: #fff8ed; }
+    .pr-stitch-table tbody tr:last-child { border-bottom: none; }
+    .pr-stitch-table td { padding: .8rem 1.1rem; font-size: .92rem; }
+    .pr-stitch-table td:last-child { font-weight: 700; color: #c9953a; font-family: monospace; font-size: .98rem; }
+    .pr-stitch-note { font-size: .75rem; color: #6b7280; display: block; margin-top: .15rem; }
+    .pr-minimums {
+        background: linear-gradient(135deg, #1a365d 0%, #0d1b2a 100%);
+        border-radius: 12px;
+        padding: 1.6rem;
+        color: white;
+    }
+    .pr-minimums h3 { font-size: 1rem; color: #e6b050; margin-bottom: 1.1rem; }
+    .pr-min-row { display: flex; justify-content: space-between; align-items: center; padding: .6rem 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .pr-min-row:last-of-type { border-bottom: none; }
+    .pr-min-label { font-size: .87rem; color: rgba(255,255,255,.8); }
+    .pr-min-val { font-family: monospace; font-weight: 700; color: #e6b050; font-size: .98rem; }
+    .pr-min-note { font-size: .75rem; color: rgba(255,255,255,.4); margin-top: 1rem; line-height: 1.5; }
+    /* Examples */
+    .pr-examples-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+        gap: 1.1rem;
+    }
+    .pr-example {
+        background: #f7f3ee;
+        border: 1.5px solid #e2d9ce;
+        border-radius: 12px;
+        padding: 1.4rem;
+    }
+    .pr-ex-icon { font-size: 1.6rem; margin-bottom: .6rem; }
+    .pr-ex-title { font-weight: 700; font-size: .9rem; color: #0d1b2a; margin-bottom: .2rem; }
+    .pr-ex-stitches { font-family: monospace; font-size: .75rem; color: #6b7280; margin-bottom: .9rem; }
+    .pr-ex-calc { font-size: .8rem; color: #6b7280; line-height: 1.9; border-top: 1px dashed #e2d9ce; padding-top: .7rem; }
+    .pr-ex-total { font-family: 'Playfair Display', Georgia, serif; font-size: 1.55rem; font-weight: 900; color: #c9953a; margin-top: .35rem; }
+    /* Placement guide */
+    .pr-guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 620px) { .pr-guide-grid { grid-template-columns: 1fr; } }
+    .pr-guide-card { background: white; border: 1px solid #e2d9ce; border-radius: 12px; padding: 1.6rem; transition: box-shadow .2s; }
+    .pr-guide-card:hover { box-shadow: 0 4px 20px rgba(13,27,42,.09); }
+    .pr-guide-card h3 { font-size: 1.05rem; margin-bottom: .2rem; color: #0d1b2a; }
+    .pr-guide-size { font-family: monospace; font-size: .76rem; color: #c9953a; font-weight: 700; margin-bottom: .65rem; display: block; }
+    .pr-guide-card p { font-size: .87rem; color: #6b7280; margin-bottom: .65rem; }
+    .pr-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .pr-tag { font-size: .72rem; background: #f0ece7; border: 1px solid #e2d9ce; border-radius: 50px; padding: .18rem .65rem; color: #0d1b2a; }
+    .pr-guide-note { margin-top: .65rem; font-size: .77rem; color: #2d7a4f; background: #f0f9f4; border: 1px solid #b6e0c8; border-radius: 6px; padding: .45rem .7rem; }
+    /* Special services */
+    .pr-dark { background: linear-gradient(135deg, #0d1b2a 0%, #162436 100%); color: white; }
+    .pr-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; }
+    .pr-service { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 1.75rem; transition: border-color .2s; }
+    .pr-service:hover { border-color: rgba(201,149,58,.5); }
+    .pr-service-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+    .pr-service h3 { font-size: 1.1rem; color: white; margin-bottom: .4rem; }
+    .pr-service-badge { display: inline-block; background: rgba(201,149,58,.2); border: 1px solid rgba(201,149,58,.4); color: #e6b050; font-size: .72rem; font-weight: 700; letter-spacing: .06em; padding: .18rem .65rem; border-radius: 50px; margin-bottom: .65rem; }
+    .pr-service p { font-size: .87rem; color: rgba(255,255,255,.65); line-height: 1.6; }
+    .pr-svc-examples { margin-top: 2rem; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 1.5rem; }
+    .pr-svc-examples h4 { color: #e6b050; margin-bottom: 1.1rem; font-size: .95rem; }
+    .pr-svc-row { display: flex; justify-content: space-between; align-items: center; padding: .6rem 0; border-bottom: 1px solid rgba(255,255,255,.07); gap: 1rem; }
+    .pr-svc-row:last-child { border-bottom: none; }
+    .pr-svc-desc { font-size: .85rem; color: rgba(255,255,255,.75); }
+    .pr-svc-desc small { display: block; font-size: .74rem; color: rgba(255,255,255,.4); margin-top: .1rem; }
+    .pr-svc-price { font-family: monospace; font-weight: 700; color: #e6b050; font-size: .98rem; white-space: nowrap; }
+    /* Gradient note */
+    .pr-gradient-note { background: linear-gradient(135deg, #fff8ed, #fffbf5); border: 1.5px solid #e6c97a; border-radius: 12px; padding: 1.75rem; display: flex; gap: 1.1rem; align-items: flex-start; }
+    .pr-gradient-note h3 { font-size: 1.05rem; color: #0d1b2a; margin-bottom: .4rem; }
+    .pr-gradient-note p { font-size: .87rem; color: #5a4a20; line-height: 1.65; }
+    /* Includes */
+    .pr-includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: .9rem; }
+    .pr-include { display: flex; align-items: flex-start; gap: .7rem; padding: 1rem 1.15rem; background: white; border: 1px solid #e2d9ce; border-radius: 10px; }
+    .pr-check { width: 20px; height: 20px; background: #2d7a4f; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: .7rem; flex-shrink: 0; margin-top: .1rem; }
+    .pr-include span { font-size: .87rem; font-weight: 500; color: #0d1b2a; }
+    /* CTA */
+    .pr-cta { background: linear-gradient(135deg, #1a365d 0%, #0d1b2a 100%); text-align: center; padding: 4.5rem 1.5rem; position: relative; overflow: hidden; }
+    .pr-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(201,149,58,.15), transparent); }
+    .pr-cta-inner { position: relative; max-width: 580px; margin: 0 auto; }
+    .pr-cta h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.6rem, 3.5vw, 2.25rem); color: white; margin-bottom: .9rem; }
+    .pr-cta p { color: rgba(255,255,255,.7); margin-bottom: 1.75rem; font-size: .97rem; }
+    .pr-btn-gold { display: inline-block; padding: .85rem 2.1rem; border-radius: 8px; font-weight: 700; font-size: .97rem; text-decoration: none; background: linear-gradient(135deg, #c9953a, #e6b050); color: #0d1b2a; box-shadow: 0 4px 20px rgba(201,149,58,.4); transition: all .22s; }
+    .pr-btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,149,58,.55); }
+    .pr-cta-email { display: block; margin-top: 1.25rem; font-size: .87rem; color: rgba(255,255,255,.5); }
+    .pr-cta-email a { color: #e6b050; text-decoration: none; }
+    .pr-cta-email a:hover { text-decoration: underline; }
+    /* Section spacing */
+    .pr-section { padding: 4rem 0; }
+    .pr-section-alt { background: white; }
+    .pr-divider { border: none; height: 1px; background: #e2d9ce; margin: 0; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-header" style="background: linear-gradient(135deg, #0d1b2a 0%, #1a3050 60%, #0f2238 100%) !important; padding: 4rem 0 0; position:relative; overflow:visible;">
+        <div class="container" style="text-align:center;">
+            <span class="pr-badge">Transparent Pricing Since 1993</span>
+            <h1 style="color:#ffffff !important; font-family:'Playfair Display',Georgia,serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:900; text-shadow:none; margin-bottom:1rem;">
+                Pay for what your design<br><em style="color:#e6b050; font-style:normal;">actually needs</em>
+            </h1>
+            <p style="color:rgba(255,255,255,.75) !important; text-shadow:none; opacity:1; max-width:520px; margin:0 auto;">
+                No flat-rate surprises. Our stitch-count model means a simple logo stays affordable — and a complex jacket back is priced fairly for the work it requires.
+            </p>
+            <div class="pr-hero-stats">
+                <div class="pr-stat"><strong>$10</strong><span>Starting price</span></div>
+                <div class="pr-stat"><strong>24h</strong><span>Turnaround</span></div>
+                <div class="pr-stat"><strong>30+</strong><span>Years experience</span></div>
+                <div class="pr-stat"><strong>∞</strong><span>Free revisions</span></div>
+            </div>
+        </div>
+    
+        <!-- Curve wave -->
+        <div style="position:relative; height:70px; overflow:hidden; margin-top:3rem;">
+            <svg viewBox="0 0 1440 70" preserveAspectRatio="none"
+                 style="position:absolute; bottom:0; left:0; width:100%; height:100%; display:block;"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,70 C360,0 1080,0 1440,70 L1440,70 L0,70 Z" fill="#ffffff"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Section 1: Placement at a Glance -->
+    <section class="content-section pr-section">
+        <div class="container">
+            <div class="section-title">
+                <p class="pr-section-label">Pricing at a Glance</p>
+                <h2>Choose your placement</h2>
+                <p>Select the area where your design will be embroidered. The final price is calculated by stitch count — shown in detail below.</p>
+            </div>
+
+            <div class="pr-placement-grid">
+                <div class="pr-card">
+                    <span class="pr-card-icon">🎩</span>
+                    <div class="pr-card-name">Hat / Cap</div>
+                    <div class="pr-card-size">up to 4.5″ × 4″</div>
+                    <div class="pr-card-from">starting at</div>
+                    <div class="pr-card-price">$10</div>
+                    <div class="pr-card-note">Includes special cap digitizing — no extra charge</div>
+                </div>
+                <div class="pr-card">
+                    <span class="pr-card-icon">👕</span>
+                    <div class="pr-card-name">Left Chest / Pocket</div>
+                    <div class="pr-card-size">up to 4.5″ × 4″</div>
+                    <div class="pr-card-from">starting at</div>
+                    <div class="pr-card-price">$10</div>
+                    <div class="pr-card-note">Same size as Hat — same price</div>
+                </div>
+                <div class="pr-card">
+                    <span class="pr-card-icon">👕</span>
+                    <div class="pr-card-name">Full Front / Back Yoke</div>
+                    <div class="pr-card-size">up to 7″ × 5″</div>
+                    <div class="pr-card-from">starting at</div>
+                    <div class="pr-card-price">$20</div>
+                    <div class="pr-card-note">T-shirts, hoodies, school crests</div>
+                </div>
+                <div class="pr-card">
+                    <span class="pr-card-icon">🧥</span>
+                    <div class="pr-card-name">Jacket Back</div>
+                    <div class="pr-card-size">up to 12″ × 10″</div>
+                    <div class="pr-card-from">starting at</div>
+                    <div class="pr-card-price">$24</div>
+                    <div class="pr-card-note">Varsity jackets, bombers, work jackets</div>
+                </div>
+                <div class="pr-card">
+                    <span class="pr-card-icon">🧥</span>
+                    <div class="pr-card-name">Full Back (Large)</div>
+                    <div class="pr-card-size">over 12″ × 10″</div>
+                    <div class="pr-card-from">starting at</div>
+                    <div class="pr-card-price">$32</div>
+                    <div class="pr-card-note">Large artwork, oversized back panels</div>
+                </div>
+            </div>
+
+            <div class="pr-info-box">
+                <span style="font-size:1.2rem; flex-shrink:0;">💡</span>
+                <div><strong>How the final price is calculated:</strong> We count the stitches in your design and multiply by the rate for that range. Most hat and left chest designs fall between <strong>$10 and $18</strong>. Scroll down to see the full rate table and real examples.</div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="pr-divider">
+
+    <!-- Section 2: Stitch Count Table -->
+    <section class="content-section pr-section pr-section-alt">
+        <div class="container">
+            <div class="section-title">
+                <p class="pr-section-label">How We Calculate</p>
+                <h2>Stitch count pricing</h2>
+                <p>The industry's most transparent and fair method. You only pay for the actual work your design requires — the more stitches, the lower the rate per thousand.</p>
+            </div>
+            <div class="pr-stitch-layout">
+                <div>
+                    <table class="pr-stitch-table">
+                        <thead>
+                            <tr>
+                                <th>Stitch Range</th>
+                                <th>Price per 1,000 stitches</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Up to 10,000</strong><span class="pr-stitch-note">Most hats and left chest designs</span></td>
+                                <td>$1.50 /k</td>
+                            </tr>
+                            <tr>
+                                <td><strong>10,001 – 20,000</strong><span class="pr-stitch-note">Full front, back yoke designs</span></td>
+                                <td>$1.25 /k</td>
+                            </tr>
+                            <tr>
+                                <td><strong>20,001 – 30,000</strong><span class="pr-stitch-note">Jacket backs, larger designs</span></td>
+                                <td>$1.10 /k</td>
+                            </tr>
+                            <tr>
+                                <td><strong>30,001 – 50,000</strong><span class="pr-stitch-note">Large and detailed designs</span></td>
+                                <td>$0.99 /k</td>
+                            </tr>
+                            <tr>
+                                <td><strong>50,001+</strong><span class="pr-stitch-note">Full back large artwork</span></td>
+                                <td>$0.88 /k</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pr-minimums">
+                    <h3>📌 Minimum charge by placement</h3>
+                    <div class="pr-min-row"><span class="pr-min-label">🎩 Hat / Cap</span><span class="pr-min-val">$10.00</span></div>
+                    <div class="pr-min-row"><span class="pr-min-label">👕 Left Chest / Pocket</span><span class="pr-min-val">$10.00</span></div>
+                    <div class="pr-min-row"><span class="pr-min-label">👕 Full Front / Back Yoke</span><span class="pr-min-val">$20.00</span></div>
+                    <div class="pr-min-row"><span class="pr-min-label">🧥 Jacket Back</span><span class="pr-min-val">$24.00</span></div>
+                    <div class="pr-min-row"><span class="pr-min-label">🧥 Full Back (large)</span><span class="pr-min-val">$32.00</span></div>
+                    <p class="pr-min-note">Minimum applies when the calculated stitch-count price falls below the placement minimum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="pr-divider">
+
+    <!-- Section 3: Practical Examples -->
+    <section class="content-section pr-section">
+        <div class="container">
+            <div class="section-title">
+                <p class="pr-section-label">Real Examples</p>
+                <h2>See what your design would cost</h2>
+                <p>Don't know your stitch count? Register and request a free quote — we estimate it for you before any charge is made.</p>
+            </div>
+            <div class="pr-examples-grid">
+                <div class="pr-example">
+                    <div class="pr-ex-icon">🎩</div>
+                    <div class="pr-ex-title">Cap — simple company logo</div>
+                    <div class="pr-ex-stitches">~4,000 stitches</div>
+                    <div class="pr-ex-calc">
+                        4 × $1.50 = $6.00<br>
+                        <span style="color:#c9953a;">↳ minimum applies</span>
+                        <div class="pr-ex-total">$10.00</div>
+                    </div>
+                </div>
+                <div class="pr-example">
+                    <div class="pr-ex-icon">👕</div>
+                    <div class="pr-ex-title">Left chest — detailed logo</div>
+                    <div class="pr-ex-stitches">~9,000 stitches</div>
+                    <div class="pr-ex-calc">
+                        9 × $1.50 = $13.50<br>
+                        <span style="color:#2d7a4f;">above minimum ✓</span>
+                        <div class="pr-ex-total">$13.50</div>
+                    </div>
+                </div>
+                <div class="pr-example">
+                    <div class="pr-ex-icon">👕</div>
+                    <div class="pr-ex-title">Full front — team graphic</div>
+                    <div class="pr-ex-stitches">~21,000 stitches</div>
+                    <div class="pr-ex-calc">
+                        21 × $1.10 = $23.10<br>
+                        <span style="color:#2d7a4f;">above minimum ✓</span>
+                        <div class="pr-ex-total">$23.10</div>
+                    </div>
+                </div>
+                <div class="pr-example">
+                    <div class="pr-ex-icon">🧥</div>
+                    <div class="pr-ex-title">Jacket back — mascot artwork</div>
+                    <div class="pr-ex-stitches">~55,000 stitches</div>
+                    <div class="pr-ex-calc">
+                        55 × $0.88 = $48.40<br>
+                        <span style="color:#2d7a4f;">above minimum ✓</span>
+                        <div class="pr-ex-total">$48.40</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="pr-divider">
+
+    <!-- Section 4: Placement Guide -->
+    <section class="content-section pr-section pr-section-alt">
+        <div class="container">
+            <div class="section-title">
+                <p class="pr-section-label">Placement Guide</p>
+                <h2>What fits where</h2>
+                <p>Not sure which placement applies to your project? Use this guide — or just send us your artwork and we'll advise you.</p>
+            </div>
+            <div class="pr-guide-grid">
+                <div class="pr-guide-card">
+                    <h3>🎩 Hat / Cap &nbsp;&amp;&nbsp; 👕 Left Chest</h3>
+                    <span class="pr-guide-size">Max: 4.5″ × 4″ &nbsp;|&nbsp; 114mm × 101mm &nbsp;|&nbsp; Same price</span>
+                    <p>The most common placement for logos, monograms, and brand identifiers. Ideal for uniforms, promotional apparel, and personalized gifts.</p>
+                    <div class="pr-tags">
+                        <span class="pr-tag">Baseball caps</span><span class="pr-tag">Beanies</span><span class="pr-tag">Polo shirts</span><span class="pr-tag">Uniforms</span><span class="pr-tag">Breast pockets</span>
+                    </div>
+                    <div class="pr-guide-note">✅ Cap designs require special curved-surface digitizing — already included in your price at no extra charge.</div>
+                </div>
+                <div class="pr-guide-card">
+                    <h3>👕 Full Front / Back Yoke</h3>
+                    <span class="pr-guide-size">Max: 7″ × 5″ &nbsp;|&nbsp; 178mm × 127mm</span>
+                    <p>Larger designs for the center front or upper back of shirts, hoodies, and jackets. Great for team graphics and event apparel.</p>
+                    <div class="pr-tags">
+                        <span class="pr-tag">T-shirt fronts</span><span class="pr-tag">Hoodies</span><span class="pr-tag">Back yokes</span><span class="pr-tag">School crests</span><span class="pr-tag">Team graphics</span>
+                    </div>
+                </div>
+                <div class="pr-guide-card">
+                    <h3>🧥 Jacket Back</h3>
+                    <span class="pr-guide-size">Max: 12″ × 10″ &nbsp;|&nbsp; 305mm × 254mm</span>
+                    <p>Designed for the full back panel of jackets. Supports complex artwork with multiple colors, text, and detailed graphics.</p>
+                    <div class="pr-tags">
+                        <span class="pr-tag">Varsity jackets</span><span class="pr-tag">Work jackets</span><span class="pr-tag">Bombers</span><span class="pr-tag">Hoodie backs</span><span class="pr-tag">Club patches</span>
+                    </div>
+                </div>
+                <div class="pr-guide-card">
+                    <h3>🧥 Full Back (Large)</h3>
+                    <span class="pr-guide-size">Over 12″ × 10″</span>
+                    <p>Maximum coverage for oversized artwork, detailed murals, and large scenic or decorative designs that span the entire back.</p>
+                    <div class="pr-tags">
+                        <span class="pr-tag">Full-back artwork</span><span class="pr-tag">Large format</span><span class="pr-tag">Scenic designs</span><span class="pr-tag">Workwear</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="pr-divider">
+
+    <!-- Gradients Note -->
+    <section class="content-section pr-section">
+        <div class="container">
+            <div class="pr-gradient-note">
+                <span style="font-size:1.75rem; flex-shrink:0; margin-top:.1rem;">🎨</span>
+                <div>
+                    <h3>A note about gradients and photorealism</h3>
+                    <p>True color gradients and photographic images <strong>cannot be reproduced exactly in embroidery</strong> — thread is not ink. Our digitizers will adapt your artwork to achieve the best possible result within the natural limitations of the embroidery medium, and will show you a digital preview before production begins. This is part of our standard process, at no extra charge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="pr-divider">
+
+    <!-- Section 5: Special Services -->
+    <section class="content-section pr-section pr-dark">
+        <div class="container">
+            <div class="section-title">
+                <p class="pr-section-label" style="color:#e6b050;">Special Services</p>
+                <h2 style="color:white;">Techniques that go beyond standard digitizing</h2>
+                <p style="color:rgba(255,255,255,.65);">These services require a fundamentally different digitizing approach. A 25% surcharge applies over the standard stitch-count price. Combining two specials (e.g. Rush + 3D Puff) results in a 50% surcharge.</p>
+            </div>
+            <div class="pr-services-grid">
+                <div class="pr-service">
+                    <span class="pr-service-icon">⚡</span>
+                    <h3>Rush Delivery</h3>
+                    <span class="pr-service-badge">+25% surcharge</span>
+                    <p>Your order jumps to the front of the queue. Delivered within <strong style="color:white;">4–6 hours</strong>, any day of the week. Available for all placements.</p>
+                </div>
+                <div class="pr-service">
+                    <span class="pr-service-icon">🧵</span>
+                    <h3>Appliqué Digitizing</h3>
+                    <span class="pr-service-badge">+25% surcharge</span>
+                    <p>Appliqué stitches fabric pieces onto the garment. Placement stitches, tack-down layers, and finishing borders are mapped separately — a completely different process.</p>
+                </div>
+                <div class="pr-service">
+                    <span class="pr-service-icon">🏔️</span>
+                    <h3>3D Puff Digitizing</h3>
+                    <span class="pr-service-badge">+25% surcharge</span>
+                    <p>Creates a raised, three-dimensional effect using foam underneath the stitches. Requires a specially built file — standard files cannot simply be converted.</p>
+                </div>
+            </div>
+            <div class="pr-svc-examples">
+                <h4>📊 Surcharge examples</h4>
+                <div class="pr-svc-row">
+                    <div class="pr-svc-desc">Left chest Appliqué<small>~9,000 stitches → $13.50 + 25%</small></div>
+                    <span class="pr-svc-price">$16.88</span>
+                </div>
+                <div class="pr-svc-row">
+                    <div class="pr-svc-desc">Rush cap logo<small>~4,000 stitches → $10.00 minimum + 25%</small></div>
+                    <span class="pr-svc-price">$12.50</span>
+                </div>
+                <div class="pr-svc-row">
+                    <div class="pr-svc-desc">Jacket back 3D Puff + Rush<small>~25,000 stitches → $27.50 + 50%</small></div>
+                    <span class="pr-svc-price">$41.25</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="pr-divider">
+
+    <!-- Section 6: What's Included -->
+    <section class="content-section pr-section pr-section-alt">
+        <div class="container">
+            <div class="section-title">
+                <p class="pr-section-label">What's Included</p>
+                <h2>Everything in every order</h2>
+                <p>No upsells. No extra charges for format conversion or revisions. Every order includes the same complete service.</p>
+            </div>
+            <div class="pr-includes-grid">
+                <div class="pr-include"><span class="pr-check">✓</span><span>Unlimited revisions until you're satisfied</span></div>
+                <div class="pr-include"><span class="pr-check">✓</span><span>All machine formats (DST, PES, EMB, VP3, JEF and more)</span></div>
+                <div class="pr-include"><span class="pr-check">✓</span><span>Free format conversion — any machine, any software</span></div>
+                <div class="pr-include"><span class="pr-check">✓</span><span>Standard delivery within 24 hours</span></div>
+                <div class="pr-include"><span class="pr-check">✓</span><span>Design archive for 2 years</span></div>
+                <div class="pr-include"><span class="pr-check">✓</span><span>30+ years of professional digitizing experience</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pr-cta">
+        <div class="pr-cta-inner">
+            <h2>Ready to get your design digitized?</h2>
+            <p>Create your free account and submit your artwork. We'll estimate your stitch count and confirm the exact price — before any charge is made.</p>
+            <a href="app/" class="pr-btn-gold">Create Your Account &amp; Get a Free Quote →</a>
+            <span class="pr-cta-email">Questions? Email us at <a href="/#quote" style="color:#e8791d;font-weight:600;">Send us a message</a></span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Puncher.com</h4>
+                    <p style="color:#a0aec0;">Professional embroidery digitizing services since 1993.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="pricing.html">Embroidery Digitizing</a></li>
+                        <li><a href="vector-service.html">Vector Art</a></li>
+                        <li><a href="embroidery-file-formats.html">File Formats</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partner-companies.html">Partners</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>📧 <a href="/#quote" style="color:#e8791d;font-weight:600;">Send us a message</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 1993-2025 Puncher.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/language.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Robots.txt for puncher.com
+# Professional Embroidery Digitizing Services
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://puncher.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /app/wp-admin/
+Allow: /app/wp-admin/admin-ajax.php
+
+# Disallow upload directories (protect client files)
+Disallow: /uploads/
+
+# Disallow PHP files
+Disallow: /php/
+
+# Allow all language versions
+Allow: /de/
+Allow: /fr/
+Allow: /es/
+Allow: /it/
+
+# Crawl-delay (be nice to server)
+Crawl-delay: 1
