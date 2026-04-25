@@ -1,3 +1,5 @@
 uploads/
 logs/
 app/
+*.bak
+.claude/
