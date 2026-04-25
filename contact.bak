@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Puncher.com for professional embroidery digitizing services. Email, phone, and contact form available.">
+    <title>Contact Puncher.com — Embroidery Digitizing & Vector Art</title>
+    <meta name="description" content="Get in touch with Puncher.com for embroidery digitizing and vector art services. Email, WhatsApp or online form. We respond within 2-4 hours. Free quotes available.">
+    <link rel="alternate" hreflang="en" href="https://puncher.com/contact.html" />
+    <link rel="alternate" hreflang="de" href="https://puncher.com/de/contact.html" />
+    <link rel="alternate" hreflang="fr" href="https://puncher.com/fr/contact.html" />
+    <link rel="alternate" hreflang="es" href="https://puncher.com/es/contact.html" />
+    <link rel="alternate" hreflang="it" href="https://puncher.com/it/contact.html" />
+    <link rel="alternate" hreflang="x-default" href="https://puncher.com/contact.html" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-376DZQKDWZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-376DZQKDWZ');
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%) !important;">
+        <div class="container">
+            <h1 style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">Contact Us</h1>
+            <p style="color: #ffffff !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); opacity: 1;">We'd love to hear from you!</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="content-section">
+        <div class="container">
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="icon">📧</div>
+                    <h3>Email</h3>
+                    <p><a href="/#quote" style="color:#e8791d;font-weight:600;">Send us a message</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="icon">📞</div>
+                    <h3>Phone</h3>
+                    <p><a href="https://wa.me/5531920039974">💬 WhatsApp: (31) 9 2003-9974</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="icon">⏰</div>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Saturday<br>9am - 9pm (Brazil Time)</p>
+                </div>
+            </div>
+
+            <div class="quote-form" style="margin-top: 50px;">
+                <h3>📨 Send us a Message</h3>
+                <form id="contact-form" action="php/send-contact.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">📨 Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Puncher.com</h4>
+                    <p style="color: #a0aec0;">Professional embroidery digitizing services since 1993.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="pricing.html">Embroidery Digitizing</a></li>
+                        <li><a href="vector-service.html">Vector Art</a></li>
+                        <li><a href="embroidery-file-formats.html">File Formats</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partner-companies.html">Partners</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>📧 <a href="/#quote" style="color:#e8791d;font-weight:600;">Send us a message</a></li>
+                        <li>💬 <a href="https://wa.me/5531920039974" style="color: #a0aec0;">WhatsApp: (31) 9 2003-9974</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 1993-2025 Puncher.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/language.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

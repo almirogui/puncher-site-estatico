@@ -1004,93 +1004,57 @@
                         <textarea id="description" name="description" placeholder="Describe your project, dimensions, colors, etc." required></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Attach Files (optional, up to 3)</label>
-                        <label for="file1" id="file-label-1" style="display: block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 25px; border-radius: 10px; text-align: center; font-weight: 600; cursor: pointer; margin-bottom: 8px;">
-                            📎 File 1 — Click to choose
+                        <label>Attach File (optional)</label>
+                        <label for="file" id="file-label" style="display: block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 25px; border-radius: 10px; text-align: center; font-weight: 600; cursor: pointer;">
+                            📎 Click to choose a file
                         </label>
-                        <input type="file" id="file1" name="file1" accept=".jpg,.jpeg,.png,.gif,.pdf,.ai,.eps,.svg" style="display: none;">
-                        <div id="file-info-1" style="display: none; margin-top: 10px; padding: 12px 15px; background: #d4edda; border: 2px solid #28a745; border-radius: 8px; margin-bottom: 8px;">
-                            <span style="font-size: 20px;" id="file-icon-1">🖼️</span>
-                            <strong id="file-name-1" style="color: #155724; margin-left: 8px;"></strong>
-                            <span id="file-size-1" style="color: #155724; margin-left: 8px; font-size: 12px;"></span>
-                            <button type="button" id="file-remove-btn-1" style="float: right; background: #dc3545; color: white; border: none; border-radius: 50%; width: 22px; height: 22px; cursor: pointer; font-size: 12px;">✕</button>
-                        </div>
-                        <label for="file2" id="file-label-2" style="display: block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 25px; border-radius: 10px; text-align: center; font-weight: 600; cursor: pointer; margin-bottom: 8px;">
-                            📎 File 2 — Click to choose
-                        </label>
-                        <input type="file" id="file2" name="file2" accept=".jpg,.jpeg,.png,.gif,.pdf,.ai,.eps,.svg" style="display: none;">
-                        <div id="file-info-2" style="display: none; margin-top: 10px; padding: 12px 15px; background: #d4edda; border: 2px solid #28a745; border-radius: 8px; margin-bottom: 8px;">
-                            <span style="font-size: 20px;" id="file-icon-2">🖼️</span>
-                            <strong id="file-name-2" style="color: #155724; margin-left: 8px;"></strong>
-                            <span id="file-size-2" style="color: #155724; margin-left: 8px; font-size: 12px;"></span>
-                            <button type="button" id="file-remove-btn-2" style="float: right; background: #dc3545; color: white; border: none; border-radius: 50%; width: 22px; height: 22px; cursor: pointer; font-size: 12px;">✕</button>
-                        </div>
-                        <label for="file3" id="file-label-3" style="display: block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 25px; border-radius: 10px; text-align: center; font-weight: 600; cursor: pointer;">
-                            📎 File 3 — Click to choose
-                        </label>
-                        <input type="file" id="file3" name="file3" accept=".jpg,.jpeg,.png,.gif,.pdf,.ai,.eps,.svg" style="display: none;">
-                        <div id="file-info-3" style="display: none; margin-top: 10px; padding: 12px 15px; background: #d4edda; border: 2px solid #28a745; border-radius: 8px;">
-                            <span style="font-size: 20px;" id="file-icon-3">🖼️</span>
-                            <strong id="file-name-3" style="color: #155724; margin-left: 8px;"></strong>
-                            <span id="file-size-3" style="color: #155724; margin-left: 8px; font-size: 12px;"></span>
-                            <button type="button" id="file-remove-btn-3" style="float: right; background: #dc3545; color: white; border: none; border-radius: 50%; width: 22px; height: 22px; cursor: pointer; font-size: 12px;">✕</button>
+                        <input type="file" id="file" name="file" accept=".jpg,.jpeg,.png,.gif,.pdf,.ai,.eps,.svg" style="display: none;">
+                        <div id="file-info" style="display: none; margin-top: 10px; padding: 12px 15px; background: #d4edda; border: 2px solid #28a745; border-radius: 8px;">
+                            <span style="font-size: 20px;" id="file-icon">🖼️</span>
+                            <strong id="file-name" style="color: #155724; margin-left: 8px;"></strong>
+                            <span id="file-size" style="color: #155724; margin-left: 8px; font-size: 12px;"></span>
+                            <button type="button" id="file-remove-btn" style="float: right; background: #dc3545; color: white; border: none; border-radius: 50%; width: 22px; height: 22px; cursor: pointer; font-size: 12px;">✕</button>
                         </div>
                         <script>
-                        function setupFileInput(inputId, infoId, iconId, nameId, sizeId, removeBtnId, labelId, defaultText, changeText) {
-                            document.getElementById(inputId).addEventListener('change', function() {
-                                var fileInfo = document.getElementById(infoId);
-                                var fileName = document.getElementById(nameId);
-                                var fileSize = document.getElementById(sizeId);
-                                var fileIcon = document.getElementById(iconId);
-                                var fileLabel = document.getElementById(labelId);
-                                if (this.files && this.files[0]) {
-                                    var file = this.files[0];
-                                    var size = file.size;
-                                    var sizeText = '';
-                                    if (size < 1024) {
-                                        sizeText = size + ' B';
-                                    } else if (size < 1024 * 1024) {
-                                        sizeText = (size / 1024).toFixed(1) + ' KB';
-                                    } else {
-                                        sizeText = (size / (1024 * 1024)).toFixed(1) + ' MB';
-                                    }
-                                    var ext = file.name.split('.').pop().toLowerCase();
-                                    if (['jpg', 'jpeg', 'png', 'gif', 'webp'].indexOf(ext) > -1) {
-                                        fileIcon.textContent = '🖼️';
-                                    } else if (ext === 'pdf') {
-                                        fileIcon.textContent = '📕';
-                                    } else if (['ai', 'eps', 'svg'].indexOf(ext) > -1) {
-                                        fileIcon.textContent = '🎨';
-                                    } else {
-                                        fileIcon.textContent = '📄';
-                                    }
-                                    fileName.textContent = file.name;
-                                    fileSize.textContent = '(' + sizeText + ')';
-                                    fileInfo.style.display = 'block';
-                                    fileLabel.textContent = changeText;
+                        document.getElementById('file').addEventListener('change', function() {
+                            var fileInfo = document.getElementById('file-info');
+                            var fileName = document.getElementById('file-name');
+                            var fileSize = document.getElementById('file-size');
+                            var fileIcon = document.getElementById('file-icon');
+                            var fileLabel = document.getElementById('file-label');
+                            
+                            if (this.files && this.files[0]) {
+                                var file = this.files[0];
+                                var size = file.size;
+                                var sizeText = '';
+                                if (size < 1024) {
+                                    sizeText = size + ' B';
+                                } else if (size < 1024 * 1024) {
+                                    sizeText = (size / 1024).toFixed(1) + ' KB';
+                                } else {
+                                    sizeText = (size / (1024 * 1024)).toFixed(1) + ' MB';
                                 }
-                            });
-                            document.getElementById(removeBtnId).addEventListener('click', function() {
-                                document.getElementById(inputId).value = '';
-                                document.getElementById(infoId).style.display = 'none';
-                                document.getElementById(labelId).textContent = defaultText;
-                            });
-                        }
-                        setupFileInput('file1', 'file-info-1', 'file-icon-1', 'file-name-1', 'file-size-1', 'file-remove-btn-1', 'file-label-1', '📎 File 1 — Click to choose', '📎 Change file 1');
-                        setupFileInput('file2', 'file-info-2', 'file-icon-2', 'file-name-2', 'file-size-2', 'file-remove-btn-2', 'file-label-2', '📎 File 2 — Click to choose', '📎 Change file 2');
-                        setupFileInput('file3', 'file-info-3', 'file-icon-3', 'file-name-3', 'file-size-3', 'file-remove-btn-3', 'file-label-3', '📎 File 3 — Click to choose', '📎 Change file 3');
-                        window.resetFilePreviews = function() {
-                            [
-                                ['file-info-1', 'file-label-1', '📎 File 1 — Click to choose'],
-                                ['file-info-2', 'file-label-2', '📎 File 2 — Click to choose'],
-                                ['file-info-3', 'file-label-3', '📎 File 3 — Click to choose']
-                            ].forEach(function(item) {
-                                var info = document.getElementById(item[0]);
-                                var label = document.getElementById(item[1]);
-                                if (info) info.style.display = 'none';
-                                if (label) label.textContent = item[2];
-                            });
-                        };
+                                var ext = file.name.split('.').pop().toLowerCase();
+                                if (['jpg', 'jpeg', 'png', 'gif', 'webp'].indexOf(ext) > -1) {
+                                    fileIcon.textContent = '🖼️';
+                                } else if (ext === 'pdf') {
+                                    fileIcon.textContent = '📕';
+                                } else if (['ai', 'eps', 'svg'].indexOf(ext) > -1) {
+                                    fileIcon.textContent = '🎨';
+                                } else {
+                                    fileIcon.textContent = '📄';
+                                }
+                                fileName.textContent = file.name;
+                                fileSize.textContent = '(' + sizeText + ')';
+                                fileInfo.style.display = 'block';
+                                fileLabel.textContent = '📎 Change file';
+                            }
+                        });
+                        document.getElementById('file-remove-btn').addEventListener('click', function() {
+                            document.getElementById('file').value = '';
+                            document.getElementById('file-info').style.display = 'none';
+                            document.getElementById('file-label').textContent = '📎 Click to choose a file';
+                        });
                         </script>
                     </div>
                     <button type="submit" class="form-submit">📨 Request Quote</button>

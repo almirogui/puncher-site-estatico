@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Art Conversion Service — JPG to AI, EPS, CDR | Puncher.com</title>
+    <meta name="description" content="Professional vector art conversion and color separation service. Transform JPG, PNG, BMP logos into scalable AI, EPS, CDR files for screen printing, vinyl cutting and embroidery. Fast 24-hour delivery.">
+    <meta name="keywords" content="vector art service, vectorization service, color separation service, color sep, art separation, screen printing separation, logo vectorization, JPG to vector, PNG to AI, image to EPS, CDR conversion, vector art for embroidery, vector art for screen printing, vinyl cutting vector, DTF vector art">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-376DZQKDWZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-376DZQKDWZ');
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%) !important;">
+        <div class="container">
+            <h1 style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">Vector Art & Color Separation Service</h1>
+            <p style="color: #ffffff !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); opacity: 1;">Turn Your Images into Perfect Vector Art — Ready for Any Application</p>
+        </div>
+    </section>
+
+    <!-- Vector Content -->
+    <section class="content-section">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Why Choose Our Vector Art & Color Separation Services?</h2>
+                <p>Professional vectorization and color separation for screen printing, embroidery, vinyl cutting, DTF and sublimation since 1993.</p>
+            </div>
+
+            <div class="features" style="margin-bottom: 60px;">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>High Quality</h3>
+                    <p>Clean, precise vector files that scale perfectly to any size without losing quality. Properly separated color layers for screen printing and DTF.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Usually shipped within 1 day. Express service available for urgent orders.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✏️</div>
+                    <h3>Free Corrections</h3>
+                    <p>We make all necessary corrections at no extra charge.</p>
+                </div>
+            </div>
+
+            <!-- Color Separation Section -->
+            <div class="section-title">
+                <h2>Color Separation Services</h2>
+                <p>Professional color separation for screen printing, DTF, vinyl cutting and sublimation</p>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto 60px auto; text-align: center;">
+                <p style="font-size: 1.15rem; line-height: 1.9; color: #4a5568; margin-bottom: 20px;">
+                    Our vector art service includes professional <strong>color separation</strong> — each color layer properly isolated and ready for production. Whether you need separations for <strong>screen printing</strong>, <strong>DTF transfers</strong>, <strong>vinyl cutting</strong> or <strong>sublimation</strong>, we deliver clean, print-ready files in AI, EPS or CDR format.
+                </p>
+                <p style="font-size: 1.15rem; line-height: 1.9; color: #4a5568; margin-bottom: 20px;">
+                    Send us your artwork in any format — JPG, PNG, BMP, PDF — and we return a fully separated vector file with each color on its own layer, correctly named and ready for your print shop or cutting machine.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+                    <div style="background: #f8fafc; border-radius: 10px; padding: 20px 30px; text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 8px;">🖨️</div>
+                        <strong>Screen Printing</strong><br>
+                        <span style="color: #718096; font-size: 0.9rem;">Spot color separations</span>
+                    </div>
+                    <div style="background: #f8fafc; border-radius: 10px; padding: 20px 30px; text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 8px;">🔲</div>
+                        <strong>Vinyl Cutting</strong><br>
+                        <span style="color: #718096; font-size: 0.9rem;">Single & multi-color</span>
+                    </div>
+                    <div style="background: #f8fafc; border-radius: 10px; padding: 20px 30px; text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 8px;">👕</div>
+                        <strong>DTF & Sublimation</strong><br>
+                        <span style="color: #718096; font-size: 0.9rem;">Print-ready files</span>
+                    </div>
+                    <div style="background: #f8fafc; border-radius: 10px; padding: 20px 30px; text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 8px;">🧵</div>
+                        <strong>Embroidery Prep</strong><br>
+                        <span style="color: #718096; font-size: 0.9rem;">Vector before digitizing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Samples -->
+            <div class="section-title">
+                <h2>Free Samples</h2>
+                <p>See the transformation from original image to professional vector art</p>
+            </div>
+
+            <div class="vector-comparison" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 30px;">
+                <div class="comparison-item" style="text-align: center;">
+                    <p style="font-weight: bold; color: #1a365d; margin-bottom: 10px;">📷 Original Image</p>
+                    <img src="images/vector/vector-before.jpg" alt="Original Image" style="max-width: 350px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
+                </div>
+                <div class="comparison-item" style="text-align: center;">
+                    <p style="font-weight: bold; color: #1a365d; margin-bottom: 10px;">🎨 Vector Result</p>
+                    <img src="images/vector/vector-after.jpg" alt="Vector Result" style="max-width: 350px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 60px;">
+                <a href="downloads/vector-samples.zip" download class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; font-size: 18px;">
+                    <span style="font-size: 24px;">📥</span> Download Free Vector Samples
+                </a>
+                <p style="margin-top: 15px; color: #718096; font-size: 14px;">ZIP file includes AI and CDR formats</p>
+            </div>
+
+            <!-- FAQ -->
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Do you offer color separation services?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. Our vector art service includes professional color separation for screen printing, DTF transfers, vinyl cutting and sublimation. We deliver AI, EPS and CDR files with properly separated color layers — each color on its own layer, correctly named and ready for your print shop or cutting machine.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How to place an order?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply fill out the registration form, then go to another page and fill out the form with the logo attached. You will receive a message confirming that we have started your order.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How long will it take to get my vector back?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Orders are usually shipped within 1 day or less after we receive your order. However, we do have an express service for urgent orders with delivery within a few hours at a special rate.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        What time zone are you in?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Brazil is in the same time zone as North America, with similar working hours. This means fast communication and quick turnaround for US customers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Do your prices include corrections?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we will make any corrections you need. Additional charges will only apply if the original design sent to us is changed.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Do you do vectorization of old or low quality logos?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we can work with old logos or low-resolution images and turn them into high-quality vector files.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html#quote" class="btn btn-primary">Get a Free Quote</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Puncher.com</h4>
+                    <p style="color: #a0aec0;">Professional embroidery digitizing services since 1993.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="pricing.html">Embroidery Digitizing</a></li>
+                        <li><a href="vector-service.html">Vector Art</a></li>
+                        <li><a href="embroidery-file-formats.html">File Formats</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partner-companies.html">Partners</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>
+                            <a href="/#quote" style="display:inline-block; background:#e8791d; color:white; padding:8px 16px; border-radius:6px; font-size:0.85rem; font-weight:600; text-decoration:none;">
+                                📨 Send us a message
+                            </a>
+                        </li>
+                        <li style="margin-top: 10px;">💬 <a href="https://wa.me/5531920039974" style="color: #a0aec0;">US Business Line (WhatsApp available)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 1993-2025 Puncher.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

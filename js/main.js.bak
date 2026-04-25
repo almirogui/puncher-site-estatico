@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch('php/send-quote.php', { method: 'POST', body: formData })
                 .then(r => r.json())
                 .then(data => {
-                    if (data.success) { showToast('Quote request sent! We will contact you soon.', 'success'); quoteForm.reset(); if (window.resetFilePreviews) window.resetFilePreviews(); }
+                    if (data.success) { showToast('Quote request sent! We will contact you soon.', 'success'); quoteForm.reset(); }
                     else              { showToast('Error: ' + data.message, 'error'); }
                 })
                 .catch(() => showToast('Error sending request. Please try again.', 'error'))

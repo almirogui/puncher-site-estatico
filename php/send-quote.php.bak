@@ -50,38 +50,41 @@ $service_labels = [
 ];
 $service_label = isset($service_labels[$service]) ? $service_labels[$service] : $service;
 
-// Handle file uploads (up to 3)
-$allowed_types = [
-    'image/jpeg', 'image/png', 'image/gif', 'image/webp',
-    'application/pdf', 'application/postscript',
-    'image/svg+xml', 'application/illustrator'
-];
-$allowed_extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'pdf', 'ai', 'eps', 'svg'];
+// Handle file upload
+$file_link_html = '<p style="color: #999;">No file attached</p>';
+$file_info_for_customer = '';
 
-$file_links_html = '';
-$files_for_customer = [];
-
-foreach (['file1', 'file2', 'file3'] as $field) {
-    if (isset($_FILES[$field]) && $_FILES[$field]['error'] === UPLOAD_ERR_OK) {
-        $file = $_FILES[$field];
-        $file_extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-
-        if ((in_array($file['type'], $allowed_types) || in_array($file_extension, $allowed_extensions))
-            && $file['size'] <= 10 * 1024 * 1024) {
-
-            $upload_dir = dirname(__DIR__) . '/uploads/quotes/';
-            if (!is_dir($upload_dir)) {
-                mkdir($upload_dir, 0755, true);
-            }
-
-            $unique_id = date('Ymd_His') . '_' . uniqid();
-            $safe_filename = preg_replace('/[^a-zA-Z0-9._-]/', '_', $file['name']);
-            $filename = $unique_id . '_' . $safe_filename;
-            $filepath = $upload_dir . $filename;
-
-            if (move_uploaded_file($file['tmp_name'], $filepath)) {
-                $file_url = $site_url . '/uploads/quotes/' . $filename;
-                $file_links_html .= "
+if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+    $file = $_FILES['file'];
+    $allowed_types = [
+        'image/jpeg', 'image/png', 'image/gif', 'image/webp',
+        'application/pdf', 'application/postscript', 
+        'image/svg+xml', 'application/illustrator'
+    ];
+    
+    // Also check by extension for AI/EPS files
+    $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'pdf', 'ai', 'eps', 'svg'];
+    $file_extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    
+    if ((in_array($file['type'], $allowed_types) || in_array($file_extension, $allowed_extensions)) 
+        && $file['size'] <= 10 * 1024 * 1024) {
+        
+        // Create uploads directory if not exists
+        $upload_dir = dirname(__DIR__) . '/uploads/quotes/';
+        if (!is_dir($upload_dir)) {
+            mkdir($upload_dir, 0755, true);
+        }
+        
+        // Create unique filename
+        $unique_id = date('Ymd_His') . '_' . uniqid();
+        $safe_filename = preg_replace('/[^a-zA-Z0-9._-]/', '_', $file['name']);
+        $filename = $unique_id . '_' . $safe_filename;
+        $filepath = $upload_dir . $filename;
+        
+        if (move_uploaded_file($file['tmp_name'], $filepath)) {
+            // Create clickable link
+            $file_url = $site_url . '/uploads/quotes/' . $filename;
+            $file_link_html = "
                 <p>
                     <a href='{$file_url}' target='_blank' style='color: #2b6cb0; text-decoration: none; font-weight: bold;'>
                         📎 {$file['name']}
@@ -91,15 +94,11 @@ foreach (['file1', 'file2', 'file3'] as $field) {
                         Click to view/download
                     </a>
                 </p>
-                ";
-                $files_for_customer[] = $file['name'];
-            }
+            ";
+            $file_info_for_customer = $file['name'];
         }
     }
 }
-
-$file_link_html = !empty($file_links_html) ? $file_links_html : '<p style="color: #999;">No file attached</p>';
-$file_info_for_customer = $files_for_customer;
 
 // Build email content for ADMIN
 $subject = "$subject_prefix New Quote from $name";
@@ -147,7 +146,7 @@ $admin_message = "
                 <div class='value'>" . nl2br(htmlspecialchars($description)) . "</div>
             </div>
             <div class='field'>
-                <div class='label'>📎 Attached Files:</div>
+                <div class='label'>📎 Attached File:</div>
                 <div class='file-box'>
                     {$file_link_html}
                 </div>
@@ -179,10 +178,9 @@ $customer_subject = "Your Quote Request has been Received - Puncher.com";
 
 $file_attachment_info = '';
 if (!empty($file_info_for_customer)) {
-    $names = implode(', ', array_map('htmlspecialchars', $file_info_for_customer));
     $file_attachment_info = "
         <div style='background: #edf2f7; padding: 10px 15px; border-radius: 5px; margin: 15px 0;'>
-            <strong>📎 Attached files:</strong> " . $names . "
+            <strong>📎 Attached file:</strong> " . htmlspecialchars($file_info_for_customer) . "
         </div>
     ";
 }
