@@ -122,6 +122,21 @@ document.addEventListener('DOMContentLoaded', function() {
     if (quoteForm) {
         quoteForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            const service  = quoteForm.querySelector('[name="service"]').value;
+            const widthEl  = quoteForm.querySelector('[name="width"]');
+            const heightEl = quoteForm.querySelector('[name="height"]');
+            const unitEl   = quoteForm.querySelector('[name="unit"]:checked');
+            const hasWidth     = widthEl  && widthEl.value  && parseFloat(widthEl.value)  > 0;
+            const hasHeight    = heightEl && heightEl.value && parseFloat(heightEl.value) > 0;
+            const hasDimension = hasWidth || hasHeight;
+            if ((service === 'digitizing' || service === 'both') && !hasDimension) {
+                showToast('Please enter at least one dimension (width or height).', 'error');
+                return;
+            }
+            if (hasDimension && !unitEl) {
+                showToast('Please select a unit of measurement (cm or inches).', 'error');
+                return;
+            }
             const formData   = new FormData(this);
             const submitBtn  = this.querySelector('.form-submit');
             const origText   = submitBtn.textContent;

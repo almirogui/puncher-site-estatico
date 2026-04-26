@@ -288,6 +288,20 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label>Dimensions *</label>
+                        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                            <input type="number" id="width" name="width" placeholder="Largeur" step="0.1" min="0.1" style="width: 130px; flex-shrink: 0;">
+                            <input type="number" id="height" name="height" placeholder="Hauteur" step="0.1" min="0.1" style="width: 130px; flex-shrink: 0;">
+                            <label for="unit-cm" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; font-weight: 500; background: white; margin: 0;">
+                                <input type="radio" id="unit-cm" name="unit" value="cm"> cm
+                            </label>
+                            <label for="unit-inches" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; font-weight: 500; background: white; margin: 0;">
+                                <input type="radio" id="unit-inches" name="unit" value="inches"> pouces
+                            </label>
+                        </div>
+                        <small style="color: #718096; font-size: 12px; margin-top: 6px; display: block;">Requis pour la numérisation de broderie. Au moins une dimension requise.</small>
+                    </div>
+                    <div class="form-group">
                         <label for="description">Description du Projet *</label>
                         <textarea id="description" name="description" placeholder="Décrivez votre projet, dimensions, couleurs, etc." required></textarea>
                     </div>

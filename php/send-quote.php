@@ -29,6 +29,9 @@ $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 $company = isset($_POST['company']) ? trim($_POST['company']) : '';
 $service = isset($_POST['service']) ? trim($_POST['service']) : '';
 $description = isset($_POST['description']) ? trim($_POST['description']) : '';
+$width = isset($_POST['width']) ? trim($_POST['width']) : '';
+$height = isset($_POST['height']) ? trim($_POST['height']) : '';
+$unit = isset($_POST['unit']) ? trim($_POST['unit']) : '';
 
 // Validate required fields
 if (empty($name) || empty($email) || empty($service) || empty($description)) {
@@ -40,6 +43,32 @@ if (empty($name) || empty($email) || empty($service) || empty($description)) {
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo json_encode(['success' => false, 'message' => 'Please enter a valid email address']);
     exit;
+}
+
+// Validate dimensions
+$has_width = !empty($width) && floatval($width) > 0;
+$has_height = !empty($height) && floatval($height) > 0;
+$has_dimension = $has_width || $has_height;
+
+if (($service === 'digitizing' || $service === 'both') && !$has_dimension) {
+    echo json_encode(['success' => false, 'message' => 'Please enter at least one dimension']);
+    exit;
+}
+
+if ($has_dimension && (empty($unit) || !in_array($unit, ['cm', 'inches']))) {
+    echo json_encode(['success' => false, 'message' => 'Please select a unit of measurement']);
+    exit;
+}
+
+$unit_label = ($unit === 'cm') ? 'cm' : 'inches';
+
+// Format dimensions for emails
+$dimensions_text = 'Not provided';
+if ($has_dimension) {
+    $dimensions_parts = [];
+    if ($has_width) $dimensions_parts[] = "Width: {$width} {$unit_label}";
+    if ($has_height) $dimensions_parts[] = "Height: {$height} {$unit_label}";
+    $dimensions_text = implode(' × ', $dimensions_parts);
 }
 
 // Service type labels
@@ -143,6 +172,10 @@ $admin_message = "
                 <div class='value'><strong>" . htmlspecialchars($service_label) . "</strong></div>
             </div>
             <div class='field'>
+                <div class='label'>📐 Dimensions:</div>
+                <div class='value'><strong>{$dimensions_text}</strong></div>
+            </div>
+            <div class='field'>
                 <div class='label'>📝 Project Description:</div>
                 <div class='value'>" . nl2br(htmlspecialchars($description)) . "</div>
             </div>
@@ -221,6 +254,7 @@ $customer_message = "
             <div class='summary'>
                 <h4 style='margin-top: 0; color: #1a365d;'>📋 Your Request Summary:</h4>
                 <p><strong>Service:</strong> " . htmlspecialchars($service_label) . "</p>
+                <p><strong>Dimensions:</strong> {$dimensions_text}</p>
                 <p><strong>Description:</strong><br>" . nl2br(htmlspecialchars($description)) . "</p>
                 {$file_attachment_info}
             </div>
