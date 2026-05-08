@@ -1,6 +1,6 @@
 <header>
     <div class="container">
-        <a href="index.html" class="logo"><img src="images/logo.png" alt="Puncher Embroidery Digitizing" style="height: 55px; background: white; padding: 8px 15px; border-radius: 8px;"></a>
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Puncher Embroidery Digitizing" style="height: 77px; background: white; padding: 8px 15px; border-radius: 8px;"></a>
        <button class="mobile-menu-btn" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -21,9 +21,10 @@
                     </ul>
                 </li>
                 <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="https://blog.puncher.com">Blog</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="app/" class="btn btn-primary" style="padding: 8px 20px;">Login / Order</a></li>
+                <li style="display:flex;gap:10px;align-items:center;"><a href="app/" class="btn btn-outline-dark" style="padding: 8px 20px;">Login</a><a href="app/register/" class="btn btn-primary" style="padding: 8px 20px;">Get Started</a></li>
             </ul>
         </nav>
         <div id="language-switcher" style="display: flex; align-items: center; margin-left: 15px;"></div>
