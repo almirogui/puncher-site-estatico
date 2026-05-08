@@ -139,15 +139,21 @@
            HERO
            ============================================ */
         .shops-hero {
-            background: linear-gradient(160deg, #0f2b1a 0%, #1a3d2a 40%, #1a4530 100%);
-            color: #fff; padding: 90px 0 70px; text-align: center;
+            background: linear-gradient(160deg, #0f2b1a 0%, #1a3d2a 40%, #1a4530 100%) !important;
+            color: #fff !important; padding: 90px 0 70px !important; text-align: center;
             position: relative; overflow: hidden;
         }
         .shops-hero::before {
-            content: ''; position: absolute; inset: 0;
+            content: ''; position: absolute; inset: 0; z-index: 0;
             background: radial-gradient(ellipse at 20% 50%, rgba(244,166,35,0.08) 0%, transparent 60%),
                         radial-gradient(ellipse at 80% 20%, rgba(26,107,60,0.15) 0%, transparent 50%);
             pointer-events: none;
+        }
+        .shops-hero .hero-sub {
+            color: rgba(255,255,255,0.85) !important;
+        }
+        .shops-hero .hero-badge {
+            color: rgba(255,255,255,0.9) !important;
         }
         .hero-badge {
             display: inline-block; background: rgba(255,255,255,0.12);
@@ -159,6 +165,7 @@
         .shops-hero h1 {
             font-size: clamp(2rem, 5vw, 3rem); font-weight: 700;
             line-height: 1.2; margin-bottom: 16px; position: relative;
+            color: #fff !important;
         }
         .shops-hero h1 span { color: var(--color-accent); }
         .hero-sub {
