@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Precios transparentes para digitalización de bordados. Pague solo por los puntos que su diseño necesita. Desde $10. Calidad profesional desde 1993.">
+    <meta name="description" content="Digitalización profesional de bordados desde $10. Presupuesto gratuito en 2 horas. Los diseños cuestan típicamente $15-$90 según tamaño y complejidad.">
     <title>Precios | Digitalización Profesional de Bordados | Puncher</title>
     <link rel="alternate" hreflang="en" href="https://puncher.com/pricing.html" />
     <link rel="alternate" hreflang="de" href="https://puncher.com/de/pricing.html" />
@@ -22,76 +22,20 @@
     .pr-stat strong{display:block;font-family:'Playfair Display',Georgia,serif;font-size:2rem;color:#e6b050;line-height:1;}
     .pr-stat span{font-size:.78rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.08em;}
     .pr-section-label{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--primary-color,#e67e22);margin-bottom:.5rem;}
-    .pr-placement-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:1.1rem;margin-bottom:1.75rem;}
-    .pr-card{background:#fff;border:1.5px solid #e2d9ce;border-radius:12px;padding:1.6rem 1.25rem;text-align:center;position:relative;transition:transform .22s,box-shadow .22s,border-color .22s;overflow:hidden;}
-    .pr-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c9953a,#e6b050);opacity:0;transition:opacity .22s;}
-    .pr-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(13,27,42,.14);border-color:#c9953a;}
-    .pr-card:hover::before{opacity:1;}
-    .pr-card-icon{font-size:2rem;margin-bottom:.6rem;display:block;}
-    .pr-card-name{font-weight:700;font-size:.95rem;margin-bottom:.2rem;color:#0d1b2a;}
-    .pr-card-size{font-size:.75rem;color:#6b7280;margin-bottom:.9rem;font-family:monospace;}
-    .pr-card-from{font-size:.7rem;color:#6b7280;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.2rem;}
-    .pr-card-price{font-family:'Playfair Display',Georgia,serif;font-size:2rem;font-weight:900;color:#c9953a;line-height:1;}
-    .pr-card-note{font-size:.74rem;color:#6b7280;margin-top:.65rem;padding-top:.65rem;border-top:1px solid #e2d9ce;}
-    .pr-info-box{background:linear-gradient(135deg,#fff8ed,#fff3e0);border:1px solid #f0d090;border-radius:10px;padding:1rem 1.4rem;font-size:.88rem;color:#5a4010;display:flex;align-items:flex-start;gap:.7rem;}
-    .pr-stitch-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:start;}
-    @media(max-width:680px){.pr-stitch-layout{grid-template-columns:1fr;}}
-    .pr-stitch-table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(13,27,42,.09);}
-    .pr-stitch-table thead tr{background:linear-gradient(135deg,#1a365d 0%,#2b6cb0 100%);color:white;}
-    .pr-stitch-table thead th{padding:.85rem 1.1rem;text-align:left;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;}
-    .pr-stitch-table tbody tr{background:white;border-bottom:1px solid #e2d9ce;transition:background .15s;}
-    .pr-stitch-table tbody tr:nth-child(even){background:#faf8f5;}
-    .pr-stitch-table tbody tr:hover{background:#fff8ed;}
-    .pr-stitch-table tbody tr:last-child{border-bottom:none;}
-    .pr-stitch-table td{padding:.8rem 1.1rem;font-size:.92rem;}
-    .pr-stitch-table td:last-child{font-weight:700;color:#c9953a;font-family:monospace;font-size:.98rem;}
-    .pr-stitch-note{font-size:.75rem;color:#6b7280;display:block;margin-top:.15rem;}
-    .pr-minimums{background:linear-gradient(135deg,#1a365d 0%,#0d1b2a 100%);border-radius:12px;padding:1.6rem;color:white;}
-    .pr-minimums h3{font-size:1rem;color:#e6b050;margin-bottom:1.1rem;}
-    .pr-min-row{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.1);}
-    .pr-min-row:last-of-type{border-bottom:none;}
-    .pr-min-label{font-size:.87rem;color:rgba(255,255,255,.8);}
-    .pr-min-val{font-family:monospace;font-weight:700;color:#e6b050;font-size:.98rem;}
-    .pr-min-note{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:1rem;line-height:1.5;}
-    .pr-examples-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:1.1rem;}
-    .pr-example{background:#f7f3ee;border:1.5px solid #e2d9ce;border-radius:12px;padding:1.4rem;}
-    .pr-ex-icon{font-size:1.6rem;margin-bottom:.6rem;}
-    .pr-ex-title{font-weight:700;font-size:.9rem;color:#0d1b2a;margin-bottom:.2rem;}
-    .pr-ex-stitches{font-family:monospace;font-size:.75rem;color:#6b7280;margin-bottom:.9rem;}
-    .pr-ex-calc{font-size:.8rem;color:#6b7280;line-height:1.9;border-top:1px dashed #e2d9ce;padding-top:.7rem;}
-    .pr-ex-total{font-family:'Playfair Display',Georgia,serif;font-size:1.55rem;font-weight:900;color:#c9953a;margin-top:.35rem;}
-    .pr-guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
-    @media(max-width:620px){.pr-guide-grid{grid-template-columns:1fr;}}
-    .pr-guide-card{background:white;border:1px solid #e2d9ce;border-radius:12px;padding:1.6rem;transition:box-shadow .2s;}
-    .pr-guide-card:hover{box-shadow:0 4px 20px rgba(13,27,42,.09);}
-    .pr-guide-card h3{font-size:1.05rem;margin-bottom:.2rem;color:#0d1b2a;}
-    .pr-guide-size{font-family:monospace;font-size:.76rem;color:#c9953a;font-weight:700;margin-bottom:.65rem;display:block;}
-    .pr-guide-card p{font-size:.87rem;color:#6b7280;margin-bottom:.65rem;}
-    .pr-tags{display:flex;flex-wrap:wrap;gap:.35rem;}
-    .pr-tag{font-size:.72rem;background:#f0ece7;border:1px solid #e2d9ce;border-radius:50px;padding:.18rem .65rem;color:#0d1b2a;}
-    .pr-guide-note{margin-top:.65rem;font-size:.77rem;color:#2d7a4f;background:#f0f9f4;border:1px solid #b6e0c8;border-radius:6px;padding:.45rem .7rem;}
-    .pr-dark{background:linear-gradient(135deg,#0d1b2a 0%,#162436 100%);color:white;}
-    .pr-services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem;}
-    .pr-service{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:1.75rem;transition:border-color .2s;}
-    .pr-service:hover{border-color:rgba(201,149,58,.5);}
-    .pr-service-icon{font-size:2rem;margin-bottom:.75rem;display:block;}
-    .pr-service h3{font-size:1.1rem;color:white;margin-bottom:.4rem;}
-    .pr-service-badge{display:inline-block;background:rgba(201,149,58,.2);border:1px solid rgba(201,149,58,.4);color:#e6b050;font-size:.72rem;font-weight:700;letter-spacing:.06em;padding:.18rem .65rem;border-radius:50px;margin-bottom:.65rem;}
-    .pr-service p{font-size:.87rem;color:rgba(255,255,255,.65);line-height:1.6;}
-    .pr-svc-examples{margin-top:2rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.5rem;}
-    .pr-svc-examples h4{color:#e6b050;margin-bottom:1.1rem;font-size:.95rem;}
-    .pr-svc-row{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.07);gap:1rem;}
-    .pr-svc-row:last-child{border-bottom:none;}
-    .pr-svc-desc{font-size:.85rem;color:rgba(255,255,255,.75);}
-    .pr-svc-desc small{display:block;font-size:.74rem;color:rgba(255,255,255,.4);margin-top:.1rem;}
-    .pr-svc-price{font-family:monospace;font-weight:700;color:#e6b050;font-size:.98rem;white-space:nowrap;}
-    .pr-gradient-note{background:linear-gradient(135deg,#fff8ed,#fffbf5);border:1.5px solid #e6c97a;border-radius:12px;padding:1.75rem;display:flex;gap:1.1rem;align-items:flex-start;}
-    .pr-gradient-note h3{font-size:1.05rem;color:#0d1b2a;margin-bottom:.4rem;}
-    .pr-gradient-note p{font-size:.87rem;color:#5a4a20;line-height:1.65;}
-    .pr-includes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:.9rem;}
-    .pr-include{display:flex;align-items:flex-start;gap:.7rem;padding:1rem 1.15rem;background:white;border:1px solid #e2d9ce;border-radius:10px;}
-    .pr-check{width:20px;height:20px;background:#2d7a4f;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:.7rem;flex-shrink:0;margin-top:.1rem;}
-    .pr-include span{font-size:.87rem;font-weight:500;color:#0d1b2a;}
+    .pr-cost-highlights{max-width:680px;margin:1.5rem auto;}
+    .pr-cost-highlight{background:linear-gradient(135deg,#fff8ed,#fff3e0);border:1.5px solid #e6c97a;border-radius:12px;padding:1.25rem 1.75rem;font-size:1.05rem;color:#0d1b2a;margin-bottom:1rem;text-align:left;}
+    .pr-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:860px;margin:2rem auto 0;position:relative;}
+    .pr-steps::before{content:'';position:absolute;top:1.6rem;left:18%;right:18%;height:2px;background:#e2d9ce;z-index:0;}
+    .pr-step{text-align:center;position:relative;z-index:1;}
+    .pr-step-number{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a365d,#2b6cb0);color:#fff;font-size:1.25rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:1rem;box-shadow:0 4px 14px rgba(26,54,93,.25);}
+    .pr-step h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;color:#0d1b2a;}
+    .pr-step p{font-size:.87rem;color:#6b7280;line-height:1.65;}
+    .pr-faq-item{margin-bottom:.85rem;border:1px solid #e2d9ce;border-radius:10px;overflow:hidden;}
+    .pr-faq-question{padding:1.1rem 1.4rem;background:#f7fafc;cursor:pointer;font-weight:600;font-size:.95rem;color:#0d1b2a;display:flex;justify-content:space-between;align-items:center;user-select:none;}
+    .pr-faq-question::after{content:'+';font-size:1.4rem;color:#c9953a;font-weight:300;line-height:1;flex-shrink:0;margin-left:.5rem;}
+    .pr-faq-item.open .pr-faq-question::after{content:'\2212';}
+    .pr-faq-answer{padding:0 1.4rem;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:.9rem;color:#4a5568;line-height:1.7;}
+    .pr-faq-item.open .pr-faq-answer{max-height:500px;padding:1rem 1.4rem;}
     .pr-cta{background:linear-gradient(135deg,#1a365d 0%,#0d1b2a 100%);text-align:center;padding:4.5rem 1.5rem;position:relative;overflow:hidden;}
     .pr-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(201,149,58,.15),transparent);}
     .pr-cta-inner{position:relative;max-width:580px;margin:0 auto;}
@@ -104,13 +48,83 @@
     .pr-section{padding:4rem 0;}
     .pr-section-alt{background:white;}
     .pr-divider{border:none;height:1px;background:#e2d9ce;margin:0;}
+    @media(max-width:620px){.pr-steps{grid-template-columns:1fr;gap:1.5rem;}.pr-steps::before{display:none;}}
     </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Digitalizaci&#243;n de Bordado &#8212; Precios",
+  "provider": {
+    "@type": "Organization",
+    "name": "Puncher.com",
+    "url": "https://puncher.com"
+  },
+  "serviceType": "Digitalizaci&#243;n de Bordado",
+  "description": "Digitalizaci&#243;n profesional de bordados desde $10 por dise&#241;o. Presupuesto gratuito en 2 horas. Todos los formatos incluidos.",
+  "areaServed": [
+    {"@type": "Country", "name": "Espa&#241;a"},
+    {"@type": "Country", "name": "M&#233;xico"},
+    {"@type": "Country", "name": "Argentina"}
+  ],
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "10.00",
+    "highPrice": "90.00",
+    "offerCount": "1",
+    "description": "Digitalizaci&#243;n de bordado personalizada seg&#250;n tama&#241;o y complejidad. Desde $10. Presupuesto gratuito en 2 horas."
+  }
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "&#191;Por qu&#233; no publican una lista de precios detallada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cada dise&#241;o es &#250;nico. La cantidad de puntos, el tama&#241;o, el tipo de tela y la complejidad del arte afectan el precio final. Publicar una tabla fija significar&#237;a cobrar de m&#225;s a los dise&#241;os simples o de menos a los complejos. En su lugar, le enviamos un presupuesto exacto en 2 horas tras recibir su arte &#8212; sin compromiso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "&#191;Qu&#233; incluye el precio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Todos los formatos de archivo de bordado (DST, PES, EMB, JEF, EXP, VP3 y m&#225;s), revisiones gratuitas ilimitadas, conversi&#243;n de formato y 2 a&#241;os de archivo de dise&#241;os &#8212; todo incluido sin cargos adicionales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "&#191;Ofrecen descuentos por volumen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "S&#237;. Si env&#237;a regularmente varios dise&#241;os al mes, ofrecemos precios personalizados. Cont&#225;ctenos con su volumen habitual y estableceremos una tarifa con descuento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "&#191;Con qu&#233; rapidez pueden entregar un dise&#241;o?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El plazo est&#225;ndar es de 24 horas desde la aprobaci&#243;n. Tambi&#233;n ofrecemos servicio urgente (4 horas o menos) para proyectos urgentes a una tarifa especial."
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header>
         <div class="container">
             <a href="index.html" class="logo"><img src="../images/logo.png" alt="Puncher" style="height:77px;background:white;padding:8px 15px;border-radius:8px;"></a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">&#9776;</button>
             <nav>
                 <ul id="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
@@ -125,23 +139,24 @@
         </div>
     </header>
 
+    <!-- Section 1 — Hero -->
     <section class="page-header" style="background:linear-gradient(135deg,#0d1b2a 0%,#1a3050 60%,#0f2238 100%) !important;padding:4rem 0 0;position:relative;overflow:visible;">
         <div class="container" style="text-align:center;">
             <span class="pr-badge">Precios Transparentes Desde 1993</span>
             <h1 style="color:#ffffff !important;font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;text-shadow:none;margin-bottom:1rem;">
-                Pague solo por lo que su diseño<br><em style="color:#e6b050;font-style:normal;">realmente necesita</em>
+                Pague solo por lo que su dise&#241;o<br><em style="color:#e6b050;font-style:normal;">realmente necesita</em>
             </h1>
-            <p style="color:rgba(255,255,255,.75) !important;text-shadow:none;opacity:1;max-width:520px;margin:0 auto;">
-                Sin sorpresas de tarifa plana. Nuestro modelo por puntos garantiza que un logo simple sea accesible y que una espalda de chaqueta compleja se cobre justamente.
+            <p style="color:rgba(255,255,255,.75) !important;text-shadow:none;opacity:1;max-width:560px;margin:0 auto;">
+                Cada dise&#241;o de bordado es diferente. Calculamos el precio seg&#250;n el tama&#241;o, la cantidad de puntos y la complejidad &#8212; para que pague de manera justa. Desde $10.
             </p>
             <div class="pr-hero-stats">
                 <div class="pr-stat"><strong>$10</strong><span>Precio inicial</span></div>
                 <div class="pr-stat"><strong>24h</strong><span>Entrega</span></div>
-                <div class="pr-stat"><strong>30+</strong><span>Años de experiencia</span></div>
-                <div class="pr-stat"><strong>∞</strong><span>Revisiones gratis</span></div>
+                <div class="pr-stat"><strong>30+</strong><span>A&#241;os de experiencia</span></div>
+                <div class="pr-stat"><strong>&#8734;</strong><span>Revisiones gratis</span></div>
             </div>
         </div>
-    
+
         <!-- Curve wave -->
         <div style="position:relative; height:70px; overflow:hidden; margin-top:3rem;">
             <svg viewBox="0 0 1440 70" preserveAspectRatio="none"
@@ -152,54 +167,41 @@
         </div>
     </section>
 
-    <section class="content-section pr-section">
-        <div class="container">
-            <div class="section-title">
-                <p class="pr-section-label">Precios de un vistazo</p>
-                <h2>Elija su ubicación</h2>
-                <p>Seleccione el área donde se bordará su diseño. El precio final se calcula por cantidad de puntos — la tabla completa está más abajo.</p>
+    <!-- Section 2 — Costo T&#237;pico -->
+    <section class="content-section pr-section pr-section-alt">
+        <div class="container" style="text-align:center;">
+            <p class="pr-section-label">Costo T&#237;pico</p>
+            <h2>Precios honestos, sin sorpresas</h2>
+            <div class="pr-cost-highlights">
+                <div class="pr-cost-highlight"><strong>La mayor&#237;a de logos para gorras y pecho izquierdo cuestan entre $15 y $35</strong></div>
+                <div class="pr-cost-highlight"><strong>Los dise&#241;os m&#225;s grandes</strong> &#8212; frente completo, espalda de chaqueta, arte de espalda completa &#8212; <strong>t&#237;picamente van de $25 a $90</strong></div>
             </div>
-            <div class="pr-placement-grid">
-                <div class="pr-card"><span class="pr-card-icon">🎩</span><div class="pr-card-name">Gorra / Cap</div><div class="pr-card-size">hasta 4.5″ × 4″</div><div class="pr-card-from">desde</div><div class="pr-card-price">$10</div><div class="pr-card-note">Digitalización especial para gorras incluida — sin cargo extra</div></div>
-                <div class="pr-card"><span class="pr-card-icon">👕</span><div class="pr-card-name">Pecho Izquierdo</div><div class="pr-card-size">hasta 4.5″ × 4″</div><div class="pr-card-from">desde</div><div class="pr-card-price">$10</div><div class="pr-card-note">Mismo tamaño que la gorra — mismo precio</div></div>
-                <div class="pr-card"><span class="pr-card-icon">👕</span><div class="pr-card-name">Frente / Espalda Alta</div><div class="pr-card-size">hasta 7″ × 5″</div><div class="pr-card-from">desde</div><div class="pr-card-price">$20</div><div class="pr-card-note">Camisetas, hoodies, escudos escolares</div></div>
-                <div class="pr-card"><span class="pr-card-icon">🧥</span><div class="pr-card-name">Espalda de Chaqueta</div><div class="pr-card-size">hasta 12″ × 10″</div><div class="pr-card-from">desde</div><div class="pr-card-price">$24</div><div class="pr-card-note">Chaquetas universitarias, de trabajo, bombers</div></div>
-                <div class="pr-card"><span class="pr-card-icon">🧥</span><div class="pr-card-name">Espalda Completa</div><div class="pr-card-size">más de 12″ × 10″</div><div class="pr-card-from">desde</div><div class="pr-card-price">$32</div><div class="pr-card-note">Arte a gran formato, paneles traseros grandes</div></div>
-            </div>
-            <div class="pr-info-box"><span style="font-size:1.2rem;flex-shrink:0;">💡</span><div><strong>Cómo se calcula el precio final:</strong> Contamos los puntos en su diseño y multiplicamos por la tarifa de ese rango. La mayoría de diseños para gorras y pecho quedan entre <strong>$10 y $18</strong>.</div></div>
+            <p style="max-width:640px;margin:0 auto;color:#4a5568;font-size:.97rem;line-height:1.75;">El precio final depende del tama&#241;o, la cantidad de puntos y la complejidad de su arte. Los dise&#241;os con degradados, letras finas o muchos cambios de color requieren m&#225;s trabajo &#8212; y los cobramos en consecuencia. El cargo m&#237;nimo es de <strong>$10</strong> por dise&#241;o.</p>
         </div>
     </section>
 
     <hr class="pr-divider">
 
-    <section class="content-section pr-section pr-section-alt">
-        <div class="container">
-            <div class="section-title">
-                <p class="pr-section-label">Cómo calculamos</p>
-                <h2>Precio por cantidad de puntos</h2>
-                <p>El método más transparente de la industria. Solo paga por el trabajo real que su diseño requiere — a más puntos, menor tarifa por mil.</p>
-            </div>
-            <div class="pr-stitch-layout">
-                <div>
-                    <table class="pr-stitch-table">
-                        <thead><tr><th>Rango de Puntos</th><th>Precio por 1.000 puntos</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Hasta 10.000</strong><span class="pr-stitch-note">La mayoría de gorras y pecho izquierdo</span></td><td>$1,75 /k</td></tr>
-                            <tr><td><strong>10.001 – 20.000</strong><span class="pr-stitch-note">Frente completo, espalda alta</span></td><td>$1,50 /k</td></tr>
-                            <tr><td><strong>20.001 – 30.000</strong><span class="pr-stitch-note">Espaldas de chaqueta, diseños grandes</span></td><td>$1,25 /k</td></tr>
-                            <tr><td><strong>30.001 – 50.000</strong><span class="pr-stitch-note">Diseños grandes y detallados</span></td><td>$1,10 /k</td></tr>
-                            <tr><td><strong>50.001+</strong><span class="pr-stitch-note">Arte de espalda completa</span></td><td>$0,99 /k</td></tr>
-                        </tbody>
-                    </table>
+    <!-- Section 3 — C&#243;mo Funciona -->
+    <section class="content-section pr-section" style="background:#f7fafc;">
+        <div class="container" style="text-align:center;">
+            <p class="pr-section-label">C&#243;mo Funciona</p>
+            <h2>Obtenga su presupuesto en 3 pasos</h2>
+            <div class="pr-steps">
+                <div class="pr-step">
+                    <div class="pr-step-number">1</div>
+                    <h3>Env&#237;e su artwork</h3>
+                    <p>Cargue su dise&#241;o a trav&#233;s del formulario de pedido, o env&#237;elo por correo electr&#243;nico. Incluya ubicaci&#243;n, tama&#241;o y tela.</p>
                 </div>
-                <div class="pr-minimums">
-                    <h3>📌 Cargo mínimo por ubicación</h3>
-                    <div class="pr-min-row"><span class="pr-min-label">🎩 Gorra / Cap</span><span class="pr-min-val">$10,00</span></div>
-                    <div class="pr-min-row"><span class="pr-min-label">👕 Pecho Izquierdo</span><span class="pr-min-val">$10,00</span></div>
-                    <div class="pr-min-row"><span class="pr-min-label">👕 Frente / Espalda Alta</span><span class="pr-min-val">$20,00</span></div>
-                    <div class="pr-min-row"><span class="pr-min-label">🧥 Espalda de Chaqueta</span><span class="pr-min-val">$24,00</span></div>
-                    <div class="pr-min-row"><span class="pr-min-label">🧥 Espalda Completa</span><span class="pr-min-val">$32,00</span></div>
-                    <p class="pr-min-note">El mínimo aplica cuando el precio calculado es inferior al mínimo de la ubicación.</p>
+                <div class="pr-step">
+                    <div class="pr-step-number">2</div>
+                    <h3>Reciba un presupuesto fijo</h3>
+                    <p>En 2 horas durante el horario comercial, respondemos con un precio exacto &#8212; sin compromiso.</p>
+                </div>
+                <div class="pr-step">
+                    <div class="pr-step-number">3</div>
+                    <h3>Apruebe y digitalizamos</h3>
+                    <p>Una vez aprobado, entregamos su archivo digitalizado en 24 horas. Revisiones gratuitas hasta su completa satisfacci&#243;n.</p>
                 </div>
             </div>
         </div>
@@ -207,116 +209,62 @@
 
     <hr class="pr-divider">
 
-    <section class="content-section pr-section">
-        <div class="container">
-            <div class="section-title">
-                <p class="pr-section-label">Ejemplos reales</p>
-                <h2>¿Cuánto costaría su diseño?</h2>
-                <p>¿No conoce la cantidad de puntos? Regístrese y solicite un presupuesto gratuito — lo calculamos antes de cualquier cobro.</p>
-            </div>
-            <div class="pr-examples-grid">
-                <div class="pr-example"><div class="pr-ex-icon">🎩</div><div class="pr-ex-title">Gorra — logo simple</div><div class="pr-ex-stitches">~4.000 puntos</div><div class="pr-ex-calc">4 × $1,75 = $7,00<br><span style="color:#c9953a;">↳ aplica mínimo</span><div class="pr-ex-total">$10,00</div></div></div>
-                <div class="pr-example"><div class="pr-ex-icon">👕</div><div class="pr-ex-title">Pecho — logo detallado</div><div class="pr-ex-stitches">~9.000 puntos</div><div class="pr-ex-calc">9 × $1,75 = $15,75<br><span style="color:#2d7a4f;">sobre el mínimo ✓</span><div class="pr-ex-total">$15,75</div></div></div>
-                <div class="pr-example"><div class="pr-ex-icon">👕</div><div class="pr-ex-title">Frente — gráfico de equipo</div><div class="pr-ex-stitches">~21.000 puntos</div><div class="pr-ex-calc">21 × $1,25 = $26,25<br><span style="color:#2d7a4f;">sobre el mínimo ✓</span><div class="pr-ex-total">$26,25</div></div></div>
-                <div class="pr-example"><div class="pr-ex-icon">🧥</div><div class="pr-ex-title">Espalda chaqueta — mascota</div><div class="pr-ex-stitches">~55.000 puntos</div><div class="pr-ex-calc">55 × $0,99 = $54,45<br><span style="color:#2d7a4f;">sobre el mínimo ✓</span><div class="pr-ex-total">$54,45</div></div></div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="pr-divider">
-
+    <!-- Section 4 — Preguntas Frecuentes -->
     <section class="content-section pr-section pr-section-alt">
         <div class="container">
-            <div class="section-title">
-                <p class="pr-section-label">Guía de ubicaciones</p>
-                <h2>Qué va dónde</h2>
+            <div class="section-title" style="text-align:center;">
+                <p class="pr-section-label">Preguntas Frecuentes</p>
+                <h2>Preguntas comunes sobre precios</h2>
             </div>
-            <div class="pr-guide-grid">
-                <div class="pr-guide-card"><h3>🎩 Gorra &nbsp;&amp;&nbsp; 👕 Pecho Izquierdo</h3><span class="pr-guide-size">Máx: 4,5″ × 4″ &nbsp;|&nbsp; 114mm × 101mm &nbsp;|&nbsp; Mismo precio</span><p>La ubicación más común para logos y monogramas. Ideal para uniformes y ropa promocional.</p><div class="pr-tags"><span class="pr-tag">Gorras de béisbol</span><span class="pr-tag">Beanies</span><span class="pr-tag">Polos</span><span class="pr-tag">Uniformes</span></div><div class="pr-guide-note">✅ Los diseños para gorras requieren digitalización especial para superficies curvas — ya incluida en el precio.</div></div>
-                <div class="pr-guide-card"><h3>👕 Frente / Espalda Alta</h3><span class="pr-guide-size">Máx: 7″ × 5″ &nbsp;|&nbsp; 178mm × 127mm</span><p>Diseños más grandes para el centro del frente o la parte superior de la espalda de camisetas y hoodies.</p><div class="pr-tags"><span class="pr-tag">Frentes de camiseta</span><span class="pr-tag">Hoodies</span><span class="pr-tag">Escudos escolares</span></div></div>
-                <div class="pr-guide-card"><h3>🧥 Espalda de Chaqueta</h3><span class="pr-guide-size">Máx: 12″ × 10″ &nbsp;|&nbsp; 305mm × 254mm</span><p>Para el panel trasero de chaquetas. Admite arte complejo con varios colores y texto detallado.</p><div class="pr-tags"><span class="pr-tag">Chaquetas universitarias</span><span class="pr-tag">Bombers</span><span class="pr-tag">Trabajo</span></div></div>
-                <div class="pr-guide-card"><h3>🧥 Espalda Completa</h3><span class="pr-guide-size">Más de 12″ × 10″</span><p>Cobertura máxima para arte de gran formato y diseños decorativos que abarcan toda la espalda.</p><div class="pr-tags"><span class="pr-tag">Arte a gran formato</span><span class="pr-tag">Ropa de trabajo</span></div></div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="pr-divider">
-
-    <section class="content-section pr-section">
-        <div class="container">
-            <div class="pr-gradient-note">
-                <span style="font-size:1.75rem;flex-shrink:0;margin-top:.1rem;">🎨</span>
-                <div>
-                    <h3>Una nota sobre degradados y fotorrealismo</h3>
-                    <p>Los degradados de color verdaderos y las imágenes fotográficas <strong>no pueden reproducirse exactamente en bordado</strong> — el hilo no es tinta. Nuestros digitalizadores adaptarán su diseño para lograr el mejor resultado posible y le mostrarán una vista previa antes de la producción. Incluido sin cargo adicional.</p>
+            <div style="max-width:760px;margin:0 auto;">
+                <div class="pr-faq-item">
+                    <div class="pr-faq-question">&#191;Por qu&#233; no publican una lista de precios detallada?</div>
+                    <div class="pr-faq-answer">Cada dise&#241;o es &#250;nico. La cantidad de puntos, el tama&#241;o, el tipo de tela y la complejidad del arte afectan el precio final. Publicar una tabla fija significar&#237;a cobrar de m&#225;s a los dise&#241;os simples o de menos a los complejos. En su lugar, le enviamos un presupuesto exacto en 2 horas tras recibir su arte &#8212; sin compromiso.</div>
+                </div>
+                <div class="pr-faq-item">
+                    <div class="pr-faq-question">&#191;Qu&#233; incluye el precio?</div>
+                    <div class="pr-faq-answer">Todos los formatos de archivo de bordado (DST, PES, EMB, JEF, EXP, VP3 y m&#225;s), revisiones gratuitas ilimitadas, conversi&#243;n de formato y 2 a&#241;os de archivo de dise&#241;os &#8212; todo incluido sin cargos adicionales.</div>
+                </div>
+                <div class="pr-faq-item">
+                    <div class="pr-faq-question">&#191;Ofrecen descuentos por volumen?</div>
+                    <div class="pr-faq-answer">S&#237;. Si env&#237;a regularmente varios dise&#241;os al mes, ofrecemos precios personalizados. Cont&#225;ctenos con su volumen habitual y estableceremos una tarifa con descuento.</div>
+                </div>
+                <div class="pr-faq-item">
+                    <div class="pr-faq-question">&#191;Con qu&#233; rapidez pueden entregar un dise&#241;o?</div>
+                    <div class="pr-faq-answer">El plazo est&#225;ndar es de 24 horas desde la aprobaci&#243;n. Tambi&#233;n ofrecemos servicio urgente (4 horas o menos) para proyectos urgentes a una tarifa especial.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <hr class="pr-divider">
-
-    <section class="content-section pr-section pr-dark">
-        <div class="container">
-            <div class="section-title">
-                <p class="pr-section-label" style="color:#e6b050;">Servicios Especiales</p>
-                <h2 style="color:white;">Técnicas que van más allá de la digitalización estándar</h2>
-                <p style="color:rgba(255,255,255,.65);">Estos servicios requieren un proceso de digitalización diferente. Se aplica un recargo del 25%. Combinando dos servicios especiales (ej. Rush + 3D Puff) el recargo es del 50%.</p>
-            </div>
-            <div class="pr-services-grid">
-                <div class="pr-service"><span class="pr-service-icon">⚡</span><h3>Entrega Urgente</h3><span class="pr-service-badge">+25% recargo</span><p>Su pedido pasa al frente de la cola. Entregado en <strong style="color:white;">4–6 horas</strong>, cualquier día de la semana.</p></div>
-                <div class="pr-service"><span class="pr-service-icon">🧵</span><h3>Digitalización Apliqué</h3><span class="pr-service-badge">+25% recargo</span><p>El apliqué cose piezas de tela sobre la prenda. Los puntos de posicionamiento, fijación y acabado se mapean por separado — un proceso completamente diferente.</p></div>
-                <div class="pr-service"><span class="pr-service-icon">🏔️</span><h3>Digitalización 3D Puff</h3><span class="pr-service-badge">+25% recargo</span><p>Crea un efecto tridimensional usando espuma bajo los puntos. Requiere un archivo especialmente construido — los archivos estándar no se pueden convertir.</p></div>
-            </div>
-            <div class="pr-svc-examples">
-                <h4>📊 Ejemplos de recargo</h4>
-                <div class="pr-svc-row"><div class="pr-svc-desc">Apliqué pecho izquierdo<small>~9.000 puntos → $15,75 + 25%</small></div><span class="pr-svc-price">$19,69</span></div>
-                <div class="pr-svc-row"><div class="pr-svc-desc">Logo gorra urgente<small>~4.000 puntos → $10,00 mínimo + 25%</small></div><span class="pr-svc-price">$12,50</span></div>
-                <div class="pr-svc-row"><div class="pr-svc-desc">Espalda chaqueta 3D Puff + Urgente<small>~25.000 puntos → $31,25 + 50%</small></div><span class="pr-svc-price">$46,88</span></div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="pr-divider">
-
-    <section class="content-section pr-section pr-section-alt">
-        <div class="container">
-            <div class="section-title">
-                <p class="pr-section-label">Siempre incluido</p>
-                <h2>En cada pedido</h2>
-                <p>Sin extras ocultos. Sin cargos adicionales por conversión de formato o revisiones.</p>
-            </div>
-            <div class="pr-includes-grid">
-                <div class="pr-include"><span class="pr-check">✓</span><span>Revisiones ilimitadas hasta su satisfacción</span></div>
-                <div class="pr-include"><span class="pr-check">✓</span><span>Todos los formatos (DST, PES, EMB, VP3, JEF y más)</span></div>
-                <div class="pr-include"><span class="pr-check">✓</span><span>Conversión de formato gratuita</span></div>
-                <div class="pr-include"><span class="pr-check">✓</span><span>Entrega estándar en 24 horas</span></div>
-                <div class="pr-include"><span class="pr-check">✓</span><span>Archivo de diseños por 2 años</span></div>
-                <div class="pr-include"><span class="pr-check">✓</span><span>Más de 30 años de experiencia profesional</span></div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Section 5 — CTA -->
     <section class="pr-cta">
         <div class="pr-cta-inner">
-            <h2>¿Listo para digitalizar su diseño?</h2>
-            <p>Cree su cuenta gratuita y envíe su arte. Estimaremos la cantidad de puntos y confirmaremos el precio exacto — antes de cualquier cobro.</p>
-            <a href="../app/" class="pr-btn-gold">Crear Cuenta y Obtener Presupuesto Gratis →</a>
-            <span class="pr-cta-email">¿Preguntas? Escríbanos a <a href="/es/#quote" style="color:#e8791d;font-weight:600;">Envíanos un mensaje</a></span>
+            <h2>&#191;Listo para digitalizar su dise&#241;o?</h2>
+            <p>Cree su cuenta gratuita y env&#237;e su archivo. Lo revisaremos y responderemos en 2 horas con un presupuesto fijo &#8212; antes de cualquier cargo.</p>
+            <a href="../app/" class="pr-btn-gold">Crear Cuenta &amp; Obtener Presupuesto Gratis &#8594;</a>
+            <span class="pr-cta-email">&#191;Preguntas? <a href="/es/#quote" style="color:#e8791d;font-weight:600;">Env&#237;anos un mensaje</a></span>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col"><h4>Puncher.com</h4><p style="color:#a0aec0;">Digitalización profesional de bordados desde 1993.</p></div>
+                <div class="footer-col"><h4>Puncher.com</h4><p style="color:#a0aec0;">Digitalizaci&#243;n profesional de bordados desde 1993.</p></div>
                 <div class="footer-col"><h4>Enlaces</h4><ul><li><a href="about.html">Nosotros</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contacto</a></li></ul></div>
-                <div class="footer-col"><h4>Contacto</h4><ul><li>📧 <a href="/es/#quote" style="color:#e8791d;font-weight:600;">Envíanos un mensaje</a></li></ul></div>
+                <div class="footer-col"><h4>Contacto</h4><ul><li>&#128231; <a href="/es/#quote" style="color:#e8791d;font-weight:600;">Env&#237;anos un mensaje</a></li></ul></div>
             </div>
             <div class="footer-bottom"><p>&copy; 1993-2025 Puncher.com. Todos los derechos reservados.</p></div>
         </div>
     </footer>
     <script src="../js/main.js"></script>
     <script src="../js/language.js"></script>
+    <script>
+    document.querySelectorAll('.pr-faq-question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            this.closest('.pr-faq-item').classList.toggle('open');
+        });
+    });
+    </script>
 </body>
 </html>
