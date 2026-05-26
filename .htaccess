@@ -18,6 +18,10 @@ Redirect 301 /order/ https://puncher.com/order.html
 Redirect 301 /vector-service/ https://puncher.com/vector-service.html
 Redirect 301 /partnership/ https://puncher.com/partner-companies.html
 Redirect 301 /quote/ https://puncher.com/contact.html
+Redirect 301 /faq/ https://puncher.com/faq.html
+Redirect 301 /order-2/ https://puncher.com/order.html
+Redirect 301 /partner-companies/ https://puncher.com/partner-companies.html
+Redirect 301 /update-payment/ https://puncher.com/php/payupdate.php
 
 # 3. Redirecionar URLs antigas do sistema para o novo app
 Redirect 301 /register/ https://puncher.com/app/
