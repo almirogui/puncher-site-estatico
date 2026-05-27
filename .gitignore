@@ -3,3 +3,4 @@ logs/
 app/
 *.bak
 .claude/
+images/shop/
