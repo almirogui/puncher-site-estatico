@@ -8,7 +8,7 @@
   <url>
     <loc>https://puncher.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://puncher.com/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://puncher.com/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://puncher.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://puncher.com/fr/index.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://puncher.com/es/index.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://puncher.com/it/index.html"/>
@@ -19,9 +19,9 @@
   </url>
 
   <url>
-    <loc>https://puncher.com/de/index.html</loc>
+    <loc>https://puncher.com/de/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://puncher.com/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://puncher.com/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://puncher.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://puncher.com/fr/index.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://puncher.com/es/index.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://puncher.com/it/index.html"/>
@@ -34,7 +34,7 @@
   <url>
     <loc>https://puncher.com/fr/index.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://puncher.com/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://puncher.com/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://puncher.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://puncher.com/fr/index.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://puncher.com/es/index.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://puncher.com/it/index.html"/>
@@ -47,7 +47,7 @@
   <url>
     <loc>https://puncher.com/es/index.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://puncher.com/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://puncher.com/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://puncher.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://puncher.com/fr/index.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://puncher.com/es/index.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://puncher.com/it/index.html"/>
@@ -60,7 +60,7 @@
   <url>
     <loc>https://puncher.com/it/index.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://puncher.com/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://puncher.com/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://puncher.com/de/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://puncher.com/fr/index.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://puncher.com/es/index.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://puncher.com/it/index.html"/>
