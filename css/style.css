@@ -1695,3 +1695,80 @@ footer {
 .note-danger h4 {
     color: #7d2020;
 }
+
+/* ================================================
+   Page: partner-companies
+   ================================================ */
+
+/* Botão compacto dentro dos cards de parceiro */
+.btn-sm {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+/* Bloco de texto e painel da seção de parceria */
+.cta-lead {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-panel {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.cta-panel h4 {
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.cta-note {
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+/* Lista de benefícios — ícone dourado alinhado ao texto */
+.benefit-list {
+    list-style: none;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.benefit-list li svg {
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* ================================================
+   Page: for-shops
+   ================================================ */
+
+/* Chips de ícone nos cards de dor e nos selos de confiança */
+.pain-card .card-icon,
+.trust-badge .card-icon {
+    margin-bottom: 14px;
+}
+
+/* Ícone inline dentro dos títulos dos cards "Why Puncher"
+   (o h3 já é flex com gap no CSS da página) */
+.why-card h3 svg {
+    color: var(--gold-dark);
+    flex-shrink: 0;
+}
