@@ -179,7 +179,9 @@ nav ul li a.active {
 .hero {
     background: var(--navy-deep);
     color: var(--white);
-    padding: 110px 0 80px;
+    position: relative;
+    /* base 80px + folga para a curva decorativa de 64px */
+    padding: 110px 0 110px;
     text-align: center;
 }
 
@@ -662,8 +664,29 @@ footer {
 .page-header {
     background: var(--navy-deep);
     color: var(--white);
-    padding: 110px 0 60px;
+    position: relative;
+    /* base 60px + folga para a curva decorativa de 64px */
+    padding: 110px 0 110px;
     text-align: center;
+}
+
+/* Curva decorativa na base das seções escuras — assinatura visual do site */
+.hero::after,
+.page-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 64px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 64' preserveAspectRatio='none'%3E%3Cpath d='M0,64 C360,0 1080,0 1440,64 L1440,64 L0,64 Z' fill='%23ffffff'/%3E%3C/svg%3E") no-repeat bottom / 100% 100%;
+    pointer-events: none;
+}
+
+/* pricing.html já traz a própria curva em HTML — evita duplicação */
+.page-header.no-curve::after,
+.hero.no-curve::after {
+    display: none;
 }
 
 .page-header h1 {
