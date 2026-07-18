@@ -78,6 +78,57 @@
 })();
 
 // =========================================================
+// FOOTER INJECT — carrega footer.html em todas as páginas
+// =========================================================
+(function injectFooter() {
+    var depth = (window.location.pathname.match(/\//g) || []).length;
+    var base  = depth > 1 ? '../' : '';
+    var lang = window.location.pathname.split('/')[1];
+    var langFooters = {'de':'footer-de.html','es':'footer-es.html','fr':'footer-fr.html','it':'footer-it.html'};
+    var footerFile = langFooters[lang] || 'footer.html';
+    var footerUrl = base + footerFile;
+
+    // Dispara o fetch de imediato, mas só injeta com o DOM pronto:
+    // o rodapé vai como último filho do <body> e precisa que o corpo
+    // da página já tenha sido totalmente parseado.
+    function whenReady(fn) {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fn);
+        } else {
+            fn();
+        }
+    }
+
+    fetch(footerUrl)
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+            whenReady(function() {
+                var temp = document.createElement('div');
+                temp.innerHTML = html;
+                var newFooter = temp.querySelector('footer');
+                if (!newFooter) return;
+
+                // Substitui rodapé estático se existir (migração gradual),
+                // senão anexa ao final do body.
+                var existing = document.querySelector('footer');
+                if (existing) {
+                    existing.parentNode.replaceChild(newFooter, existing);
+                } else {
+                    document.body.appendChild(newFooter);
+                }
+
+                var yearEl = document.getElementById('footer-year');
+                if (yearEl) {
+                    yearEl.textContent = new Date().getFullYear();
+                }
+            });
+        })
+        .catch(function(err) {
+            console.warn('Footer inject failed:', err);
+        });
+})();
+
+// =========================================================
 // MOBILE MENU TOGGLE
 // =========================================================
 function toggleMenu() {
