@@ -222,10 +222,11 @@
             padding: 0; overflow: hidden; background: var(--color-bg-dark);
         }
         .lifestyle-scroll {
-            display: flex; gap: 0;
+            display: flex; gap: 0; width: 100%;
         }
         .lifestyle-scroll img {
-            height: 220px; width: auto; object-fit: cover; flex-shrink: 0;
+            flex: 1 1 0; min-width: 0;
+            height: 220px; object-fit: cover; display: block;
         }
 
         /* ============================================
@@ -436,13 +437,14 @@
             .work-gallery { grid-template-columns: repeat(2, 1fr); }
             .pricing-body { padding: 24px 20px; }
             .final-cta { padding: 60px 0; }
-            .lifestyle-scroll img { height: 160px; }
+            /* 3 colunas x 2 linhas */
+            .lifestyle-scroll { flex-wrap: wrap; }
+            .lifestyle-scroll img { flex: 1 1 33.333%; height: 140px; }
         }
 
         @media (max-width: 480px) {
             .work-gallery { grid-template-columns: 1fr; }
             .testimonials-grid { grid-template-columns: 1fr; }
-            .lifestyle-scroll img { height: 130px; }
         }
     </style>
 </head>
