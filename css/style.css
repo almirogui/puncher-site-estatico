@@ -1772,3 +1772,28 @@ footer {
     color: var(--gold-dark);
     flex-shrink: 0;
 }
+
+/* ================================================
+   Ícones inline em rótulos, botões e previews (CC-5c)
+   ================================================ */
+.btn svg,
+.form-submit svg,
+.file-upload-label svg,
+.comparison-label svg,
+.contact-card a svg,
+.form-message svg,
+.price-highlight svg {
+    vertical-align: -3px;
+}
+
+.file-icon svg,
+.upload-icon svg {
+    vertical-align: middle;
+}
+
+.remove-btn svg,
+#file-remove-btn-1 svg,
+#file-remove-btn-2 svg,
+#file-remove-btn-3 svg {
+    vertical-align: middle;
+}
