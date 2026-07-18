@@ -29,6 +29,7 @@
     --text-dark: #1c2733;
     --text-body: #4a4437;
     --text-muted: #6b6355;
+    --text-soft: #6b6355;   /* alias de --text-muted, usado nas classes de página */
 
     /* Tipografia */
     --font-display: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
@@ -268,7 +269,10 @@ section {
     padding: 80px 0;
 }
 
-section:nth-child(even) {
+/* :where() zera a especificidade do :nth-child, deixando a regra em (0,0,1).
+   Assim o zebrado vale para sections sem classe de fundo, mas qualquer
+   classe (.hero, .services-dark, .quote-section…) vence naturalmente. */
+section:where(:nth-child(even)) {
     background: var(--ivory);
 }
 
@@ -694,12 +698,12 @@ footer {
     font-weight: 900;
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #ffffff !important;
+    color: var(--white);
 }
 
 .page-header p {
     font-size: 1.15rem;
-    color: #ffffff !important;
+    color: var(--white);
     opacity: 0.8;
 }
 
@@ -1252,4 +1256,226 @@ footer {
 
 .mobile-menu-btn.active span:nth-child(3) {
   transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* ================================================
+   Page: index
+   ================================================ */
+
+/* Hero com foto de bordado + overlay navy */
+.hero-bg {
+    background-color: var(--navy-deep);
+    /* Duas paradas de cor IGUAIS = camada chapada sobre a foto (overlay),
+       não um gradiente visual. Única exceção à regra "sem gradientes". */
+    background-image: linear-gradient(rgba(13, 27, 42, 0.88), rgba(13, 27, 42, 0.88)),
+                      url('../images/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Números de destaque */
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--gold);
+}
+
+.hero-stat-label {
+    color: var(--text-soft);
+    font-size: 0.9rem;
+}
+
+/* Seção clara */
+.section-ivory {
+    background: var(--ivory);
+    padding: 60px 0;
+}
+
+/* Figura centralizada + legenda */
+.figure-center {
+    margin: 10px auto 40px;
+    max-width: 900px;
+    text-align: center;
+}
+
+.figure-center img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.figure-caption {
+    margin-top: 14px;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text-soft);
+    letter-spacing: 0.01em;
+}
+
+/* Bloco de texto introdutório */
+.intro-block {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text-body);
+    margin-bottom: 20px;
+}
+
+.intro-text-last {
+    margin-bottom: 30px;
+}
+
+/* Chip de ícone dos cards */
+.card-icon {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: #faf3e3;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    color: var(--gold-dark);
+}
+
+/* Seção escura de serviços */
+.services-dark {
+    background: var(--navy-deep);
+    color: var(--white);
+    padding: 70px 0;
+}
+
+.services-dark .section-title h2 {
+    color: var(--white);
+}
+
+.services-dark .section-title p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 30px;
+    transition: border-color 0.25s ease;
+}
+
+.service-card:hover {
+    border-color: var(--gold);
+}
+
+.service-card h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Seção de garantias */
+.guarantee-section {
+    padding: 60px 0;
+}
+
+.guarantee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.guarantee-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: var(--ivory);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+}
+
+.guarantee-item .card-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.guarantee-title {
+    color: var(--text-dark);
+}
+
+.guarantee-text {
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* CTA centralizado no fim de seção */
+.section-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-lg {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+
+/* Formulário de orçamento */
+.unit-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    background: var(--white);
+    margin: 0;
+}
+
+.form-hint {
+    color: var(--text-soft);
+    font-size: 12px;
+    margin-top: 6px;
+    display: block;
+}
+
+.form-note {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--text-soft);
+    font-size: 14px;
 }
