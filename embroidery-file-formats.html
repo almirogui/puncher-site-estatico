@@ -19,20 +19,20 @@
             margin: 20px 0;
         }
         .format-table th {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
+            background: var(--navy-deep);
+            color: var(--white);
             padding: 15px;
             text-align: left;
         }
         .format-table td {
             padding: 12px 15px;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--card-border);
         }
         .format-table tr:nth-child(even) {
-            background: #f7fafc;
+            background: var(--ivory);
         }
         .format-table tr:hover {
-            background: #edf2f7;
+            background: #f2ede4;
         }
         .stats-table {
             max-width: 500px;
@@ -40,8 +40,8 @@
         }
         .stats-table td:last-child {
             text-align: right;
-            font-weight: bold;
-            color: var(--secondary-color);
+            font-weight: 700;
+            color: var(--gold-dark);
         }
     </style>
 
@@ -105,10 +105,11 @@
     </header>
 
     <!-- Page Header -->
-    <section class="page-header" style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%) !important;">
+    <section class="page-header">
         <div class="container">
-            <h1 style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">Embroidery File Formats</h1>
-            <p style="color: #ffffff !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); opacity: 1;">Complete guide to machine embroidery formats</p>
+            <span class="eyebrow" style="color:var(--gold)">Embroidery digitizing since 1993</span>
+            <h1>Embroidery File Formats</h1>
+            <p>Complete guide to machine embroidery formats</p>
         </div>
     </section>
 
@@ -116,8 +117,8 @@
     <section class="content-section">
         <div class="container">
             
-            <div style="max-width: 900px; margin: 0 auto;">
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+            <div class="content-narrow">
+                <p class="lead-text">
                     Machine embroidery is an embroidery process whereby a sewing machine or embroidery machine is used to create patterns on textiles. It is used commercially in product branding, corporate advertising, and uniform adornment. It is also used in the fashion industry to decorate garments and apparel.
                 </p>
 
@@ -165,23 +166,23 @@
                     </tbody>
                 </table>
 
-                <div style="background: #e3f2fd; padding: 25px; border-radius: 10px; margin: 40px 0; border-left: 4px solid var(--secondary-color);">
-                    <h4 style="margin: 0 0 15px 0; color: var(--primary-color);">💡 Pro Tip: Tajima DST Format</h4>
-                    <p style="margin: 0;">
+                <div class="note note-tip">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Pro Tip: Tajima DST Format</h4>
+                    <p>
                         The <strong>Tajima .DST format</strong> is a universal embroidery machine format. Most of the embroidery machines can read it and perform the original file. It's the safest choice if you're unsure which format to request.
                     </p>
                 </div>
 
-                <div style="background: #fff3cd; padding: 25px; border-radius: 10px; margin: 40px 0; border-left: 4px solid #ffc107;">
-                    <h4 style="margin: 0 0 15px 0; color: #856404;">⚠️ About Outline Formats (EMB/PXF)</h4>
-                    <p style="margin: 0;">
+                <div class="note note-warning">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg> About Outline Formats (EMB/PXF)</h4>
+                    <p>
                         For those embroiderers that can afford embroidery software like Wilcom or Pulse, the best option is to request an outline format like <strong>.EMB</strong> or <strong>.PXF</strong>. This way you can make changes to the file in-house, like adjusting density or size for different fabrics.
                     </p>
                 </div>
 
-                <div style="background: #f8d7da; padding: 25px; border-radius: 10px; margin: 40px 0; border-left: 4px solid #dc3545;">
-                    <h4 style="margin: 0 0 15px 0; color: #721c24;">❌ About Melco Condensed (CND)</h4>
-                    <p style="margin: 0;">
+                <div class="note note-danger">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg> About Melco Condensed (CND)</h4>
+                    <p>
                         We do not recommend requesting designs in CND format because many resources (curve fill, compensation, special underlay, etc.) that we use disappear in Melco condensed format. We cannot tell you not to use it, but be aware of these limitations.
                     </p>
                 </div>
@@ -226,11 +227,11 @@
                     </tbody>
                 </table>
 
-                <p style="text-align: center; margin-top: 30px; color: #718096;">
+                <p class="table-note">
                     <em>Don't see your format? <a href="contact.html">Contact us</a> - we support many more formats not listed here.</em>
                 </p>
 
-                <div style="text-align: center; margin-top: 50px;">
+                <div class="section-cta">
                     <a href="index.html#quote" class="btn btn-primary">Get a Free Quote</a>
                 </div>
             </div>
@@ -238,44 +239,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Puncher.com</h4>
-                    <p style="color: #a0aec0;">Professional embroidery digitizing services since 1993.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="pricing.html">Embroidery Digitizing</a></li>
-                        <li><a href="vector-service.html">Vector Art</a></li>
-                        <li><a href="embroidery-file-formats.html">File Formats</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="partner-companies.html">Partners</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>📧 <a href="/#quote" style="color:#e8791d;font-weight:600;">Send us a message</a></li>
-                        <li>💬 <a href="https://wa.me/5531920039974" style="color: #a0aec0;">WhatsApp: (31) 9 2003-9974</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 1993-2025 Puncher.com. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="js/language.js"></script>
     <script src="js/main.js"></script>

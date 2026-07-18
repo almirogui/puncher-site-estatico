@@ -1624,3 +1624,74 @@ footer {
     padding: 15px 30px;
     font-size: 18px;
 }
+
+/* ================================================
+   Page: embroidery-file-formats
+   ================================================ */
+
+/* Coluna de leitura (prosa alinhada à esquerda) */
+.content-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.table-note {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-soft);
+}
+
+/* Caixas de aviso — o ícone herda a cor do h4 via currentColor */
+.note {
+    padding: 25px;
+    border-radius: 10px;
+    margin: 40px 0;
+    border: 1px solid var(--card-border);
+}
+
+.note h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 15px 0;
+    font-size: 1.05rem;
+}
+
+.note p {
+    margin: 0;
+}
+
+/* Dica: cor da marca */
+.note-tip {
+    background: var(--ivory);
+    border-left: 4px solid var(--gold-dark);
+}
+
+.note-tip h4 {
+    color: var(--text-dark);
+}
+
+/* Atenção e ressalva: cores funcionais preservadas */
+.note-warning {
+    background: #fff8e6;
+    border-left: 4px solid #d99e0b;
+}
+
+.note-warning h4 {
+    color: #8a6414;
+}
+
+.note-danger {
+    background: #fdf0f0;
+    border-left: 4px solid #c53030;
+}
+
+.note-danger h4 {
+    color: #7d2020;
+}
