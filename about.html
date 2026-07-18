@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Puncher.com - Professional embroidery digitizing since 1993. Founded by Almiro Guimarães in Belo Horizonte, Brazil. Over 30 years serving embroiderers worldwide.">
     <meta name="keywords" content="puncher history, embroidery digitizing company, Magic Cap, Almiro Guimarães, embroidery Brazil, digitizing since 1993">
     <title>About Puncher.com — Professional Embroidery Digitizing Since 1993</title>
     <meta name="description" content="Puncher.com has been digitizing since 1993. We operate 4 embroidery shops, so we digitize from real production experience. Trusted by embroiderers in USA, Canada, UK, Germany and 50+ countries.">
@@ -31,23 +30,23 @@
     }
     .about-intro img {
         width: 100%;
-        border-radius: 16px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
     }
     .about-intro-text h2 {
-        color: #1a365d;
+        color: var(--text-dark);
         margin-bottom: 20px;
     }
     .about-intro-text p {
         font-size: 1.1rem;
         line-height: 1.8;
-        color: #4a5568;
+        color: var(--text-body);
         margin-bottom: 15px;
     }
     
     /* Timeline */
     .timeline-section {
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        background: var(--ivory);
         padding: 80px 0;
     }
     .timeline {
@@ -62,7 +61,7 @@
         transform: translateX(-50%);
         width: 4px;
         height: 100%;
-        background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+        background: var(--navy-deep);
         border-radius: 2px;
     }
     .timeline-item {
@@ -78,10 +77,11 @@
         padding-left: 50%;
     }
     .timeline-content {
-        background: white;
+        background: var(--white);
         padding: 25px 30px;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border: 1px solid var(--card-border);
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
         max-width: 400px;
         position: relative;
     }
@@ -91,8 +91,8 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
-        color: white;
+        background: var(--navy-deep);
+        color: var(--gold);
         padding: 8px 16px;
         border-radius: 20px;
         font-weight: 700;
@@ -100,8 +100,8 @@
     }
     .timeline-item:nth-child(odd) .timeline-year { right: -80px; }
     .timeline-item:nth-child(even) .timeline-year { left: -80px; }
-    .timeline-content h3 { color: #1a365d; margin-bottom: 10px; font-size: 1.2rem; }
-    .timeline-content p { color: #4a5568; font-size: 0.95rem; line-height: 1.6; }
+    .timeline-content h3 { color: var(--text-dark); margin-bottom: 10px; font-size: 1.2rem; }
+    .timeline-content p { color: var(--text-body); font-size: 0.95rem; line-height: 1.6; }
     
     /* Photo Grid */
     .photo-grid {
@@ -113,8 +113,8 @@
     .photo-item {
         position: relative;
         overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
     }
     .photo-item img {
         width: 100%;
@@ -133,7 +133,7 @@
         left: 0;
         right: 0;
         padding: 20px;
-        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        background: rgba(13, 27, 42, 0.85);
         color: white;
         font-size: 1.1rem;
         font-weight: 600;
@@ -146,9 +146,9 @@
     
     /* Stats */
     .stats-section {
-        background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+        background: var(--navy-deep);
         padding: 60px 0;
-        color: white;
+        color: var(--white);
     }
     .stats-grid {
         display: grid;
@@ -156,11 +156,11 @@
         gap: 30px;
         text-align: center;
     }
-    .stat-item h3 { font-size: 3rem; font-weight: 700; margin-bottom: 5px; }
-    .stat-item p { font-size: 1rem; opacity: 0.9; }
+    .stat-item h3 { font-family: var(--font-display); font-size: 3rem; font-weight: 700; margin-bottom: 5px; color: var(--gold); }
+    .stat-item p { font-size: 1rem; color: rgba(255, 255, 255, 0.8); }
     
     /* Differentials */
-    .differentials { background: #fff; padding: 80px 0; }
+    .differentials { background: var(--white); padding: 80px 0; }
     .diff-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -168,13 +168,14 @@
         margin-top: 40px;
     }
     .diff-card {
-        background: #f8fafc;
+        background: var(--ivory);
         padding: 30px;
-        border-radius: 16px;
-        border-left: 4px solid #2b6cb0;
+        border: 1px solid var(--card-border);
+        border-radius: 10px;
+        border-left: 3px solid var(--gold-dark);
     }
-    .diff-card h3 { color: #1a365d; margin-bottom: 15px; }
-    .diff-card p { color: #4a5568; line-height: 1.7; }
+    .diff-card h3 { color: var(--text-dark); margin-bottom: 15px; }
+    .diff-card p { color: var(--text-body); line-height: 1.7; }
     
     /* Logo History */
     .logo-history {
@@ -185,13 +186,14 @@
         flex-wrap: wrap;
         margin-top: 40px;
         padding: 40px;
-        background: white;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        background: var(--white);
+        border: 1px solid var(--card-border);
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
     }
     .logo-item { text-align: center; }
     .logo-item img { max-height: 80px; margin-bottom: 10px; }
-    .logo-item span { display: block; font-size: 13px; color: #718096; }
+    .logo-item span { display: block; font-size: 13px; color: var(--text-soft); }
     
     @media (max-width: 768px) {
         .about-intro { grid-template-columns: 1fr; gap: 30px; }
@@ -268,10 +270,11 @@
     </header>
 
     <!-- Page Header -->
-    <section class="page-header" style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%) !important;">
+    <section class="page-header">
         <div class="container">
-            <h1 style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">About Us</h1>
-            <p style="color: #ffffff !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); opacity: 1;">Over 30 years of excellence in embroidery digitizing</p>
+            <span class="eyebrow" style="color:var(--gold)">Embroidery digitizing since 1993</span>
+            <h1>About Us</h1>
+            <p>Over 30 years of excellence in embroidery digitizing</p>
         </div>
     </section>
 
@@ -332,19 +335,23 @@
             </div>
             <div class="diff-grid">
                 <div class="diff-card">
-                    <h3>🏪 We Run Our Own Shops</h3>
+                    <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg></span>
+                    <h3>We Run Our Own Shops</h3>
                     <p>Magic Cap operates <strong>four embroidery shops</strong>. This daily experience with real customers makes the difference between us and other internet digitizers. We know what works on the machine because we run it ourselves.</p>
                 </div>
                 <div class="diff-card">
-                    <h3>🌎 Same Timezone Advantage</h3>
+                    <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
+                    <h3>Same Timezone Advantage</h3>
                     <p>Brazil is in the <strong>same timezone as North America</strong>, with similar working hours. This means faster communication, quicker responses, and no overnight delays.</p>
                 </div>
                 <div class="diff-card">
-                    <h3>🖥️ Professional Setup</h3>
+                    <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
+                    <h3>Professional Setup</h3>
                     <p>Our digitizing office uses professional software including Wilcom and maintains multiple embroidery machines for testing: <strong>Tajima TMFX, Tajima NEO, SWF, and Brother</strong>.</p>
                 </div>
                 <div class="diff-card">
-                    <h3>📁 Your Designs, Archived</h3>
+                    <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></span>
+                    <h3>Your Designs, Archived</h3>
                     <p>Finished designs <strong>belong only to the customer</strong> and are archived for 2 years. Need an edit on a design from last year? No problem.</p>
                 </div>
             </div>
@@ -434,7 +441,7 @@
     </section>
 
     <!-- Logo History -->
-    <section class="content-section" style="background: #f8fafc;">
+    <section class="content-section section-ivory">
         <div class="container">
             <div class="section-title">
                 <h2>Our Brand Evolution</h2>
@@ -462,52 +469,14 @@
     </section>
 
     <!-- CTA Section -->
-    <section style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); padding: 60px 0; text-align: center;">
+    <section class="cta-section">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 15px;">Ready to Work With Us?</h2>
-            <p style="color: rgba(255,255,255,0.9); margin-bottom: 30px; font-size: 1.1rem;">Join thousands of satisfied customers worldwide</p>
-            <a href="app/" class="btn btn-primary" style="background: white; color: #1a365d; padding: 15px 40px; font-size: 1.1rem;">Get Started Today</a>
+            <h2>Ready to Work With Us?</h2>
+            <p>Join thousands of satisfied customers worldwide</p>
+            <a href="app/" class="btn btn-primary btn-lg">Get Started Today</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Puncher.com</h4>
-                    <p style="color: #a0aec0;">Professional embroidery digitizing services since 1993. Trusted by thousands of customers worldwide.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="pricing.html">Embroidery Digitizing</a></li>
-                        <li><a href="vector-service.html">Vector Art</a></li>
-                        <li><a href="embroidery-file-formats.html">File Formats</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="partner-companies.html">Partners</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>📧 <a href="/#quote" style="color:#e8791d;font-weight:600;">Send us a message</a></li>
-                        <li>💬 <a href="https://wa.me/5531920039974" style="color: #a0aec0;">WhatsApp: (31) 9 2003-9974</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 1993-2025 Puncher.com. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="js/language.js"></script>
     <script src="js/main.js"></script>

@@ -1485,3 +1485,30 @@ footer {
     color: var(--text-soft);
     font-size: 14px;
 }
+
+/* ================================================
+   Page: about
+   ================================================ */
+
+/* CTA final em fundo escuro */
+.cta-section {
+    background: var(--navy-deep);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* Ícone dos cards de diferencial */
+.diff-card .card-icon {
+    margin-bottom: 14px;
+}
