@@ -18,25 +18,26 @@
         /* Additional styles for order page */
         .order-section {
             padding: 60px 0;
-            background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
+            background: var(--ivory);
             min-height: calc(100vh - 200px);
         }
         
         .order-form-container {
             max-width: 700px;
             margin: 0 auto;
-            background: white;
+            background: var(--white);
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
         }
         
         .online-system-banner {
-            background: linear-gradient(135deg, #e6fffa 0%, #c6f6d5 100%);
-            border: 2px solid #38a169;
-            border-left: 6px solid #276749;
+            background: var(--ivory);
+            border: 1px solid var(--gold-dark);
+            border-left: 4px solid var(--gold-dark);
             padding: 24px 25px;
-            border-radius: 12px;
+            border-radius: 10px;
             margin-bottom: 30px;
         }
 
@@ -47,20 +48,15 @@
             margin-bottom: 14px;
         }
 
-        .online-system-banner .icon {
-            font-size: 30px;
-            flex-shrink: 0;
-        }
-
         .online-system-banner h4 {
             margin: 0;
-            color: #1c4532;
+            color: var(--text-dark);
             font-size: 18px;
             font-weight: 700;
         }
 
         .online-system-banner .banner-body {
-            color: #22543d;
+            color: var(--text-body);
             font-size: 14px;
         }
 
@@ -76,8 +72,8 @@
 
         .online-system-banner .price-highlight {
             display: inline-block;
-            background: #276749;
-            color: #fff;
+            background: var(--navy-deep);
+            color: var(--gold);
             font-weight: 700;
             padding: 3px 10px;
             border-radius: 20px;
@@ -87,8 +83,8 @@
 
         .online-system-banner .register-btn {
             display: inline-block;
-            background: linear-gradient(135deg, #276749 0%, #38a169 100%);
-            color: #fff;
+            background: var(--gold);
+            color: var(--navy-deep);
             font-weight: 700;
             font-size: 15px;
             padding: 11px 24px;
@@ -99,18 +95,17 @@
         }
 
         .online-system-banner .register-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(39, 103, 73, 0.35);
+            background: #d9a23e;
         }
 
         .online-system-banner .scroll-note {
             margin: 0;
             font-size: 13px;
-            color: #2f855a;
+            color: var(--text-soft);
         }
         
         .order-form-container h3 {
-            color: #1a365d;
+            color: var(--text-dark);
             margin-bottom: 25px;
             font-size: 24px;
             text-align: center;
@@ -140,7 +135,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #2d3748;
+            color: var(--text-dark);
             font-size: 14px;
         }
         
@@ -149,7 +144,7 @@
         .form-group textarea {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid #e2e8f0;
+            border: 1px solid var(--card-border);
             border-radius: 8px;
             font-size: 15px;
             transition: border-color 0.2s, box-shadow 0.2s;
@@ -160,8 +155,8 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #4299e1;
-            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+            border-color: var(--gold-dark);
+            box-shadow: 0 0 0 3px rgba(184, 137, 47, 0.15);
         }
         
         .form-group textarea {
@@ -188,18 +183,18 @@
         }
         
         .file-upload-box {
-            border: 2px dashed #cbd5e0;
+            border: 2px dashed var(--card-border);
             border-radius: 10px;
             padding: 25px;
             text-align: center;
-            background: #f7fafc;
+            background: var(--ivory);
             transition: all 0.2s;
             cursor: pointer;
         }
         
         .file-upload-box:hover {
-            border-color: #4299e1;
-            background: #ebf8ff;
+            border-color: var(--gold-dark);
+            background: #faf3e3;
         }
         
         .file-upload-box.has-file {
@@ -214,12 +209,12 @@
         }
         
         .file-upload-box .upload-text {
-            color: #4a5568;
+            color: var(--text-body);
             font-size: 14px;
         }
         
         .file-upload-box .upload-text strong {
-            color: #2b6cb0;
+            color: var(--gold-dark);
         }
         
         .file-upload-box input[type="file"] {
@@ -279,10 +274,10 @@
         .submit-btn {
             width: 100%;
             padding: 16px 30px;
-            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
-            color: white;
+            background: var(--gold);
+            color: var(--navy-deep);
             border: none;
-            border-radius: 10px;
+            border-radius: 50px;
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
@@ -291,8 +286,7 @@
         }
         
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(43, 108, 176, 0.4);
+            background: #d9a23e;
         }
         
         .submit-btn:disabled {
@@ -304,7 +298,7 @@
         .form-note {
             text-align: center;
             margin-top: 20px;
-            color: #718096;
+            color: var(--text-soft);
             font-size: 14px;
         }
         
@@ -341,10 +335,11 @@
     </header>
 
     <!-- Page Title -->
-    <section class="hero" style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); padding: 60px 0;">
+    <section class="hero">
         <div class="container">
+            <span class="eyebrow" style="color:var(--gold)">Embroidery digitizing since 1993</span>
             <h1 style="font-size: 36px; margin-bottom: 10px;">PLACE YOUR ORDER</h1>
-            <p style="font-size: 18px; opacity: 0.9;">Submit your design for professional embroidery digitizing</p>
+            <p style="font-size: 18px;">Submit your design for professional embroidery digitizing</p>
         </div>
     </section>
 
@@ -356,7 +351,7 @@
                 <!-- Online System Banner -->
                 <div class="online-system-banner">
                     <div class="banner-header">
-                        <span class="icon">🚀</span>
+                        <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
                         <h4>Our New Online Ordering System is Live!</h4>
                     </div>
                     <div class="banner-body">
@@ -368,13 +363,14 @@
                             <li><strong>Centralized communication</strong> — send and receive messages tied to each order</li>
                             <li><strong>Lower prices</strong> — online orders are priced lower than form-based orders</li>
                         </ul>
-                        <span class="price-highlight">💰 Lower prices when ordering online</span><br>
+                        <span class="price-highlight"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg> Lower prices when ordering online</span><br>
                         <a href="https://puncher.com/app/register/" class="register-btn">Create a free account →</a>
                         <p class="scroll-note">Prefer the classic form? Scroll down to use it — it still works just fine.</p>
                     </div>
                 </div>
                 
-                <h3>📦 Order Details</h3>
+                <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
+                <h3>Order Details</h3>
                 
                 <!-- Messages -->
                 <div id="form-message" class="form-message"></div>
@@ -493,44 +489,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Puncher.com</h4>
-                    <p style="color: #a0aec0;">Professional embroidery digitizing services since 1993. Trusted by thousands of customers worldwide.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="pricing.html">Embroidery Digitizing</a></li>
-                        <li><a href="vector-service.html">Vector Art</a></li>
-                        <li><a href="embroidery-file-formats.html">File Formats</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="partner-companies.html">Partners</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>📧 <a href="/#quote" style="color:#e8791d;font-weight:600;">Send us a message</a></li>
-                        <li>💬 <a href="https://wa.me/5531920039974" style="color: #a0aec0;">WhatsApp: (31) 9 2003-9974</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 1993-2025 Puncher.com. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="js/main.js"></script>
     <script src="js/language.js"></script>
@@ -634,7 +592,7 @@
         .catch(error => {
             messageDiv.style.display = 'block';
             messageDiv.className = 'form-message error';
-            messageDiv.innerHTML = '❌ An error occurred. Please try again or contact us directly at <a href="/#quote" style="color:#e8791d;font-weight:600;">Send us a message</a>';
+            messageDiv.innerHTML = '❌ An error occurred. Please try again or contact us directly at <a href="/#quote" style="color:var(--gold-dark);font-weight:600;">Send us a message</a>';
         })
         .finally(() => {
             submitBtn.disabled = false;

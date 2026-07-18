@@ -1527,3 +1527,23 @@ footer {
     margin: 10px 0 10px 20px;
     list-style: none;
 }
+
+/* ================================================
+   Page: order
+   ================================================ */
+
+/* Chips de ícone dentro do painel do sistema online e do cabeçalho do form */
+.online-system-banner .card-icon,
+.order-form-container > .card-icon {
+    margin-bottom: 0;
+}
+
+.online-system-banner .banner-header .card-icon {
+    flex-shrink: 0;
+}
+
+/* Ícone pequeno dentro do selo de preço */
+.price-highlight svg {
+    vertical-align: -2px;
+    margin-right: 2px;
+}
