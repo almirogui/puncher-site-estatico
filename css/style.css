@@ -1547,3 +1547,18 @@ footer {
     vertical-align: -2px;
     margin-right: 2px;
 }
+
+/* ================================================
+   Page: contact
+   ================================================ */
+
+/* Links dos cartões de contato herdam a cor base (--gold-dark); só o peso muda */
+.contact-card a {
+    font-weight: 600;
+}
+
+/* Chip de ícone acima do título do formulário de contato */
+.quote-form > .card-icon {
+    display: flex;
+    margin: 0 auto 12px;
+}
