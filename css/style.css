@@ -1512,3 +1512,18 @@ footer {
 .diff-card .card-icon {
     margin-bottom: 14px;
 }
+
+/* ================================================
+   Page: faq
+   ================================================ */
+
+/* Links dentro das respostas herdam a cor base (--gold-dark); só o peso muda */
+.faq-answer a {
+    font-weight: 600;
+}
+
+/* Lista de horários por fuso — marcadores substituídos pelas bandeiras do texto */
+.hours-list {
+    margin: 10px 0 10px 20px;
+    list-style: none;
+}
