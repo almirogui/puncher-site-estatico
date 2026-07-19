@@ -112,11 +112,11 @@ foreach (['file1', 'file2', 'file3'] as $field) {
                 $file_url = $site_url . '/uploads/quotes/' . $filename;
                 $file_links_html .= "
                 <p>
-                    <a href='{$file_url}' target='_blank' style='color: #2b6cb0; text-decoration: none; font-weight: bold;'>
-                        📎 {$file['name']}
+                    <a href='{$file_url}' target='_blank' style='color: #b8892f; text-decoration: none; font-weight: bold;'>
+                        {$file['name']}
                     </a>
                     <br>
-                    <a href='{$file_url}' target='_blank' style='color: #718096; font-size: 12px;'>
+                    <a href='{$file_url}' target='_blank' style='color: #6b6355; font-size: 12px;'>
                         Click to view/download
                     </a>
                 </p>
@@ -127,7 +127,7 @@ foreach (['file1', 'file2', 'file3'] as $field) {
     }
 }
 
-$file_link_html = !empty($file_links_html) ? $file_links_html : '<p style="color: #999;">No file attached</p>';
+$file_link_html = !empty($file_links_html) ? $file_links_html : '<p style="color: #6b6355;">No file attached</p>';
 $file_info_for_customer = $files_for_customer;
 
 // Build email content for ADMIN
@@ -140,55 +140,56 @@ $admin_message = "
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
-        .content { background: #f7fafc; padding: 30px; border: 1px solid #e2e8f0; }
+        .header { background: #0d1b2a; color: #ffffff; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
+        .header h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; color: #ffffff; }
+        .content { background: #faf7f0; padding: 30px; border: 1px solid #ece5d4; }
         .field { margin-bottom: 20px; }
-        .label { font-weight: bold; color: #1a365d; margin-bottom: 5px; }
-        .value { padding: 12px; background: white; border-radius: 5px; border: 1px solid #e2e8f0; }
-        .footer { text-align: center; padding: 20px; color: #718096; font-size: 12px; }
-        .file-box { background: #edf2f7; padding: 15px; border-radius: 8px; border-left: 4px solid #ed8936; }
+        .label { font-weight: bold; color: #0d1b2a; margin-bottom: 5px; }
+        .value { padding: 12px; background: #ffffff; border-radius: 5px; border: 1px solid #ece5d4; }
+        .footer { text-align: center; padding: 20px; color: #6b6355; font-size: 12px; }
+        .file-box { background: #faf3e3; padding: 15px; border-radius: 8px; border-left: 4px solid #b8892f; }
     </style>
 </head>
 <body>
     <div class='container'>
-        <div class='header'>
-            <h2>📨 New Quote Request</h2>
+        <div class='header' style='background-color:#0d1b2a; color:#ffffff;'>
+            <h2 style='color:#ffffff; font-family:Georgia,serif; margin:0;'>New Quote Request</h2>
         </div>
-        <div class='content'>
+        <div class='content' style='background-color:#faf7f0; color:#1c2733;'>
             <div class='field'>
-                <div class='label'>👤 Name:</div>
+                <div class='label'>Name:</div>
                 <div class='value'>" . htmlspecialchars($name) . "</div>
             </div>
             <div class='field'>
-                <div class='label'>📧 Email:</div>
-                <div class='value'><a href='mailto:" . htmlspecialchars($email) . "' style='color: #2b6cb0;'>" . htmlspecialchars($email) . "</a></div>
+                <div class='label'>Email:</div>
+                <div class='value'><a href='mailto:" . htmlspecialchars($email) . "' style='color: #b8892f;'>" . htmlspecialchars($email) . "</a></div>
             </div>
             <div class='field'>
-                <div class='label'>🏢 Company:</div>
-                <div class='value'>" . (empty($company) ? '<em style=\"color: #999;\">Not provided</em>' : htmlspecialchars($company)) . "</div>
+                <div class='label'>Company:</div>
+                <div class='value'>" . (empty($company) ? '<em style=\"color: #6b6355;\">Not provided</em>' : htmlspecialchars($company)) . "</div>
             </div>
             <div class='field'>
-                <div class='label'>🎯 Service Type:</div>
+                <div class='label'>Service Type:</div>
                 <div class='value'><strong>" . htmlspecialchars($service_label) . "</strong></div>
             </div>
             <div class='field'>
-                <div class='label'>📐 Dimensions:</div>
+                <div class='label'>Dimensions:</div>
                 <div class='value'><strong>{$dimensions_text}</strong></div>
             </div>
             <div class='field'>
-                <div class='label'>📝 Project Description:</div>
+                <div class='label'>Project Description:</div>
                 <div class='value'>" . nl2br(htmlspecialchars($description)) . "</div>
             </div>
             <div class='field'>
-                <div class='label'>📎 Attached Files:</div>
-                <div class='file-box'>
+                <div class='label'>Attached Files:</div>
+                <div class='file-box' style='background-color:#faf3e3; color:#1c2733;'>
                     {$file_link_html}
                 </div>
             </div>
         </div>
-        <div class='footer'>
-            <p>This quote request was sent from the Puncher.com website.</p>
-            <p>Reply directly to this email to respond to the customer.</p>
+        <div class='footer' style='background-color:#0d1b2a;'>
+            <p style='color:rgba(255,255,255,0.7);'>This quote request was sent from the Puncher.com website.</p>
+            <p style='color:rgba(255,255,255,0.7);'>Reply directly to this email to respond to the customer.</p>
         </div>
     </div>
 </body>
@@ -214,8 +215,8 @@ $file_attachment_info = '';
 if (!empty($file_info_for_customer)) {
     $names = implode(', ', array_map('htmlspecialchars', $file_info_for_customer));
     $file_attachment_info = "
-        <div style='background: #edf2f7; padding: 10px 15px; border-radius: 5px; margin: 15px 0;'>
-            <strong>📎 Attached files:</strong> " . $names . "
+        <div style='background-color: #faf3e3; color:#1c2733; padding: 10px 15px; border-radius: 5px; border-left: 4px solid #b8892f; margin: 15px 0;'>
+            <strong>Attached files:</strong> " . $names . "
         </div>
     ";
 }
@@ -227,49 +228,49 @@ $customer_message = "
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
-        .header h2 { margin: 0; }
-        .content { background: #f7fafc; padding: 30px; border: 1px solid #e2e8f0; }
-        .highlight { background: #c6f6d5; padding: 15px; border-radius: 8px; border-left: 4px solid #38a169; margin: 20px 0; }
-        .summary { background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin: 20px 0; }
-        .footer { text-align: center; padding: 20px; color: #718096; font-size: 12px; background: #1a365d; border-radius: 0 0 10px 10px; }
-        .footer p { margin: 5px 0; color: #a0aec0; }
-        .footer a { color: #ed8936; }
+        .header { background: #0d1b2a; color: #ffffff; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+        .header h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; color: #ffffff; }
+        .content { background: #faf7f0; padding: 30px; border: 1px solid #ece5d4; }
+        .highlight { background: #e8f5e9; padding: 15px; border-radius: 8px; border-left: 4px solid #2f855a; margin: 20px 0; }
+        .summary { background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #ece5d4; border-left: 4px solid #b8892f; margin: 20px 0; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; background: #0d1b2a; border-radius: 0 0 10px 10px; }
+        .footer p { margin: 5px 0; color: rgba(255,255,255,0.7); }
+        .footer a { color: #e6b050; }
     </style>
 </head>
 <body>
     <div class='container'>
-        <div class='header'>
-            <h2>✅ Quote Request Received!</h2>
+        <div class='header' style='background-color:#0d1b2a; color:#ffffff;'>
+            <h2 style='color:#ffffff; font-family:Georgia,serif; margin:0;'>Quote Request Received!</h2>
         </div>
-        <div class='content'>
+        <div class='content' style='background-color:#faf7f0; color:#1c2733;'>
             <p>Dear <strong>" . htmlspecialchars($name) . "</strong>,</p>
             
-            <div class='highlight'>
-                <strong>🎉 Great news!</strong> We have successfully received your quote request and our team is already reviewing it.
+            <div class='highlight' style='background-color:#e8f5e9; color:#1c2733;'>
+                <strong>Great news!</strong> We have successfully received your quote request and our team is already reviewing it.
             </div>
             
             <p>You can expect a response from us within the <strong>next few hours</strong> during our business hours.</p>
             
-            <div class='summary'>
-                <h4 style='margin-top: 0; color: #1a365d;'>📋 Your Request Summary:</h4>
+            <div class='summary' style='background-color:#ffffff; color:#1c2733;'>
+                <h4 style='margin-top: 0; color: #0d1b2a; font-family: Georgia, serif;'>Your Request Summary:</h4>
                 <p><strong>Service:</strong> " . htmlspecialchars($service_label) . "</p>
                 <p><strong>Dimensions:</strong> {$dimensions_text}</p>
                 <p><strong>Description:</strong><br>" . nl2br(htmlspecialchars($description)) . "</p>
                 {$file_attachment_info}
             </div>
             
-            <p>If you have any additional information or questions, feel free to reply to this email or contact us at <a href='mailto:puncher@puncher.com' style='color: #2b6cb0;'>puncher@puncher.com</a>.</p>
+            <p>If you have any additional information or questions, feel free to reply to this email or contact us at <a href='mailto:puncher@puncher.com' style='color: #b8892f;'>puncher@puncher.com</a>.</p>
             
             <p style='margin-top: 30px;'>Thank you for choosing Puncher.com!</p>
             
             <p>Best regards,<br>
             <strong>The Puncher Team</strong></p>
         </div>
-        <div class='footer'>
-            <p><strong>Puncher.com</strong> - Professional Embroidery Digitizing since 1993</p>
-            <p>📧 <a href='mailto:puncher@puncher.com'>puncher@puncher.com</a> | 💬 <a href='https://wa.me/5531920039974' style='color: #ed8936;'>WhatsApp</a></p>
-            <p><a href='https://puncher.com'>www.puncher.com</a></p>
+        <div class='footer' style='background-color:#0d1b2a;'>
+            <p style='color:rgba(255,255,255,0.7);'><strong>Puncher.com</strong> - Professional Embroidery Digitizing since 1993</p>
+            <p style='color:rgba(255,255,255,0.7);'><a href='mailto:puncher@puncher.com' style='color:#e6b050;'>puncher@puncher.com</a> | <a href='https://wa.me/5531920039974' style='color:#e6b050;'>WhatsApp</a></p>
+            <p style='color:rgba(255,255,255,0.7);'><a href='https://puncher.com' style='color:#e6b050;'>www.puncher.com</a></p>
         </div>
     </div>
 </body>
