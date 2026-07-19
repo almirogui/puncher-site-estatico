@@ -22,54 +22,40 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="index.html" class="logo"><img src="../images/logo.png" alt="Puncher" style="height: 77px; background: white; padding: 8px 15px; border-radius: 8px;"></a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-            <nav>
-                <ul id="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="about.html" class="active">Nosotros</a></li>
-                    <li><a href="pricing.html">Precios</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contacto</a></li>
-                    <li><a href="../app/" class="btn btn-primary" style="padding: 8px 20px;">Acceder</a></li>
-                </ul>
-            </nav>
-            <div id="language-switcher" style="display: flex; align-items: center; margin-left: 15px;"></div>
-        </div>
     </header>
-    <section class="page-header" style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%) !important;">
+    <section class="page-header">
         <div class="container">
-            <h1 style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">Sobre Nosotros</h1>
-            <p style="color: #ffffff !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); opacity: 1;">Más de 30 años de excelencia en digitalización de bordados</p>
+            <span class="eyebrow" style="color:var(--gold)">Digitalización de bordados desde 1993</span>
+            <h1>Sobre Nosotros</h1>
+            <p>Más de 30 años de excelencia en digitalización de bordados</p>
         </div>
     </section>
     <section class="content-section">
         <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
+            <div class="content-narrow">
                 <h2>Un poco de nuestra historia</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+                <p class="lead-text">
                     Puncher.com y Magic Cap son socios orgullosos especializados en digitalización de bordados, imágenes vectoriales y diseños de gorras y ropa deportiva bordada. Fundadas en <strong>marzo de 1993</strong> en Belo Horizonte, Minas Gerais, Brasil, por A. Guimarães y D. Bossi, nuestras empresas han entregado productos y servicios excepcionales a clientes de todo el mundo.
                 </p>
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+                <p class="lead-text">
                     Con nuestro sitio web lanzado en <strong>1999</strong>, hemos establecido una fuerte presencia global y ganado una reputación por nuestros diseños de alta calidad. Operando desde nuestra oficina de digitalización en Brasil, nuestro equipo experimentado trabaja incansablemente para garantizar la satisfacción del cliente.
                 </p>
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">
+                <p class="lead-text" style="margin-bottom: 40px;">
                     Con <strong>10 estaciones de trabajo</strong>, Puncher.com puede gestionar eficientemente alrededor de <strong>200 diseños por día</strong>, proporcionando experiencia profesional y diseños de alta calidad en cada proyecto.
                 </p>
                 <div class="features" style="margin-top: 50px;">
                     <div class="feature-card">
-                        <div class="feature-icon">🏆</div>
+                        <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span>
                         <h3>30+ años de experiencia</h3>
                         <p>Sirviendo a clientes en todo el mundo desde 1993</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🌍</div>
+                        <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
                         <h3>Presencia global</h3>
                         <p>Clientes en más de 50 países</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">💻</div>
+                        <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
                         <h3>10 estaciones de trabajo</h3>
                         <p>Capacidad para 200+ diseños por día</p>
                     </div>
@@ -77,17 +63,6 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col"><h4>Puncher.com</h4><p style="color: #a0aec0;">Digitalización de bordados profesional desde 1993.</p></div>
-                <div class="footer-col"><h4>Servicios</h4><ul><li><a href="pricing.html">Digitalización</a></li><li><a href="vector-service.html">Arte vectorial</a></li></ul></div>
-                <div class="footer-col"><h4>Empresa</h4><ul><li><a href="about.html">Nosotros</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contacto</a></li></ul></div>
-                <div class="footer-col"><h4>Contacto</h4><ul><li>📧 <a href="/es/#quote" style="color:#e8791d;font-weight:600;">Envíanos un mensaje</a></li><li>💬 <a href="https://wa.me/5531920039974" style="color: #a0aec0;">Línea US (WhatsApp disponible)</a></li></ul></div>
-            </div>
-            <div class="footer-bottom"><p>&copy; 1993-2025 Puncher.com. Todos los derechos reservados.</p></div>
-        </div>
-    </footer>
     <script src="../js/main.js"></script>
     <script src="../js/language.js"></script>
 <script src="../js/consent.js"></script>

@@ -21,59 +21,40 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="index.html" class="logo"><img src="../images/logo.png" alt="Puncher" style="height: 77px; background: white; padding: 8px 15px; border-radius: 8px;"></a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-            <nav>
-                <ul id="nav-menu">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="pricing.html">Tarifs</a></li>
-                    <li><a href="faq.html" class="active">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="../app/" class="btn btn-primary" style="padding: 8px 20px;">Connexion</a></li>
-                </ul>
-            </nav>
-            <div id="language-switcher" style="display: flex; align-items: center; margin-left: 15px;"></div>
-        </div>
     </header>
-    <section class="page-header" style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%) !important;">
+    <section class="page-header">
         <div class="container">
-            <h1 style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">Questions Fréquentes</h1>
-            <p style="color: #ffffff !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); opacity: 1;">Réponses aux questions les plus courantes</p>
+            <span class="eyebrow" style="color:var(--gold)">Numérisation de broderie depuis 1993</span>
+            <h1>Questions Fréquentes</h1>
+            <p>Réponses aux questions les plus courantes</p>
         </div>
     </section>
     <section class="content-section">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
-                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: #f7fafc; cursor: pointer; font-weight: 600;">Combien de temps prend la numérisation?</div>
+            <div class="faq-list">
+                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden;">
+                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: var(--ivory); cursor: pointer; font-weight: 600;">Combien de temps prend la numérisation?</div>
                     <div style="padding: 20px; display: none;">La plupart des designs sont terminés en 24 heures. Les designs complexes peuvent prendre 48 heures.</div>
                 </div>
-                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
-                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: #f7fafc; cursor: pointer; font-weight: 600;">Quels formats de fichiers proposez-vous?</div>
+                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden;">
+                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: var(--ivory); cursor: pointer; font-weight: 600;">Quels formats de fichiers proposez-vous?</div>
                     <div style="padding: 20px; display: none;">Nous fournissons tous les formats courants: DST, PES, JEF, EXP, VP3, XXX et plus.</div>
                 </div>
-                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
-                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: #f7fafc; cursor: pointer; font-weight: 600;">Offrez-vous des révisions gratuites?</div>
+                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden;">
+                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: var(--ivory); cursor: pointer; font-weight: 600;">Offrez-vous des révisions gratuites?</div>
                     <div style="padding: 20px; display: none;">Oui! Nous offrons des révisions gratuites illimitées jusqu'à satisfaction complète.</div>
                 </div>
-                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
-                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: #f7fafc; cursor: pointer; font-weight: 600;">Y a-t-il une commande minimum?</div>
+                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden;">
+                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: var(--ivory); cursor: pointer; font-weight: 600;">Y a-t-il une commande minimum?</div>
                     <div style="padding: 20px; display: none;">Il n'y a pas de commande minimum. Vous pouvez commander même un seul design.</div>
                 </div>
-                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
-                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: #f7fafc; cursor: pointer; font-weight: 600;">Comment puis-je payer?</div>
+                <div class="faq-item" style="margin-bottom: 20px; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden;">
+                    <div onclick="this.parentElement.classList.toggle('active')" style="padding: 20px; background: var(--ivory); cursor: pointer; font-weight: 600;">Comment puis-je payer?</div>
                     <div style="padding: 20px; display: none;">Nous acceptons PayPal, cartes de crédit et virement bancaire.</div>
                 </div>
             </div>
         </div>
     </section>
-    <footer>
-        <div class="container">
-            <div class="footer-bottom"><p>&copy; 1993-2025 Puncher.com. Tous droits réservés.</p></div>
-        </div>
-    </footer>
     <script src="../js/main.js"></script>
     <script src="../js/language.js"></script>
     <script>
