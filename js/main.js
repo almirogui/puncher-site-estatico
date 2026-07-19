@@ -12,7 +12,7 @@
     var lang = window.location.pathname.split('/')[1];
     var langMenus = {'de':'menu-de.html','es':'menu-es.html','fr':'menu-fr.html','it':'menu-it.html'};
     var menuFile = langMenus[lang] || 'menu.html';
-    var menuUrl = base + menuFile;
+    var menuUrl = base + menuFile + '?v=2026a';
 
     fetch(menuUrl)
         .then(function(r) { return r.text(); })
@@ -86,7 +86,7 @@
     var lang = window.location.pathname.split('/')[1];
     var langFooters = {'de':'footer-de.html','es':'footer-es.html','fr':'footer-fr.html','it':'footer-it.html'};
     var footerFile = langFooters[lang] || 'footer.html';
-    var footerUrl = base + footerFile;
+    var footerUrl = base + footerFile + '?v=2026a';
 
     // Dispara o fetch de imediato, mas só injeta com o DOM pronto:
     // o rodapé vai como último filho do <body> e precisa que o corpo
