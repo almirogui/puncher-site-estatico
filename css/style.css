@@ -111,6 +111,8 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* respiração mínima entre logo, nav e seletor de idioma */
+    gap: 32px;
 }
 
 .logo {
@@ -766,6 +768,12 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* no mobile o nav vira menu absoluto: 32px sobrariam entre logo,
+       botão hambúrguer e seletor de idioma, apertando telas estreitas */
+    header .container {
+        gap: 12px;
+    }
+
     .mobile-menu-btn {
         display: block;
     }
@@ -858,10 +866,14 @@ footer {
 }
 
 /* File Upload Styles */
-.file-upload-label {
+/* O seletor duplo empata em especificidade com `.form-group label`
+   (0,1,1), que define color: var(--text-dark) e antes vencia aqui,
+   deixando texto e ícone escuros sobre o fundo navy. */
+.file-upload-label,
+.form-group label.file-upload-label {
     display: block;
     background: var(--navy-deep);
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.9);
     padding: 15px 25px;
     border-radius: 8px;
     text-align: center;
@@ -870,7 +882,20 @@ footer {
     transition: background 0.25s ease;
 }
 
-.file-upload-label:hover {
+/* Qualquer conteúdo interno (spans do JS, strong, SVG) herda o branco */
+.file-upload-label *,
+.form-group label.file-upload-label * {
+    color: inherit;
+}
+
+.file-upload-label svg,
+.form-group label.file-upload-label svg {
+    color: rgba(255, 255, 255, 0.9);
+    stroke: currentColor;
+}
+
+.file-upload-label:hover,
+.form-group label.file-upload-label:hover {
     background: var(--navy-soft);
 }
 
