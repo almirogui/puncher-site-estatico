@@ -463,4 +463,16 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- TERMS OF SERVICE                                    -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://puncher.com/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puncher.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://puncher.com/terms.html"/>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
