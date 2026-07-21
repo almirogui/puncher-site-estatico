@@ -14,27 +14,27 @@
     // =========================================================
     var TEXTS = {
         en: {
-            msg: "We use cookies (Google Analytics and Meta Pixel) to understand how visitors use our site. See our <a href='/app/terms/'>Terms of Service</a>.",
+            msg: "We use cookies (Google Analytics and Meta Pixel) to understand how visitors use our site. See our <a href='/terms.html?from=site'>Terms of Service</a>.",
             accept: 'Accept',
             decline: 'Decline'
         },
         de: {
-            msg: "Wir verwenden Cookies (Google Analytics und Meta Pixel), um zu verstehen, wie Besucher unsere Website nutzen. Siehe unsere <a href='/app/terms/'>Nutzungsbedingungen</a>.",
+            msg: "Wir verwenden Cookies (Google Analytics und Meta Pixel), um zu verstehen, wie Besucher unsere Website nutzen. Siehe unsere <a href='/terms.html?from=site'>Nutzungsbedingungen</a>.",
             accept: 'Akzeptieren',
             decline: 'Ablehnen'
         },
         fr: {
-            msg: "Nous utilisons des cookies (Google Analytics et Meta Pixel) pour comprendre comment les visiteurs utilisent notre site. Consultez nos <a href='/app/terms/'>Conditions d'utilisation</a>.",
+            msg: "Nous utilisons des cookies (Google Analytics et Meta Pixel) pour comprendre comment les visiteurs utilisent notre site. Consultez nos <a href='/terms.html?from=site'>Conditions d'utilisation</a>.",
             accept: 'Accepter',
             decline: 'Refuser'
         },
         es: {
-            msg: "Utilizamos cookies (Google Analytics y Meta Pixel) para entender cómo los visitantes usan nuestro sitio. Consulte nuestros <a href='/app/terms/'>Términos de servicio</a>.",
+            msg: "Utilizamos cookies (Google Analytics y Meta Pixel) para entender cómo los visitantes usan nuestro sitio. Consulte nuestros <a href='/terms.html?from=site'>Términos de servicio</a>.",
             accept: 'Aceptar',
             decline: 'Rechazar'
         },
         it: {
-            msg: "Utilizziamo i cookie (Google Analytics e Meta Pixel) per capire come i visitatori usano il nostro sito. Consulta i nostri <a href='/app/terms/'>Termini di servizio</a>.",
+            msg: "Utilizziamo i cookie (Google Analytics e Meta Pixel) per capire come i visitatori usano il nostro sito. Consulta i nostri <a href='/terms.html?from=site'>Termini di servizio</a>.",
             accept: 'Accetta',
             decline: 'Rifiuta'
         }
