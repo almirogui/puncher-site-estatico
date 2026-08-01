@@ -4,6 +4,77 @@
  */
 
 // =========================================================
+// I18N — dicionário de mensagens de interface
+// =========================================================
+var UI_LANG = (function () {
+    var seg = window.location.pathname.split('/')[1];
+    return ['de', 'es', 'fr', 'it'].indexOf(seg) !== -1 ? seg : 'en';
+})();
+
+var UI_TEXTS = {
+    en: {
+        dimRequired:  'Please enter at least one dimension (width or height).',
+        unitRequired: 'Please select a unit of measurement (cm or inches).',
+        sending:      'Sending...',
+        quoteSent:    'Quote request sent! We will contact you soon.',
+        quoteError:   'Error sending request. Please try again.',
+        messageSent:  'Message sent! We will respond soon.',
+        messageError: 'Error sending message. Please try again.',
+        changeFile:   '📎 Change file',
+        chooseFile:   '📎 Click to choose a file'
+    },
+    de: {
+        dimRequired:  'Bitte geben Sie mindestens eine Abmessung an (Breite oder Höhe).',
+        unitRequired: 'Bitte wählen Sie eine Maßeinheit (cm oder Zoll).',
+        sending:      'Wird gesendet...',
+        quoteSent:    'Angebotsanfrage gesendet! Wir melden uns in Kürze bei Ihnen.',
+        quoteError:   'Fehler beim Senden der Anfrage. Bitte versuchen Sie es erneut.',
+        messageSent:  'Nachricht gesendet! Wir antworten Ihnen in Kürze.',
+        messageError: 'Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.',
+        changeFile:   '📎 Datei ändern',
+        chooseFile:   '📎 Klicken zum Auswählen'
+    },
+    es: {
+        dimRequired:  'Introduzca al menos una dimensión (ancho o alto).',
+        unitRequired: 'Seleccione una unidad de medida (cm o pulgadas).',
+        sending:      'Enviando...',
+        quoteSent:    '¡Solicitud de presupuesto enviada! Nos pondremos en contacto con usted en breve.',
+        quoteError:   'Error al enviar la solicitud. Inténtelo de nuevo.',
+        messageSent:  '¡Mensaje enviado! Le responderemos en breve.',
+        messageError: 'Error al enviar el mensaje. Inténtelo de nuevo.',
+        changeFile:   '📎 Cambiar archivo',
+        chooseFile:   '📎 Haga clic para seleccionar un archivo'
+    },
+    fr: {
+        dimRequired:  'Veuillez indiquer au moins une dimension (largeur ou hauteur).',
+        unitRequired: 'Veuillez sélectionner une unité de mesure (cm ou pouces).',
+        sending:      'Envoi en cours...',
+        quoteSent:    'Demande de devis envoyée ! Nous vous contacterons très prochainement.',
+        quoteError:   "Erreur lors de l'envoi de la demande. Veuillez réessayer.",
+        messageSent:  'Message envoyé ! Nous vous répondrons très prochainement.',
+        messageError: "Erreur lors de l'envoi du message. Veuillez réessayer.",
+        changeFile:   '📎 Changer de fichier',
+        chooseFile:   '📎 Cliquez pour choisir un fichier'
+    },
+    it: {
+        dimRequired:  'Inserisci almeno una dimensione (larghezza o altezza).',
+        unitRequired: "Seleziona un'unità di misura (cm o pollici).",
+        sending:      'Invio in corso...',
+        quoteSent:    'Richiesta di preventivo inviata! Ti contatteremo a breve.',
+        quoteError:   "Errore durante l'invio della richiesta. Riprova.",
+        messageSent:  'Messaggio inviato! Ti risponderemo a breve.',
+        messageError: "Errore durante l'invio del messaggio. Riprova.",
+        changeFile:   '📎 Cambia file',
+        chooseFile:   '📎 Clicca per scegliere un file'
+    }
+};
+
+function t(key) {
+    var pack = UI_TEXTS[UI_LANG] || UI_TEXTS.en;
+    return (pack[key] !== undefined) ? pack[key] : UI_TEXTS.en[key];
+}
+
+// =========================================================
 // MENU INJECT — carrega menu.html em todas as páginas
 // =========================================================
 (function injectMenu() {
@@ -181,25 +252,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const hasHeight    = heightEl && heightEl.value && parseFloat(heightEl.value) > 0;
             const hasDimension = hasWidth || hasHeight;
             if ((service === 'digitizing' || service === 'both') && !hasDimension) {
-                showToast('Please enter at least one dimension (width or height).', 'error');
+                showToast(t('dimRequired'), 'error');
                 return;
             }
             if (hasDimension && !unitEl) {
-                showToast('Please select a unit of measurement (cm or inches).', 'error');
+                showToast(t('unitRequired'), 'error');
                 return;
             }
             const formData   = new FormData(this);
             const submitBtn  = this.querySelector('.form-submit');
             const origText   = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
+            submitBtn.textContent = t('sending');
             submitBtn.disabled    = true;
             fetch('/php/send-quote.php', { method: 'POST', body: formData })
                 .then(r => r.json())
                 .then(data => {
-                    if (data.success) { showToast('Quote request sent! We will contact you soon.', 'success'); quoteForm.reset(); if (window.resetFilePreviews) window.resetFilePreviews(); }
-                    else              { showToast('Error: ' + data.message, 'error'); }
+                    if (data.success) { showToast(t('quoteSent'), 'success'); quoteForm.reset(); if (window.resetFilePreviews) window.resetFilePreviews(); }
+                    else              { showToast(t('quoteError'), 'error'); }
                 })
-                .catch(() => showToast('Error sending request. Please try again.', 'error'))
+                .catch(() => showToast(t('quoteError'), 'error'))
                 .finally(() => { submitBtn.textContent = origText; submitBtn.disabled = false; });
         });
     }
@@ -212,15 +283,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData  = new FormData(this);
             const submitBtn = this.querySelector('.form-submit');
             const origText  = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
+            submitBtn.textContent = t('sending');
             submitBtn.disabled    = true;
             fetch('/php/send-contact.php', { method: 'POST', body: formData })
                 .then(r => r.json())
                 .then(data => {
-                    if (data.success) { showToast('Message sent! We will respond soon.', 'success'); contactForm.reset(); }
-                    else              { showToast('Error: ' + data.message, 'error'); }
+                    if (data.success) { showToast(t('messageSent'), 'success'); contactForm.reset(); }
+                    else              { showToast(t('messageError'), 'error'); }
                 })
-                .catch(() => showToast('Error sending message. Please try again.', 'error'))
+                .catch(() => showToast(t('messageError'), 'error'))
                 .finally(() => { submitBtn.textContent = origText; submitBtn.disabled = false; });
         });
     }
@@ -277,7 +348,7 @@ function showFileName(input) {
         fileName.textContent  = file.name;
         fileSize.textContent  = '(' + sText + ')';
         fileInfo.style.display = 'block';
-        fileLabel.textContent = '📎 Change file';
+        fileLabel.textContent = t('changeFile');
     }
 }
 
@@ -285,7 +356,7 @@ function removeFile() {
     var input = document.getElementById('file');
     input.value = '';
     document.getElementById('file-info').style.display = 'none';
-    document.getElementById('file-label').textContent  = '📎 Click to choose a file';
+    document.getElementById('file-label').textContent  = t('chooseFile');
 }
 document.addEventListener('click', function(e) {
   var menu = document.getElementById('nav-menu');
