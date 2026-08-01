@@ -8,11 +8,11 @@
 
     // Supported languages
     const LANGUAGES = {
-        'en': { name: 'English', flag: '🇺🇸', path: '/' },
-        'de': { name: 'Deutsch', flag: '🇩🇪', path: '/de/' },
-        'fr': { name: 'Français', flag: '🇫🇷', path: '/fr/' },
-        'es': { name: 'Español', flag: '🇪🇸', path: '/es/' },
-        'it': { name: 'Italiano', flag: '🇮🇹', path: '/it/' }
+        'en': { name: 'English',  flag: '🇺🇸', path: '/',    ask: 'Would you like to view this page in',  yes: 'Yes, switch to',  no: 'No, thanks' },
+        'de': { name: 'Deutsch',  flag: '🇩🇪', path: '/de/', ask: 'Möchten Sie diese Seite ansehen auf',  yes: 'Ja, wechseln zu', no: 'Nein, danke' },
+        'fr': { name: 'Français', flag: '🇫🇷', path: '/fr/', ask: 'Souhaitez-vous voir cette page en',     yes: 'Oui, passer au',  no: 'Non, merci' },
+        'es': { name: 'Español',  flag: '🇪🇸', path: '/es/', ask: '¿Desea ver esta página en',            yes: 'Sí, cambiar a',   no: 'No, gracias' },
+        'it': { name: 'Italiano', flag: '🇮🇹', path: '/it/', ask: 'Vuoi visualizzare questa pagina in',   yes: 'Sì, passa a',     no: 'No, grazie' }
     };
 
     // Get current language from URL
@@ -67,13 +67,13 @@
         banner.innerHTML = `
             <div style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); color: white; padding: 12px 20px; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 10000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
                 <span style="margin-right: 15px;">
-                    ${langInfo.flag} Would you like to view this page in <strong>${langInfo.name}</strong>?
+                    ${langInfo.flag} ${langInfo.ask} <strong>${langInfo.name}</strong>?
                 </span>
                 <a href="${buildLangUrl(suggestedLang)}" style="background: #ed8936; color: white; padding: 8px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-right: 10px;">
-                    Yes, switch to ${langInfo.name}
+                    ${langInfo.yes} ${langInfo.name}
                 </a>
                 <button onclick="dismissLangSuggestion()" style="background: transparent; border: 1px solid white; color: white; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
-                    No, thanks
+                    ${langInfo.no}
                 </button>
             </div>
         `;

@@ -20,12 +20,23 @@ function initCarousel() {
     const autoPlayInterval = 4000; // 4 seconds
     let autoPlayTimer;
     
+    // I18N
+    var CR_LANG = (function () {
+        var seg = window.location.pathname.split('/')[1];
+        return ['de', 'es', 'fr', 'it'].indexOf(seg) !== -1 ? seg : 'en';
+    })();
+    var CR_SLIDE = {
+        en: 'Go to slide', de: 'Gehe zu Folie', es: 'Ir a la diapositiva',
+        fr: 'Aller à la diapositive', it: 'Vai alla diapositiva'
+    };
+    var crSlide = CR_SLIDE[CR_LANG] || CR_SLIDE.en;
+
     // Create dots
     slides.forEach((_, index) => {
         const dot = document.createElement('button');
         dot.classList.add('carousel-dot');
         if (index === 0) dot.classList.add('active');
-        dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+        dot.setAttribute('aria-label', `${crSlide} ${index + 1}`);
         dot.addEventListener('click', () => goToSlide(index));
         dotsContainer.appendChild(dot);
     });

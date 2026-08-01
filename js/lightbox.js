@@ -10,6 +10,25 @@
     let galleryImages = [];
     let lightboxElement = null;
 
+    // I18N
+    var LB_LANG = (function () {
+        var seg = window.location.pathname.split('/')[1];
+        return ['de', 'es', 'fr', 'it'].indexOf(seg) !== -1 ? seg : 'en';
+    })();
+
+    var LB_TEXTS = {
+        en: { close: 'Close',      prev: 'Previous',  next: 'Next',    alt: 'Gallery image' },
+        de: { close: 'Schließen',  prev: 'Zurück',    next: 'Weiter',  alt: 'Galeriebild' },
+        es: { close: 'Cerrar',     prev: 'Anterior',  next: 'Siguiente', alt: 'Imagen de la galería' },
+        fr: { close: 'Fermer',     prev: 'Précédent', next: 'Suivant', alt: 'Image de la galerie' },
+        it: { close: 'Chiudi',     prev: 'Precedente', next: 'Successivo', alt: 'Immagine della galleria' }
+    };
+
+    function lbT(key) {
+        var pack = LB_TEXTS[LB_LANG] || LB_TEXTS.en;
+        return (pack[key] !== undefined) ? pack[key] : LB_TEXTS.en[key];
+    }
+
     // Create lightbox HTML
     function createLightbox() {
         const lightbox = document.createElement('div');
@@ -17,10 +36,10 @@
         lightbox.innerHTML = `
             <div class="lightbox-overlay"></div>
             <div class="lightbox-content">
-                <button class="lightbox-close" aria-label="Close">&times;</button>
-                <button class="lightbox-prev" aria-label="Previous">&#10094;</button>
+                <button class="lightbox-close" aria-label="${lbT('close')}">&times;</button>
+                <button class="lightbox-prev" aria-label="${lbT('prev')}">&#10094;</button>
                 <img class="lightbox-image" src="" alt="">
-                <button class="lightbox-next" aria-label="Next">&#10095;</button>
+                <button class="lightbox-next" aria-label="${lbT('next')}">&#10095;</button>
                 <div class="lightbox-counter"></div>
             </div>
         `;
@@ -55,7 +74,7 @@
         const counter = lightboxElement.querySelector('.lightbox-counter');
         
         img.src = galleryImages[currentIndex].src;
-        img.alt = galleryImages[currentIndex].alt || 'Gallery image';
+        img.alt = galleryImages[currentIndex].alt || lbT('alt');
         counter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
         
         // Show/hide navigation arrows
