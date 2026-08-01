@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const origText   = submitBtn.textContent;
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled    = true;
-            fetch('php/send-quote.php', { method: 'POST', body: formData })
+            fetch('/php/send-quote.php', { method: 'POST', body: formData })
                 .then(r => r.json())
                 .then(data => {
                     if (data.success) { showToast('Quote request sent! We will contact you soon.', 'success'); quoteForm.reset(); if (window.resetFilePreviews) window.resetFilePreviews(); }
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const origText  = submitBtn.textContent;
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled    = true;
-            fetch('php/send-contact.php', { method: 'POST', body: formData })
+            fetch('/php/send-contact.php', { method: 'POST', body: formData })
                 .then(r => r.json())
                 .then(data => {
                     if (data.success) { showToast('Message sent! We will respond soon.', 'success'); contactForm.reset(); }
