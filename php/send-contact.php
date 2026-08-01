@@ -17,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Get form data
-$name = isset($_POST['name']) ? trim($_POST['name']) : '';
+$name = isset($_POST['name']) ? trim(preg_replace('/[\r\n]+/', ' ', $_POST['name'])) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-$subject = isset($_POST['subject']) ? trim($_POST['subject']) : '';
+$subject = isset($_POST['subject']) ? trim(preg_replace('/[\r\n]+/', ' ', $_POST['subject'])) : '';
 $user_message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
 // Validate required fields

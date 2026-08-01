@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Get form data
-$name = isset($_POST['name']) ? trim($_POST['name']) : '';
+$name = isset($_POST['name']) ? trim(preg_replace('/[\r\n]+/', ' ', $_POST['name'])) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 $company = isset($_POST['company']) ? trim($_POST['company']) : '';
 $service = isset($_POST['service']) ? trim($_POST['service']) : '';

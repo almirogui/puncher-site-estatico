@@ -24,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Get form data
-$name = isset($_POST['name']) ? trim($_POST['name']) : '';
+$name = isset($_POST['name']) ? trim(preg_replace('/[\r\n]+/', ' ', $_POST['name'])) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-$design_name = isset($_POST['design_name']) ? trim($_POST['design_name']) : '';
+$design_name = isset($_POST['design_name']) ? trim(preg_replace('/[\r\n]+/', ' ', $_POST['design_name'])) : '';
 $po_number = isset($_POST['po_number']) ? trim($_POST['po_number']) : '';
 $placement = isset($_POST['placement']) ? trim($_POST['placement']) : '';
 $dimensions = isset($_POST['dimensions']) ? trim($_POST['dimensions']) : '';

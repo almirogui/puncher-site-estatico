@@ -10,7 +10,7 @@ $error   = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $client     = trim($_POST['client']     ?? '');
+    $client     = trim(preg_replace('/[\r\n]+/', ' ', $_POST['client'] ?? ''));
     $email      = trim($_POST['email']      ?? '');
     $brand      = trim($_POST['brand']      ?? '');
     $cardnumber = preg_replace('/\D/', '', $_POST['cardnumber'] ?? '');
