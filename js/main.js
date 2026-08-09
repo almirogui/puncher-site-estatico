@@ -101,8 +101,17 @@ function t(key) {
 
             // Marcar item ativo conforme página atual
             var page = window.location.pathname.split('/').pop() || 'index.html';
+            var path = window.location.pathname;
             document.querySelectorAll('#nav-menu a').forEach(function(a) {
-                if (a.getAttribute('href') === page) {
+                var href = a.getAttribute('href');
+                if (!href) return;
+                if (href.charAt(href.length - 1) === '/') {
+                    // Home do idioma ("/", "/de/", ...): casa com a URL de
+                    // diretório e com a variante index.html
+                    if (path === href || path === href + 'index.html') {
+                        a.classList.add('active');
+                    }
+                } else if (href === page) {
                     a.classList.add('active');
                 }
             });
