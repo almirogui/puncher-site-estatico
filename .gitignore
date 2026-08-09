@@ -1,10 +1,9 @@
 uploads/
+uploads-contato/
 logs/
 app/
-*.bak
 .claude/
 images/shop/
+scratchpad/
 *.bak*
-s c r a t c h p a d / 
- 
- 
+php_errorlog
