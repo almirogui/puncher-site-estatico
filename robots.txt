@@ -13,6 +13,8 @@ Allow: /app/wp-admin/admin-ajax.php
 
 # Disallow upload directories (protect client files)
 Disallow: /uploads/
+Disallow: /uploads-contato/
+Disallow: /app/wp-content/uploads/
 
 # Disallow PHP files
 Disallow: /php/
