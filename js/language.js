@@ -6,6 +6,15 @@
 (function() {
     'use strict';
 
+    // Paginas sem versao em todos os idiomas.
+    // Chave: arquivo; valor: idiomas onde a traducao EXISTE.
+    // Idioma ausente da lista → switcher leva a home do idioma.
+    const PAGE_LANGS = {
+        'order.html': [],
+        'terms.html': [],
+        'for-shops.html': ['de']
+    };
+
     // Supported languages
     const LANGUAGES = {
         'en': { name: 'English',  flag: '🇺🇸', path: '/',    ask: 'Would you like to view this page in',  yes: 'Yes, switch to',  no: 'No, thanks' },
@@ -47,8 +56,10 @@
     // Build URL for language switch
     function buildLangUrl(targetLang) {
         const currentPage = getCurrentPage();
-        if (targetLang === 'en') {
-            return '/' + currentPage;
+        if (targetLang === 'en') return '/' + currentPage;
+        const langs = PAGE_LANGS[currentPage];
+        if (langs && langs.indexOf(targetLang) === -1) {
+            return '/' + targetLang + '/';
         }
         return '/' + targetLang + '/' + currentPage;
     }
