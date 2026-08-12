@@ -19,7 +19,6 @@
         .order-section {
             padding: 60px 0;
             background: var(--ivory);
-            min-height: calc(100vh - 200px);
         }
         
         .order-form-container {
@@ -38,7 +37,7 @@
             border-left: 4px solid var(--gold-dark);
             padding: 24px 25px;
             border-radius: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 0;
         }
 
         .online-system-banner .banner-header {
@@ -361,131 +360,23 @@
                             <li><strong>Full order history</strong> — access all your past orders in one place</li>
                             <li><strong>Direct file download</strong> — download your finished embroidery files instantly</li>
                             <li><strong>Centralized communication</strong> — send and receive messages tied to each order</li>
-                            <li><strong>Lower prices</strong> — online orders are priced lower than form-based orders</li>
+                            <li><strong>Lower prices</strong> — exclusive online pricing</li>
                         </ul>
                         <span class="price-highlight"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg> Lower prices when ordering online</span><br>
-                        <a href="https://puncher.com/app/register/" class="register-btn">Create a free account →</a>
-                        <p class="scroll-note">Prefer the classic form? Scroll down to use it — it still works just fine.</p>
+                        <a href="https://puncher.com/app/novo-pedido/" class="register-btn">Start Your Order &rarr;</a>
                     </div>
                 </div>
-                
-                <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
-                <h3>Order Details</h3>
-                
-                <!-- Messages -->
-                <div id="form-message" class="form-message"></div>
-                
-                <form id="order-form" action="php/send-order.php" method="POST" enctype="multipart/form-data">
-                    
-                    <!-- Contact Info -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Your Name / Company <span class="required-star">*</span></label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your E-mail <span class="required-star">*</span></label>
-                            <input type="email" id="email" name="email" placeholder="Your e-mail" required>
-                        </div>
-                    </div>
-                    
-                    <!-- Design Info -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="design_name">Design Name <span class="required-star">*</span></label>
-                            <input type="text" id="design_name" name="design_name" placeholder="Design name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="po_number">Design PO Number (optional)</label>
-                            <input type="text" id="po_number" name="po_number" placeholder="PO Number">
-                        </div>
-                    </div>
-                    
-                    <!-- Placement -->
-                    <div class="form-group">
-                        <label for="placement">Place of Embroidery <span class="required-star">*</span></label>
-                        <select id="placement" name="placement" required>
-                            <option value="">Select placement...</option>
-                            <option value="Left Chest">Left Chest</option>
-                            <option value="Front Cap">Front Cap</option>
-                            <option value="Side Cap">Side Cap</option>
-                            <option value="Back Cap">Back Cap</option>
-                            <option value="Full Back">Full Back</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Dimensions -->
-                    <div class="form-group">
-                        <label for="dimensions">Dimensions (Width x Height) <span class="required-star">*</span></label>
-                        <input type="text" id="dimensions" name="dimensions" placeholder="e.g., 3.5 x 2.5" required>
-                        <div class="unit-options">
-                            <label>
-                                <input type="radio" name="unit" value="Inches" checked> Inches
-                            </label>
-                            <label>
-                                <input type="radio" name="unit" value="Centimeters"> Centimeters
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <!-- Fabric -->
-                    <div class="form-group">
-                        <label for="fabric">Fabric (optional)</label>
-                        <input type="text" id="fabric" name="fabric" placeholder="e.g., Cotton, Polyester, Twill...">
-                    </div>
-                    
-                    <!-- Comments -->
-                    <div class="form-group">
-                        <label for="comments">Comments / Special Instructions (optional)</label>
-                        <textarea id="comments" name="comments" placeholder="Describe any special requirements, colors, stitch preferences, etc."></textarea>
-                    </div>
-                    
-                    <!-- File Upload 1 - Main File -->
-                    <div class="form-group">
-                        <label>Logo / Artwork File <span class="required-star">*</span></label>
-                        <label for="main_file" class="file-upload-box" id="main-file-box">
-                            <div class="upload-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
-                            <div class="upload-text"><strong>Click to choose your logo/artwork file</strong><br>JPG, PNG, PDF, AI, EPS, SVG (Max 10MB)</div>
-                            <input type="file" id="main_file" name="main_file" accept=".jpg,.jpeg,.png,.gif,.pdf,.ai,.eps,.svg" required>
-                        </label>
-                        <div class="file-info" id="main-file-info">
-                            <div class="file-details">
-                                <span class="file-icon" id="main-file-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></span>
-                                <span class="file-name" id="main-file-name"></span>
-                                <span class="file-size" id="main-file-size"></span>
-                            </div>
-                            <button type="button" class="remove-btn" onclick="removeFile('main')"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
-                        </div>
-                    </div>
-                    
-                    <!-- File Upload 2 - Additional File -->
-                    <div class="form-group">
-                        <label>Additional Reference File (optional)</label>
-                        <label for="additional_file" class="file-upload-box" id="additional-file-box">
-                            <div class="upload-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div>
-                            <div class="upload-text"><strong>Click to add an additional reference file</strong><br>JPG, PNG, PDF, AI, EPS, SVG (Max 10MB)</div>
-                            <input type="file" id="additional_file" name="additional_file" accept=".jpg,.jpeg,.png,.gif,.pdf,.ai,.eps,.svg">
-                        </label>
-                        <div class="file-info" id="additional-file-info">
-                            <div class="file-details">
-                                <span class="file-icon" id="additional-file-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></span>
-                                <span class="file-name" id="additional-file-name"></span>
-                                <span class="file-size" id="additional-file-size"></span>
-                            </div>
-                            <button type="button" class="remove-btn" onclick="removeFile('additional')"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn" id="submit-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Submit Order
-                    </button>
-                </form>
-                
-                <p class="form-note">
-                    You will receive an e-mail confirming that we received your order and later, another e-mail confirming we started working on it.
-                </p>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to place your order?</h2>
+            <p>Orders are now placed through our online system — faster turnaround, real-time tracking, lower prices.</p>
+            <a href="https://puncher.com/app/novo-pedido/" class="btn btn-primary btn-lg">Place Your Order Online &rarr;</a>
+            <p class="cta-note">New to Puncher? You can create your free account in under a minute.</p>
         </div>
     </section>
 
@@ -493,113 +384,6 @@
     <script src="js/main.js?v=2026a"></script>
     <script src="js/language.js?v=2026a"></script>
     
-    <script>
-    // File upload handling
-    function setupFileUpload(inputId, prefix) {
-        const input = document.getElementById(inputId);
-        const box = document.getElementById(prefix + '-file-box');
-        const info = document.getElementById(prefix + '-file-info');
-        const icon = document.getElementById(prefix + '-file-icon');
-        const name = document.getElementById(prefix + '-file-name');
-        const size = document.getElementById(prefix + '-file-size');
-        
-        input.addEventListener('change', function() {
-            if (this.files && this.files[0]) {
-                const file = this.files[0];
-                
-                // Format size
-                let sizeText = '';
-                if (file.size < 1024) {
-                    sizeText = file.size + ' B';
-                } else if (file.size < 1024 * 1024) {
-                    sizeText = (file.size / 1024).toFixed(1) + ' KB';
-                } else {
-                    sizeText = (file.size / (1024 * 1024)).toFixed(1) + ' MB';
-                }
-                
-                // Set icon based on extension
-                const ext = file.name.split('.').pop().toLowerCase();
-                if (['jpg', 'jpeg', 'png', 'gif', 'webp'].indexOf(ext) > -1) {
-                    icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>';
-                } else if (ext === 'pdf') {
-                    icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>';
-                } else if (['ai', 'eps', 'svg'].indexOf(ext) > -1) {
-                    icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>';
-                } else {
-                    icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>';
-                }
-                
-                name.textContent = file.name;
-                size.textContent = '(' + sizeText + ')';
-                info.classList.add('visible');
-                box.classList.add('has-file');
-            }
-        });
-    }
-    
-    function removeFile(prefix) {
-        const input = document.getElementById(prefix === 'main' ? 'main_file' : 'additional_file');
-        const box = document.getElementById(prefix + '-file-box');
-        const info = document.getElementById(prefix + '-file-info');
-        
-        input.value = '';
-        info.classList.remove('visible');
-        box.classList.remove('has-file');
-    }
-    
-    // Initialize file uploads
-    setupFileUpload('main_file', 'main');
-    setupFileUpload('additional_file', 'additional');
-    
-    // Form submission
-    document.getElementById('order-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const submitBtn = document.getElementById('submit-btn');
-        const messageDiv = document.getElementById('form-message');
-        const originalText = submitBtn.innerHTML;
-        
-        // Disable button and show loading
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Sending...';
-        
-        // Create FormData
-        const formData = new FormData(this);
-        
-        // Send via fetch
-        fetch('php/send-order.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            messageDiv.style.display = 'block';
-            
-            if (data.success) {
-                messageDiv.className = 'form-message success';
-                messageDiv.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> ' + data.message;
-                this.reset();
-                removeFile('main');
-                removeFile('additional');
-                
-                // Scroll to message
-                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            } else {
-                messageDiv.className = 'form-message error';
-                messageDiv.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg> ' + data.message;
-            }
-        })
-        .catch(error => {
-            messageDiv.style.display = 'block';
-            messageDiv.className = 'form-message error';
-            messageDiv.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg> An error occurred. Please try again or contact us directly at <a href="/#quote" style="color:var(--gold-dark);font-weight:600;">Send us a message</a>';
-        })
-        .finally(() => {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
-        });
-    });
-    </script>
 <script src="js/consent.js?v=2026a"></script>
 </body>
 </html>
