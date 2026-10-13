@@ -4,24 +4,26 @@
             <img src="../images/logo-header.svg" alt="" width="36" height="36">
             <span class="logo-text">Puncher<span class="logo-dot">.com</span></span>
         </a>
-        <button class="mobile-menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
         <nav>
             <ul id="nav-menu">
-                <li><a href="/de/">Startseite</a></li>
+                <li class="nav-dropdown">
+                    <a href="pricing.html">Leistungen</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pricing.html">Stickerei-Digitalisierung</a></li>
+                        <li><a href="vector-service.html">Vektorkunst &amp; Farbtrennung</a></li>
+                        <li><a href="embroidery-file-formats.html">Dateiformate</a></li>
+                        <li><a href="partner-companies.html">Partner</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">Über uns</a></li>
-                <li class="nav-dropdown"><a href="#">Dienste</a><ul class="dropdown-menu">
-                    <li><a href="pricing.html">Stickerei-Digitalisierung</a></li>
-                    <li><a href="vector-service.html">Vektorkunst &amp; Farbtrennung</a></li>
-                    <li><a href="embroidery-file-formats.html">Dateiformate</a></li>
-                    <li><a href="partner-companies.html">Partner</a></li>
-                </ul></li>
                 <li><a href="pricing.html">Preise</a></li>
                 <li><a href="for-shops.html">Für Betriebe</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
-                <li style="display:flex;gap:10px;align-items:center;"><a href="/app/" class="btn btn-outline" style="padding: 8px 20px;">Anmelden</a><a href="/app/register/" class="btn btn-primary" style="padding: 8px 20px;">Registrieren</a></li>
+                <li style="display:flex;gap:10px;align-items:center;"><a href="/app/" class="btn btn-outline">Anmelden</a><a href="/de/#quote" class="btn btn-primary">Angebot anfordern</a></li>
             </ul>
         </nav>
-        <div id="language-switcher" style="display: flex; align-items: center; margin-left: 15px;"></div>
+        <div id="language-switcher"></div>
     </div>
 </header>
