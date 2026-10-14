@@ -507,3 +507,17 @@ footer{background:var(--bg);color:var(--ink-muted);padding:48px 0 0;border-top:1
 .badge-row{display:flex;flex-wrap:wrap;gap:10px}
 .badge-row span{padding:8px 14px;border:1px solid #E0E0EC;border-radius:8px;font-family:var(--font-mono);font-size:13px;color:var(--indigo-deep);background:var(--white)}
 .badge-row span.fmt{background:var(--indigo-soft);border-color:transparent}
+
+/* Inner-page photography */
+.photo-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.photo-pair img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);display:block}
+.photo-pair img:nth-child(2){margin-top:0}
+.photo-card{margin:0;display:flex;flex-direction:column;gap:10px}
+.photo-card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);display:block}
+.photo-card figcaption{font-size:13px;font-weight:600;color:var(--ink-muted)}
+.faq-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start}
+.faq-aside{display:flex;flex-direction:column;gap:24px;position:sticky;top:96px}
+.photo-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}
+.photo-strip img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);display:block}
+.photo-wide{width:100%;height:auto;aspect-ratio:16/7;object-fit:cover;border-radius:var(--radius-xl);display:block}
+@media(max-width:1024px){.faq-layout{grid-template-columns:1fr}.faq-aside{position:static;flex-direction:row;flex-wrap:wrap}.faq-aside .photo-card{flex:1 1 220px}}
