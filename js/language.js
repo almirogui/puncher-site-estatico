@@ -11,8 +11,7 @@
     // Idioma ausente da lista → switcher leva a home do idioma.
     const PAGE_LANGS = {
         'order.html': [],
-        'terms.html': [],
-        'for-shops.html': ['de']
+        'terms.html': []
     };
 
     // Supported languages

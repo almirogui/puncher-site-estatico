@@ -7,383 +7,50 @@
     <meta name="keywords" content="embroidery digitizing, digitizing order, embroidery designs, machine embroidery">
     <title>Place Order | Puncher Embroidery Digitizing</title>
     
+    <link rel="canonical" href="https://puncher.com/order.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=2026a">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    
-    <style>
-        /* Additional styles for order page */
-        .order-section {
-            padding: 60px 0;
-            background: var(--ivory);
-        }
-        
-        .order-form-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 40px;
-            border: 1px solid var(--card-border);
-            border-radius: 10px;
-            box-shadow: var(--card-shadow);
-        }
-        
-        .online-system-banner {
-            background: var(--ivory);
-            border: 1px solid var(--gold-dark);
-            border-left: 4px solid var(--gold-dark);
-            padding: 24px 25px;
-            border-radius: 10px;
-            margin-bottom: 0;
-        }
-
-        .online-system-banner .banner-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-
-        .online-system-banner h4 {
-            margin: 0;
-            color: var(--text-dark);
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .online-system-banner .banner-body {
-            color: var(--text-body);
-            font-size: 14px;
-        }
-
-        .online-system-banner ul {
-            margin: 10px 0 14px 0;
-            padding-left: 20px;
-        }
-
-        .online-system-banner ul li {
-            margin-bottom: 5px;
-            line-height: 1.5;
-        }
-
-        .online-system-banner .price-highlight {
-            display: inline-block;
-            background: var(--navy-deep);
-            color: var(--gold);
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin-bottom: 14px;
-        }
-
-        .online-system-banner .register-btn {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--navy-deep);
-            font-weight: 700;
-            font-size: 15px;
-            padding: 11px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-bottom: 12px;
-        }
-
-        .online-system-banner .register-btn:hover {
-            background: #d9a23e;
-        }
-
-        .online-system-banner .scroll-note {
-            margin: 0;
-            font-size: 13px;
-            color: var(--text-soft);
-        }
-        
-        .order-form-container h3 {
-            color: var(--text-dark);
-            margin-bottom: 25px;
-            font-size: 24px;
-            text-align: center;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        @media (max-width: 600px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .order-form-container {
-                padding: 25px;
-                margin: 0 15px;
-            }
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text-dark);
-            font-size: 14px;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            font-size: 15px;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            box-sizing: border-box;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold-dark);
-            box-shadow: 0 0 0 3px rgba(184, 137, 47, 0.15);
-        }
-        
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .unit-options {
-            display: flex;
-            gap: 20px;
-            margin-top: 8px;
-        }
-        
-        .unit-options label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: normal;
-            cursor: pointer;
-        }
-        
-        .unit-options input[type="radio"] {
-            width: auto;
-        }
-        
-        .file-upload-box {
-            border: 2px dashed var(--card-border);
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            background: var(--ivory);
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        
-        .file-upload-box:hover {
-            border-color: var(--gold-dark);
-            background: #faf3e3;
-        }
-        
-        .file-upload-box.has-file {
-            border-color: #48bb78;
-            background: #f0fff4;
-            border-style: solid;
-        }
-        
-        .file-upload-box .upload-icon {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        
-        .file-upload-box .upload-text {
-            color: var(--text-body);
-            font-size: 14px;
-        }
-        
-        .file-upload-box .upload-text strong {
-            color: var(--gold-dark);
-        }
-        
-        .file-upload-box input[type="file"] {
-            display: none;
-        }
-        
-        .file-info {
-            display: none;
-            margin-top: 10px;
-            padding: 12px 15px;
-            background: #c6f6d5;
-            border: 2px solid #48bb78;
-            border-radius: 8px;
-            text-align: left;
-        }
-        
-        .file-info.visible {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .file-info .file-details {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .file-info .file-icon {
-            font-size: 20px;
-        }
-        
-        .file-info .file-name {
-            font-weight: 600;
-            color: #22543d;
-        }
-        
-        .file-info .file-size {
-            color: #276749;
-            font-size: 12px;
-        }
-        
-        .file-info .remove-btn {
-            background: #e53e3e;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 16px 30px;
-            background: var(--gold);
-            color: var(--navy-deep);
-            border: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 10px;
-        }
-        
-        .submit-btn:hover {
-            background: #d9a23e;
-        }
-        
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .form-note {
-            text-align: center;
-            margin-top: 20px;
-            color: var(--text-soft);
-            font-size: 14px;
-        }
-        
-        /* Success/Error messages */
-        .form-message {
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            display: none;
-        }
-        
-        .form-message.success {
-            background: #c6f6d5;
-            border: 1px solid #48bb78;
-            color: #22543d;
-        }
-        
-        .form-message.error {
-            background: #fed7d7;
-            border: 1px solid #fc8181;
-            color: #c53030;
-        }
-        
-        .required-star {
-            color: #e53e3e;
-        }
-    </style>
-
-<link rel="canonical" href="https://puncher.com/order.html">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v=2026c">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-    </header>
+    <header></header>
 
-    <!-- Page Title -->
-    <section class="hero">
-        <div class="container">
-            <span class="eyebrow" style="color:var(--gold)">Embroidery digitizing since 1993</span>
-            <h1 style="font-size: 36px; margin-bottom: 10px;">PLACE YOUR ORDER</h1>
-            <p style="font-size: 18px;">Submit your design for professional embroidery digitizing</p>
-        </div>
-    </section>
 
-    <!-- Order Form Section -->
-    <section class="order-section">
+    <section class="page-hero">
         <div class="container">
-            <div class="order-form-container">
-                
-                <!-- Online System Banner -->
-                <div class="online-system-banner">
-                    <div class="banner-header">
-                        <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
-                        <h4>Our New Online Ordering System is Live!</h4>
-                    </div>
-                    <div class="banner-body">
-                        <p style="margin: 0 0 10px 0;">You can now place and manage your orders entirely online — faster, smarter, and more convenient than ever:</p>
-                        <ul>
-                            <li><strong>Real-time order tracking</strong> — see exactly where your job stands at any moment</li>
-                            <li><strong>Full order history</strong> — access all your past orders in one place</li>
-                            <li><strong>Direct file download</strong> — download your finished embroidery files instantly</li>
-                            <li><strong>Centralized communication</strong> — send and receive messages tied to each order</li>
-                            <li><strong>Lower prices</strong> — exclusive online pricing</li>
-                        </ul>
-                        <span class="price-highlight"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg> Lower prices when ordering online</span><br>
-                        <a href="https://puncher.com/app/novo-pedido/" class="register-btn">Start Your Order &rarr;</a>
-                    </div>
-                </div>
+            <div>
+                <span class="eyebrow">Embroidery digitizing since 1993</span>
+                <h1>Place Your Order</h1>
+                <p class="lead">Orders are now placed through our online system — faster turnaround, real-time tracking, lower prices.</p>
+                <div class="hero-buttons"><a href="https://puncher.com/app/novo-pedido/" class="btn btn-primary btn-lg">Start your order →</a><a href="/app/register/" class="btn btn-outline btn-lg">Create a free account</a></div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="pg-section white">
         <div class="container">
-            <h2>Ready to place your order?</h2>
-            <p>Orders are now placed through our online system — faster turnaround, real-time tracking, lower prices.</p>
-            <a href="https://puncher.com/app/novo-pedido/" class="btn btn-primary btn-lg">Place Your Order Online &rarr;</a>
-            <p class="cta-note">New to Puncher? You can create your free account in under a minute.</p>
+            <div class="section-head"><h2>Our new online ordering system is live</h2><p>You can now place and manage your orders entirely online — faster, smarter, and more convenient than ever.</p></div>
+            <div class="callout">
+                <div class="callout-box"><h3>Real-time order tracking</h3><p>See exactly where your job stands at any moment.</p></div>
+                <div class="callout-box"><h3>Full order history</h3><p>Access all your past orders in one place.</p></div>
+                <div class="callout-box"><h3>Direct file download</h3><p>Download your finished embroidery files instantly.</p></div>
+                <div class="callout-box"><h3>Centralized communication</h3><p>Send and receive messages tied to each order.</p></div>
+                <div class="callout-box accent"><span class="label">Online pricing</span><h3>Lower prices</h3><p>Exclusive online pricing when ordering through the system.</p></div>
+            </div>
         </div>
     </section>
 
-
-    <script src="js/main.js?v=2026a"></script>
-    <script src="js/language.js?v=2026b"></script>
-    
-<script src="js/consent.js?v=2026a"></script>
+    <div class="container">
+        <section class="cta-band">
+            <div><h2>Ready to place your order?</h2><p>New to Puncher? You can create your free account in under a minute.</p></div>
+            <div class="actions"><a href="https://puncher.com/app/novo-pedido/" class="btn btn-light btn-lg">Place your order online →</a></div>
+        </section>
+    </div>
+    <script src="/js/main.js?v=2026c"></script>
+    <script src="/js/language.js?v=2026c"></script>
+    <script src="/js/consent.js?v=2026a"></script>
 </body>
 </html>
