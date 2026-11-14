@@ -521,5 +521,6 @@ footer{background:var(--bg);color:var(--ink-muted);padding:48px 0 0;border-top:1
 .photo-strip img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);display:block}
 .photo-wide{width:100%;height:auto;aspect-ratio:16/7;object-fit:cover;border-radius:var(--radius-xl);display:block}
 @media(max-width:1024px){.faq-layout{grid-template-columns:1fr}.faq-aside{position:static;flex-direction:row;flex-wrap:wrap}.faq-aside .photo-card{flex:1 1 220px}}
-.hero .hero-note{font-size:14px;line-height:1.5;opacity:.8;margin:14px 0 0;max-width:560px}
-.hero .hero-note a{text-decoration:underline}
+.hero .hero-note{font-size:15px;line-height:1.55;margin:20px 0 24px;max-width:560px;padding:14px 18px;background:rgba(79,70,229,.08);border-left:3px solid var(--indigo);border-radius:8px;color:var(--ink)}
+.hero .hero-note strong{color:var(--indigo);font-weight:700}
+.hero .hero-note a{color:var(--indigo);font-weight:600;text-decoration:underline}
