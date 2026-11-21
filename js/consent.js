@@ -14,27 +14,27 @@
     // =========================================================
     var TEXTS = {
         en: {
-            msg: "We use cookies (Google Analytics and Meta Pixel) to understand how visitors use our site. See our <a href='/terms.html?from=site'>Terms of Service</a>.",
+            msg: "We use cookies to understand how visitors use our site (Google Analytics and Meta Pixel) and, if you arrived through a referral link, to remember who referred you. See our <a href='/terms.html?from=site#cookies'>Terms of Service</a>.",
             accept: 'Accept',
             decline: 'Decline'
         },
         de: {
-            msg: "Wir verwenden Cookies (Google Analytics und Meta Pixel), um zu verstehen, wie Besucher unsere Website nutzen. Siehe unsere <a href='/terms.html?from=site'>Nutzungsbedingungen</a>.",
+            msg: "Wir verwenden Cookies, um zu verstehen, wie Besucher unsere Website nutzen (Google Analytics und Meta Pixel), und – wenn Sie über einen Empfehlungslink kommen – um zu speichern, wer Sie empfohlen hat. Siehe unsere <a href='/terms.html?from=site#cookies'>Nutzungsbedingungen</a>.",
             accept: 'Akzeptieren',
             decline: 'Ablehnen'
         },
         fr: {
-            msg: "Nous utilisons des cookies (Google Analytics et Meta Pixel) pour comprendre comment les visiteurs utilisent notre site. Consultez nos <a href='/terms.html?from=site'>Conditions d'utilisation</a>.",
+            msg: "Nous utilisons des cookies pour comprendre comment les visiteurs utilisent notre site (Google Analytics et Meta Pixel) et, si vous arrivez via un lien de parrainage, pour savoir qui vous a recommandé notre site. Consultez nos <a href='/terms.html?from=site#cookies'>Conditions d'utilisation</a>.",
             accept: 'Accepter',
             decline: 'Refuser'
         },
         es: {
-            msg: "Utilizamos cookies (Google Analytics y Meta Pixel) para entender cómo los visitantes usan nuestro sitio. Consulte nuestros <a href='/terms.html?from=site'>Términos de servicio</a>.",
+            msg: "Utilizamos cookies para entender cómo los visitantes usan nuestro sitio (Google Analytics y Meta Pixel) y, si llegó a través de un enlace de recomendación, para recordar quién le recomendó. Consulte nuestros <a href='/terms.html?from=site#cookies'>Términos de servicio</a>.",
             accept: 'Aceptar',
             decline: 'Rechazar'
         },
         it: {
-            msg: "Utilizziamo i cookie (Google Analytics e Meta Pixel) per capire come i visitatori usano il nostro sito. Consulta i nostri <a href='/terms.html?from=site'>Termini di servizio</a>.",
+            msg: "Utilizziamo i cookie per capire come i visitatori usano il nostro sito (Google Analytics e Meta Pixel) e, se sei qui tramite un link di invito, per ricordare chi ti ha invitato. Consulta i nostri <a href='/terms.html?from=site#cookies'>Termini di servizio</a>.",
             accept: 'Accetta',
             decline: 'Rifiuta'
         }
