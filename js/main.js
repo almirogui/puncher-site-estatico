@@ -75,6 +75,100 @@ function t(key) {
 }
 
 // =========================================================
+// INDICAÇÃO DE EMBAIXADOR (?ref=CODIGO)
+// - Com ?ref= válido na URL: repassa o código nos links internos e
+//   do /app/, sem guardar nada.
+// - Cookie puncher_ref só é gravado com consentimento (puncher_consent
+//   = 'granted', o mesmo do consent.js). Aceite depois, na mesma
+//   página, grava na hora; recusa não grava (e apaga um antigo).
+// - Sem ?ref= na URL, não mexe em nada: o /app/register/ lê o cookie.
+// =========================================================
+(function referral() {
+    var COOKIE = 'puncher_ref';
+    var MAX_AGE = 60 * 24 * 60 * 60; // 60 dias
+
+    function normalize(raw) {
+        var code = String(raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
+        return code.length >= 3 ? code : null;
+    }
+
+    var code = null;
+    try {
+        code = normalize(new URLSearchParams(window.location.search).get('ref'));
+    } catch (e) { /* navegador sem URLSearchParams: segue sem indicação */ }
+    if (!code) return;
+
+    function hasConsent() {
+        try { return localStorage.getItem('puncher_consent') === 'granted'; }
+        catch (e) { return false; }
+    }
+
+    function saveCookie() {
+        document.cookie = COOKIE + '=' + code + '; path=/; max-age=' + MAX_AGE + '; SameSite=Lax; Secure';
+    }
+
+    function deleteCookie() {
+        document.cookie = COOKIE + '=; path=/; max-age=0; SameSite=Lax; Secure';
+    }
+
+    if (hasConsent()) saveCookie();
+
+    // Aceite/recusa no aviso de cookies desta página. O listener do
+    // botão (consent.js) roda antes deste, que está no document, então
+    // a preferência já está gravada quando chegamos aqui.
+    document.addEventListener('click', function (e) {
+        var banner = e.target.closest ? e.target.closest('#puncher-consent-banner') : null;
+        if (!banner || !e.target.closest('button')) return;
+        var consent = null;
+        try { consent = localStorage.getItem('puncher_consent'); } catch (err) {}
+        if (consent === 'granted') saveCookie();
+        else if (consent === 'denied') deleteCookie();
+    });
+
+    // Repasse do código nos links
+    var SITE_HOSTS = ['puncher.com', 'www.puncher.com', window.location.hostname];
+
+    function decorate(a) {
+        var href = a.getAttribute('href');
+        if (!href || href.charAt(0) === '#') return;
+        var url;
+        try { url = new URL(href, window.location.href); } catch (e) { return; }
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return; // mailto:, tel:, javascript:
+        if (SITE_HOSTS.indexOf(url.hostname) === -1) return;               // links externos
+        // Âncora para a própria página (ex.: "index.html#faq" estando na home)
+        if (url.hash && url.pathname === window.location.pathname && url.search === window.location.search) return;
+        if (url.searchParams.get('ref') === code) return;
+        url.searchParams.set('ref', code);
+        // Mantém relativo quando o link original era relativo
+        a.setAttribute('href', url.hostname === window.location.hostname && !/^[a-z]+:\/\//i.test(href)
+            ? url.pathname + url.search + url.hash
+            : url.href);
+    }
+
+    function decorateAll(root) {
+        if (root.tagName === 'A') decorate(root);
+        if (root.querySelectorAll) {
+            var links = root.querySelectorAll('a[href]');
+            for (var i = 0; i < links.length; i++) decorate(links[i]);
+        }
+    }
+
+    // Menu, rodapé e seletor de idioma chegam depois (fetch/JS):
+    // o observador pega esses links quando entram no DOM.
+    if (window.MutationObserver) {
+        new MutationObserver(function (mutations) {
+            mutations.forEach(function (m) {
+                for (var i = 0; i < m.addedNodes.length; i++) {
+                    if (m.addedNodes[i].nodeType === 1) decorateAll(m.addedNodes[i]);
+                }
+            });
+        }).observe(document.documentElement, { childList: true, subtree: true });
+    }
+    decorateAll(document);
+    document.addEventListener('DOMContentLoaded', function () { decorateAll(document); });
+})();
+
+// =========================================================
 // MENU INJECT — carrega menu.html em todas as páginas
 // =========================================================
 (function injectMenu() {
