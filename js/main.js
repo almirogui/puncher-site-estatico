@@ -83,6 +83,24 @@ function t(key) {
 //   página, grava na hora; recusa não grava (e apaga um antigo).
 // - Sem ?ref= na URL, não mexe em nada: o /app/register/ lê o cookie.
 // =========================================================
+// =========================================================
+// RECUSA DE COOKIES APAGA O puncher_ref EM QUALQUER PÁGINA
+// - Decisão já 'denied' ao abrir a página: apaga um cookie antigo.
+// - Clique em "Decline" no aviso (inclusive via Cookie settings): apaga na hora.
+// - Sem decisão (aviso aberto): não faz nada.
+// ATENÇÃO: a string de apagamento abaixo é a mesma de deleteCookie() em
+// referral(); as duas devem usar os MESMOS atributos da gravação (saveCookie).
+// =========================================================
+(function referralConsentCleanup() {
+    function consent() { try { return localStorage.getItem('puncher_consent'); } catch (e) { return null; } }
+    function del() { document.cookie = 'puncher_ref=; path=/; max-age=0; SameSite=Lax; Secure'; }
+    if (consent() === 'denied') del();
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest || !e.target.closest('#puncher-consent-banner button')) return;
+        if (consent() === 'denied') del();
+    });
+})();
+
 (function referral() {
     var COOKIE = 'puncher_ref';
     var MAX_AGE = 60 * 24 * 60 * 60; // 60 dias
