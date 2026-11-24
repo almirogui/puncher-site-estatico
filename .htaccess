@@ -37,3 +37,8 @@ Redirect 301 /index.php https://puncher.com/
 Redirect 301 /embed/ https://puncher.com/
 Redirect 301 /format.htm https://puncher.com/
 
+
+# 5. Bloquear arquivos de documentação (.md), ex.: CLAUDE.md — nunca acessíveis pelo navegador
+<FilesMatch "\.(?i:md)$">
+    Require all denied
+</FilesMatch>
