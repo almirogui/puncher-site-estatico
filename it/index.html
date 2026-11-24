@@ -18,7 +18,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=2026c">
+    <link rel="stylesheet" href="../css/style.css?v=2026d">
+    <script src="../js/ref-early.js?v=2026a"></script>
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
 
@@ -64,10 +65,11 @@
                 <h1>File di ricamo pronti per la produzione, in 24 ore.</h1>
                 <p>Digitalizzazione manuale fatta da chi gestisce quattro laboratori di ricamo. Da 10 $ a design. Serve oggi? RUSH consegna entro le 18:00 EST.</p>
                 <div class="hero-buttons">
-                    <a href="#quote" class="btn btn-primary btn-lg">Preventivo gratuito</a>
-                    <a href="/app/register/" class="btn btn-outline btn-lg">Crea un account gratuito</a>
+                    <a href="#quote" class="btn btn-primary btn-lg" data-ref-cta="quote">Preventivo gratuito</a>
+                    <a href="/app/register/" class="btn btn-outline btn-lg" data-ref-cta="account">Crea un account gratuito</a>
                 </div>
-                <p class="hero-note"><strong>Sei nuovo? Il tuo primo design da ricamo è gratis</strong> — fino a 10.000 punti. Basta <a href="/app/register/">registrarti</a> e fare l'ordine nel nostro sistema online. Non ti verrà addebitato nulla, anche se scegli PayPal al pagamento. La grafica vettoriale non è inclusa.</p>
+                <script>window.puncherRefSwap && puncherRefSwap();</script>
+                <p class="hero-note"><strong class="hero-note-ref" hidden>Sei qui su consiglio di un partner Puncher.</strong><strong>Sei nuovo? Il tuo primo design da ricamo è gratis</strong> — fino a 10.000 punti. Basta <a href="/app/register/">registrarti</a> e fare l'ordine nel nostro sistema online. Non ti verrà addebitato nulla, anche se scegli PayPal al pagamento. La grafica vettoriale non è inclusa.</p>
                 <div class="hero-proof">
                     <span><strong>91.500+ design digitalizzati</strong></span>
                     <span>Correzioni gratuite illimitate</span>
@@ -385,7 +387,7 @@
         </div>
     </section>
 
-    <script src="../js/main.js?v=2026d"></script>
+    <script src="../js/main.js?v=2026e"></script>
     <script src="../js/language.js?v=2026b"></script>
     <script src="../js/consent.js?v=2026b"></script>
 </body>

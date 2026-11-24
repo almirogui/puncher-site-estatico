@@ -524,3 +524,10 @@ footer{background:var(--bg);color:var(--ink-muted);padding:48px 0 0;border-top:1
 .hero .hero-note{font-size:15px;line-height:1.55;margin:20px 0 24px;max-width:560px;padding:14px 18px;background:rgba(79,70,229,.08);border-left:3px solid var(--indigo);border-radius:8px;color:var(--ink)}
 .hero .hero-note strong{color:var(--indigo);font-weight:700}
 .hero .hero-note a{color:var(--indigo);font-weight:600;text-decoration:underline}
+/* Ambassador referral (html.has-ref, set early by js/ref-early.js): hero CTA colors swap + referral line */
+html.has-ref .hero .hero-buttons [data-ref-cta="account"]{background:var(--indigo);border-color:transparent;color:var(--white)}
+html.has-ref .hero .hero-buttons [data-ref-cta="account"]:hover{background:var(--indigo-dark);color:var(--white)}
+html.has-ref .hero .hero-buttons [data-ref-cta="quote"]{background:var(--white);border-color:var(--line-strong);color:var(--indigo-deep)}
+html.has-ref .hero .hero-buttons [data-ref-cta="quote"]:hover{border-color:var(--indigo);color:var(--indigo)}
+.hero .hero-note .hero-note-ref{display:none}
+html.has-ref .hero .hero-note .hero-note-ref{display:block;margin-bottom:6px}

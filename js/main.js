@@ -87,6 +87,8 @@ function t(key) {
     var COOKIE = 'puncher_ref';
     var MAX_AGE = 60 * 24 * 60 * 60; // 60 dias
 
+    // ATENÇÃO: esta regra de normalize() também existe em js/ref-early.js
+    // (destaque do hero para quem tem indicação). Manter as duas IGUAIS.
     function normalize(raw) {
         var code = String(raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
         return code.length >= 3 ? code : null;

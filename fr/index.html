@@ -19,7 +19,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=2026c">
+    <link rel="stylesheet" href="../css/style.css?v=2026d">
+    <script src="../js/ref-early.js?v=2026a"></script>
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
 
@@ -65,10 +66,11 @@
                 <h1>Des fichiers de broderie prêts pour la production, livrés en 24 h.</h1>
                 <p>Numérisation manuelle par des gens qui exploitent quatre ateliers de broderie. À partir de 10 $ par design. Besoin aujourd'hui ? RUSH livre avant 18 h EST.</p>
                 <div class="hero-buttons">
-                    <a href="#quote" class="btn btn-primary btn-lg">Devis gratuit</a>
-                    <a href="/app/register/" class="btn btn-outline btn-lg">Créer un compte gratuit</a>
+                    <a href="#quote" class="btn btn-primary btn-lg" data-ref-cta="quote">Devis gratuit</a>
+                    <a href="/app/register/" class="btn btn-outline btn-lg" data-ref-cta="account">Créer un compte gratuit</a>
                 </div>
-                <p class="hero-note"><strong>Nouveau client ? Votre premier design de broderie est gratuit</strong> — jusqu'à 10&nbsp;000 points. Il suffit de vous <a href="/app/register/">inscrire</a> et de passer la commande dans notre système en ligne. Rien ne vous sera facturé, même si vous choisissez PayPal au paiement. L'art vectoriel n'est pas inclus.</p>
+                <script>window.puncherRefSwap && puncherRefSwap();</script>
+                <p class="hero-note"><strong class="hero-note-ref" hidden>Vous venez de la part d'un partenaire Puncher.</strong><strong>Nouveau client ? Votre premier design de broderie est gratuit</strong> — jusqu'à 10&nbsp;000 points. Il suffit de vous <a href="/app/register/">inscrire</a> et de passer la commande dans notre système en ligne. Rien ne vous sera facturé, même si vous choisissez PayPal au paiement. L'art vectoriel n'est pas inclus.</p>
                 <div class="hero-proof">
                     <span><strong>91 500+ designs numérisés</strong></span>
                     <span>Corrections gratuites illimitées</span>
@@ -386,7 +388,7 @@
         </div>
     </section>
 
-    <script src="../js/main.js?v=2026d"></script>
+    <script src="../js/main.js?v=2026e"></script>
     <script src="../js/language.js?v=2026b"></script>
     <script src="../js/consent.js?v=2026b"></script>
 </body>

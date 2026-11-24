@@ -18,7 +18,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css?v=2026c">
+    <link rel="stylesheet" href="../css/style.css?v=2026d">
+    <script src="../js/ref-early.js?v=2026a"></script>
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
 
@@ -120,10 +121,11 @@
                 <h1>Produktionsfertige Stickdateien – in 24 Stunden zurück.</h1>
                 <p>Manuelles Punchen von Leuten, die selbst vier Stickereien betreiben. Ab 10 $ pro Design. Heute noch nötig? RUSH liefert bis 18:00 Uhr EST.</p>
                 <div class="hero-buttons">
-                    <a href="#quote" class="btn btn-primary btn-lg">Kostenloses Angebot</a>
-                    <a href="/app/register/" class="btn btn-outline btn-lg">Kostenloses Konto erstellen</a>
+                    <a href="#quote" class="btn btn-primary btn-lg" data-ref-cta="quote">Kostenloses Angebot</a>
+                    <a href="/app/register/" class="btn btn-outline btn-lg" data-ref-cta="account">Kostenloses Konto erstellen</a>
                 </div>
-                <p class="hero-note"><strong>Neu hier? Ihr erstes Stickdesign ist kostenlos</strong> — bis 10.000 Stiche. <a href="/app/register/">Registrieren</a> Sie sich einfach und geben Sie den Auftrag über unser Online-System auf. Es wird Ihnen nichts berechnet, auch wenn Sie an der Kasse PayPal wählen. Vektorgrafiken sind ausgenommen.</p>
+                <script>window.puncherRefSwap && puncherRefSwap();</script>
+                <p class="hero-note"><strong class="hero-note-ref" hidden>Sie kommen auf Empfehlung eines Puncher-Partners.</strong><strong>Neu hier? Ihr erstes Stickdesign ist kostenlos</strong> — bis 10.000 Stiche. <a href="/app/register/">Registrieren</a> Sie sich einfach und geben Sie den Auftrag über unser Online-System auf. Es wird Ihnen nichts berechnet, auch wenn Sie an der Kasse PayPal wählen. Vektorgrafiken sind ausgenommen.</p>
                 <div class="hero-proof">
                     <span><strong>91.500+ Designs digitalisiert</strong></span>
                     <span>Unbegrenzte kostenlose Korrekturen</span>
@@ -441,7 +443,7 @@
         </div>
     </section>
 
-    <script src="../js/main.js?v=2026d"></script>
+    <script src="../js/main.js?v=2026e"></script>
     <script src="../js/language.js?v=2026b"></script>
     <script src="../js/consent.js?v=2026b"></script>
 </body>
